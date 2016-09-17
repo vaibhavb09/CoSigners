@@ -1,0 +1,7 @@
+Theif_Walk_loop,SFX/ThiefWalk1,1
+Theif_Run_loop,SFX/ThiefRun1,1
+Theif_Crawl_loop,SFX/ThiefCrawl1,1
+Door_Open_OneShot,SFX/DEV/O,1
+Guards_Looping,SFX/Music/Guile,1
+Guard_See_you_OneShot,SFX/DEV/D,1
+Theif_BGM_loop,SFX/Thief_Looping,1

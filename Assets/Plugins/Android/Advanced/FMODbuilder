@@ -1,0 +1,17 @@
+# Set ANDROID_SDK_ROOT to the root path of your Android SDK.  You may also need to change the folder after "platforms"
+# Set UNITY_SDK to the path that you Unity SDK points to.
+
+ANDROID_SDK_ROOT="/usr/local/android/sdk"
+UNITY_SDK="/Applications/Unity/Unity.app/Contents"
+
+echo ""
+echo "Building JavaClass..."
+javac src/FMODSample.java -bootclasspath $ANDROID_SDK_ROOT/platforms/android-10/android.jar -classpath $UNITY_SDK/PlaybackEngines/AndroidPlayer/bin/classes.jar:fmodex.jar -d .
+
+echo ""
+echo "Signature dump of FMODSample..."
+
+javap -s com.Autodesk.HelloWorldDemo.FMODSample
+
+echo "Creating FMODSample.jar..."
+jar cvfM FMODSample.jar com/

@@ -1,0 +1,19 @@
+Number of Times Seen: 1
+Number of Times Chased: 0
+Number of Times Avoided: 543
+Guard Awareness Meter: 0
+Jammers Disabled: 0
+Transmeters Placed: 0
+Transmeters Restarted: 0
+Transmitters Picked Up: 0
+Scramblers Used: 0
+Pings Sent by Thief: 0
+Objects Pinged by Thief: 0
+Links Placed: 0
+Doors Unlocked: 2
+Doors Locked: 0
+Doors Normal Locked: 0
+IR Nodes Caputred: 0
+Security Nodes Captured: 0
+Pings Sent By Hacker: 0
+Objects Pinged by Hacker: 0Lockdowns this level: 0

@@ -1,0 +1,69 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{19DFCFC5-9C04-2794-47DB-5FD5608F77B6}") = "CyberHeist12182013", "Assembly-CSharp-firstpass.csproj", "{63857828-8A2E-5C8F-F9E5-C493591C2564}"
+EndProject
+Project("{19DFCFC5-9C04-2794-47DB-5FD5608F77B6}") = "CyberHeist12182013", "Assembly-CSharp.csproj", "{BC53A789-F9C2-A3D8-7196-B75D8B857511}"
+EndProject
+Project("{19DFCFC5-9C04-2794-47DB-5FD5608F77B6}") = "CyberHeist12182013", "Assembly-CSharp-Editor.csproj", "{F4E6C436-A2AE-2687-822D-AFFAE47F07B3}"
+EndProject
+Project("{19DFCFC5-9C04-2794-47DB-5FD5608F77B6}") = "CyberHeist12182013", "Assembly-UnityScript-firstpass.unityproj", "{A4D6C662-6EBA-70C4-8CD6-7C400D787172}"
+EndProject
+Project("{19DFCFC5-9C04-2794-47DB-5FD5608F77B6}") = "CyberHeist12182013", "Assembly-UnityScript.unityproj", "{ECCDA144-444F-C1A6-A9E8-6F78A682E603}"
+EndProject
+Project("{19DFCFC5-9C04-2794-47DB-5FD5608F77B6}") = "CyberHeist12182013", "Assembly-UnityScript-Editor.unityproj", "{40E9621E-6A01-2B97-40CB-E4F36510BADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63857828-8A2E-5C8F-F9E5-C493591C2564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63857828-8A2E-5C8F-F9E5-C493591C2564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63857828-8A2E-5C8F-F9E5-C493591C2564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63857828-8A2E-5C8F-F9E5-C493591C2564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC53A789-F9C2-A3D8-7196-B75D8B857511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC53A789-F9C2-A3D8-7196-B75D8B857511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC53A789-F9C2-A3D8-7196-B75D8B857511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC53A789-F9C2-A3D8-7196-B75D8B857511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E6C436-A2AE-2687-822D-AFFAE47F07B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E6C436-A2AE-2687-822D-AFFAE47F07B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E6C436-A2AE-2687-822D-AFFAE47F07B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E6C436-A2AE-2687-822D-AFFAE47F07B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D6C662-6EBA-70C4-8CD6-7C400D787172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D6C662-6EBA-70C4-8CD6-7C400D787172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D6C662-6EBA-70C4-8CD6-7C400D787172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D6C662-6EBA-70C4-8CD6-7C400D787172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCDA144-444F-C1A6-A9E8-6F78A682E603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCDA144-444F-C1A6-A9E8-6F78A682E603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCDA144-444F-C1A6-A9E8-6F78A682E603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCDA144-444F-C1A6-A9E8-6F78A682E603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E9621E-6A01-2B97-40CB-E4F36510BADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E9621E-6A01-2B97-40CB-E4F36510BADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E9621E-6A01-2B97-40CB-E4F36510BADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E9621E-6A01-2B97-40CB-E4F36510BADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																																																																																																																																																																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal

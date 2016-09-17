@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 79d51957dd385d84ea1adb765693b3b4
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - transmitter: {instanceID: 0}
+  - testMaterial: {instanceID: 0}
+  - accesibleMaterial: {instanceID: 0}
+  - inaccesibleMaterial: {instanceID: 0}
+  - pingMarker: {fileID: 400000, guid: 3c83e30daf5c29d45a2bdaaf1ebccdd6, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

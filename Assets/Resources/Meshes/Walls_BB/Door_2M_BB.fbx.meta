@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: e1ba1d95d9b88d242b90bdae6a054552
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: BlastDoor_Bottom
+    100002: BlastDoor_Top
+    100004: Door01
+    100006: Door02
+    100008: //RootNode
+    100010: GlowMesh01
+    100012: GlowMesh02
+    100014: GlowMesh_Door_2M
+    100016: Lock_Top01
+    100018: Lock_Top01 1
+    100020: LockBase_01
+    100022: LockBase_02
+    100024: LockBase_03
+    100026: LockBase_04
+    100028: LockBottom_01
+    100030: LockBottom_01 1
+    100032: SecurityBars_Bottom
+    100034: SecurityBars_Top
+    400000: BlastDoor_Bottom
+    400002: BlastDoor_Top
+    400004: Door01
+    400006: Door02
+    400008: //RootNode
+    400010: GlowMesh01
+    400012: GlowMesh02
+    400014: GlowMesh_Door_2M
+    400016: Lock_Top01
+    400018: Lock_Top01 1
+    400020: LockBase_01
+    400022: LockBase_02
+    400024: LockBase_03
+    400026: LockBase_04
+    400028: LockBottom_01
+    400030: LockBottom_01 1
+    400032: SecurityBars_Bottom
+    400034: SecurityBars_Top
+    2300000: BlastDoor_Bottom
+    2300002: BlastDoor_Top
+    2300004: Door01
+    2300006: Door02
+    2300008: //RootNode
+    2300010: GlowMesh01
+    2300012: GlowMesh02
+    2300014: GlowMesh_Door_2M
+    2300016: Lock_Top01
+    2300018: Lock_Top01 1
+    2300020: LockBase_01
+    2300022: LockBase_02
+    2300024: LockBase_03
+    2300026: LockBase_04
+    2300028: LockBottom_01
+    2300030: LockBottom_01 1
+    2300032: SecurityBars_Bottom
+    2300034: SecurityBars_Top
+    3300000: BlastDoor_Bottom
+    3300002: BlastDoor_Top
+    3300004: Door01
+    3300006: Door02
+    3300008: //RootNode
+    3300010: GlowMesh01
+    3300012: GlowMesh02
+    3300014: GlowMesh_Door_2M
+    3300016: Lock_Top01
+    3300018: Lock_Top01 1
+    3300020: LockBase_01
+    3300022: LockBase_02
+    3300024: LockBase_03
+    3300026: LockBase_04
+    3300028: LockBottom_01
+    3300030: LockBottom_01 1
+    3300032: SecurityBars_Bottom
+    3300034: SecurityBars_Top
+    4300000: Door_2M_BB
+    4300002: Door02
+    4300004: LockBase_02
+    4300006: LockBottom_01
+    4300008: LockBase_03
+    4300010: Lock_Top01
+    4300012: GlowMesh01
+    4300014: Door01
+    4300016: LockBase_01
+    4300018: Lock_Top01
+    4300020: GlowMesh02
+    4300022: LockBase_04
+    4300024: LockBottom_01
+    4300026: BlastDoor_Top
+    4300028: BlastDoor_Bottom
+    4300030: GlowMesh_Door_2M
+    4300032: SecurityBars_Bottom
+    4300034: SecurityBars_Top
+    7400000: Door_Open
+    7400002: Door_Close
+    7400004: Secure_Lock_Close
+    7400006: Secure_Lock_Open
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Door_Open
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Door_Close
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Secure_Lock_Close
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Secure_Lock_Open
+      takeName: Take 001
+      firstFrame: 75
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

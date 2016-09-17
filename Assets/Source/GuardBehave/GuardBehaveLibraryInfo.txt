@@ -1,0 +1,66 @@
+Library class:
+BLGuardBehaveLibrary
+
+Trees:
+	GuardCollection_NewTree1
+	GuardCollection_GuardAI
+	GuardCollection_Patrol
+	GuardCollection_Search_deprecated
+	GuardCollection_Search
+	Unknown
+
+Contexts:
+	Unknown
+
+Branch priority groups:
+	Unknown
+
+Actions (41: 1 - 42):
+	HasReachedWaypoint (1)
+	HasPausedXSecs (2)
+	HasLooked (3)
+	HasPausedXSecsAgain (4)
+	ChangeWayPoint (5)
+	SawPlayerInLastXSecs (6)
+	LookToNextWayPoint (7)
+	MoveToNewWayPoint (8)
+	StillChasingPlayer (9)
+	GoToLastSeenPlayerPos (10)
+	ReachedLastSeenPlayerPos (11)
+	LookAroundLastSeenPlayerPos (12)
+	LookToLastSeenPlayerPos (13)
+	IsAlertMeterNotFull (14)
+	guardSearchActive (15)
+	walkToSearchPoint (16)
+	waitTillSearchPoint (17)
+	sweepAndResetAction (18)
+	goToWayPoint (19)
+	waitForWayPoint (20)
+	getNextWayPoint (21)
+	checkFull (22)
+	doScanFull (23)
+	checkHalf (24)
+	doScanHalf (25)
+	checkNoScan (26)
+	dontScan (27)
+	doPauseOne (28)
+	lookToDirection (29)
+	doPauseTwo (30)
+	alignToLeave (31)
+	wayPointTasksInit (32)
+	waitForAlign (33)
+	trackPlayer (34)
+	chasePlayer (35)
+	findMostRelevantSearchPoint (36)
+	waitForSearchPoint (37)
+	lookAroundAtSearchPoint (38)
+	waitForLookAround (39)
+	parallelHighLevelInterrupt (40)
+	parallelIsSearchRequiredInterrupt (41)
+	Unknown (42)
+
+Decorators (1: 43 - 44):
+	highLevelInterrupt (43)
+	Unknown (44)
+
+Agent classes:

@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: 9a468d60427504647a220b3c435feb07
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: EndDoor_Door
+    100004: EndDoor_FloorGlowPlane
+    100006: EndDoor_Frame1
+    100008: EndDoor_InnerLights
+    100010: EndDoor_ScreenBack
+    100012: EndDoor_ScreenFront
+    100014: EndDoor_Table
+    100016: polySurface43
+    100018: polySurface44
+    100020: transform1
+    100022: transform2
+    100024: transform3
+    100026: VerticalGlowPlanes
+    400000: //RootNode
+    400002: EndDoor_Door
+    400004: EndDoor_FloorGlowPlane
+    400006: EndDoor_Frame1
+    400008: EndDoor_InnerLights
+    400010: EndDoor_ScreenBack
+    400012: EndDoor_ScreenFront
+    400014: EndDoor_Table
+    400016: polySurface43
+    400018: polySurface44
+    400020: transform1
+    400022: transform2
+    400024: transform3
+    400026: VerticalGlowPlanes
+    2300000: EndDoor_FloorGlowPlane
+    2300002: EndDoor_Frame1
+    2300004: EndDoor_ScreenBack
+    2300006: EndDoor_ScreenFront
+    2300008: EndDoor_Table
+    2300010: polySurface44
+    2300012: VerticalGlowPlanes
+    3300000: EndDoor_FloorGlowPlane
+    3300002: EndDoor_Frame1
+    3300004: EndDoor_ScreenBack
+    3300006: EndDoor_ScreenFront
+    3300008: EndDoor_Table
+    3300010: polySurface44
+    3300012: VerticalGlowPlanes
+    4300000: EndDoor_FloorGlowPlane
+    4300002: EndDoor_ScreenFront
+    4300004: EndDoor_ScreenBack
+    4300006: EndDoor_Frame1
+    4300008: EndDoor_Table
+    4300010: VerticalGlowPlanes
+    4300012: polySurface44
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

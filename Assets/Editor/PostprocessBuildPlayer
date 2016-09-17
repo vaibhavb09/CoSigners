@@ -1,0 +1,392 @@
+#!/usr/bin/perl
+use File::Find;
+use Cwd;
+use warnings;
+use strict;
+
+my $installPath = $ARGV[0];
+
+# The type of player built:
+# "dashboard", "standaloneWin32", "standaloneOSXIntel", "standaloneOSXPPC", "standaloneOSXUniversal", "webplayer"
+my $target = $ARGV[1];
+
+my @project = ();
+my @Shipping = ();
+my $ConfigStart = 0;
+my $ConfigLen = 0;
+my @configs = ();
+my $i = 0;
+my $temp = "";
+my $parseState = "none";
+my $projSection = "none";
+my $file = "";
+my $HeaderSearchPaths = "				HEADER_SEARCH_PATHS = (
+					\"\\\"\$(SRCROOT)\\\"\",
+					\"\\\"\$(SRCROOT)/Classes\\\"\",
+				);\n";
+my $LibSearchPaths = "				LIBRARY_SEARCH_PATHS = (
+					\"\$(inherited)\",
+					\"\\\"\$(SRCROOT)\\\"\",
+					\"\\\"\$(SRCROOT)/Libraries\\\"\",
+					\"\\\"\$(SRCROOT)/Libraries/ScaleformLib/clang/\$\{CONFIGURATION\}_NoRTTI\\\"\",
+					\"\\\"\$(SRCROOT)/Libraries/ScaleformLib/clang/\\\"\",
+";
+my $DebugLibs = "				OTHER_LDFLAGS = (
+					\"-weak_framework\",
+					CoreMotion,
+					\"-weak-lSystem\",
+					\"-lgfx_as3\",
+					\"-lgfx_as2\",
+					\"-lgfxrender_gl\",
+					\"-lgfx\",
+					\"-lgfxsound_fmod\",
+					\"-lunitygfxinternal\",
+					\"-lexpat\",
+					\"-lgfxexpat\",
+					\"-ljpeg\",
+					\"-lpng\",
+					\"-lz\",
+					\"-lpcre\",\n";
+my $ReleaseLibs = "				OTHER_LDFLAGS = (
+					\"-weak_framework\",
+					CoreMotion,
+					\"-weak-lSystem\",
+					\"-Wl,-S,-x\",
+					\"-lgfx_as3\",
+					\"-lgfx_as2\",
+					\"-lgfxrender_gl\",
+					\"-lgfx\",
+					\"-lgfxsound_fmod\",
+					\"-lunitygfxinternal\",
+					\"-lexpat\",
+					\"-lgfxexpat\",
+					\"-ljpeg\",
+					\"-lpng\",
+					\"-lz\",
+					\"-lpcre\",\n";
+my $debugPreProcessor = "				GCC_PREPROCESSOR_DEFINITIONS = SF_BUILD_DEBUG;\n";
+my $shippingPreProcessor = "				GCC_PREPROCESSOR_DEFINITIONS = SF_BUILD_SHIPPING;\n";
+my $Shipping="		A47C55831713027900151939 /* Shipping */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CONFIGURATION_BUILD_DIR = \"\$(BUILD_DIR)\";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Classes/iPhone_target_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = \"TARGET_IPHONE_SIMULATOR=1\";
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					\"\$(inherited)\",
+					\"\\\\\\\"\$(SRCROOT)\\\\\\\"\",
+					\"\\\\\\\"\$(SRCROOT)/Libraries\\\\\\\"\",
+					\"\\\"\$(SRCROOT)/Libraries\\\"\",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = HelloWorldDemo;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = \"1,2\";
+			};
+			name = Shipping;
+		};
+		A47C55811713027900151939 /* Shipping */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				\"CODE_SIGN_IDENTITY[sdk=iphoneos*]\" = \"iPhone Developer\";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = \"-Wl,-S,-x\";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Shipping;
+		};
+		";
+		
+my $configList = "/* Begin XCConfigurationList section */
+			1D6058960D05DD3E006BFB54 \/* Build configuration list for PBXNativeTarget \"Unity-iPhone\" \*\/ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058950D05DD3E006BFB54 \/\* Release \*\/,
+				A47C55821713027900151939 \/\* Shipping \*\/,
+				1D6058940D05DD3E006BFB54 \/\* Debug \*\/,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		567B6270114A9F340000AA1F \/\* Build configuration list for PBXNativeTarget \"Unity-iPhone-simulator\" \*\/ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				567B6271114A9F340000AA1F \/\* Release \*\/,
+				A47C55831713027900151939 \/\* Shipping \*\/,
+				567B6272114A9F340000AA1F \/\* Debug \*\/,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B \/\* Build configuration list for PBXProject \"Unity-iPhone\" \*\/ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF5008A954540054247B \/\* Release \*\/,
+				A47C55811713027900151939 \/\* Shipping \*\/,
+				C01FCF4F08A954540054247B \/\* Debug \*\/,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		";
+if ($target eq "iPhone")
+{	
+	#Copy from an internal QA build or from a pre Unity Asset store pacakge
+	if(-d "../../../Include")
+	{
+		mkdir $installPath . "/Libraries/ScaleformLib" unless (-d "$installPath/Libraries/ScaleformLib");
+		system("cp -rf ../../../Lib/iPhone-armv7/ \"$installPath\"/Libraries/ScaleformLib");
+		system("cp -rf ../Src/ \"$installPath\"/Classes");
+		system("cp -rf ../../../Include/ \"$installPath\"/Classes");
+		system("cp -rf ../../../Src/ \"$installPath\"/Classes");
+	}
+	else
+	{
+		mkdir $installPath . "Libraries/ScaleformLib" unless (-d "$installPath/Libraries/ScaleformLib");
+		system("cp -rf Assets/Scaleform/Lib/iPhone-armv7/ \"$installPath\"/Libraries/ScaleformLib") unless (-d "$installPath/Libraries/ScaleformLib/iPhone-*");
+		system("cp -rf Assets/Scaleform/Integrations/Unity/Src/ \"$installPath\"/Classes");
+		system("cp -rf Assets/Scaleform/Include/ \"$installPath\"/Classes");
+		system("cp -rf Assets/Scaleform/Src/ \"$installPath\"/Classes");
+	}
+		
+	GetProject();
+	
+	open (FILE, $file) || die "$!\n";
+	@project = <FILE>;
+	close (FILE);
+	
+	my @configurations = ("debug","release");
+	my @Options = ("ld_flag","libsearch","header","preprocessor");
+	
+	foreach my $configuration (@configurations){
+		foreach my $option (@Options){
+			if(($option eq "ld_flag") && ($configuration eq "debug")){
+				push @configs , $DebugLibs;	
+			}	
+			if(($option eq "ld_flag") && ($configuration eq "release")){
+				push @configs , $ReleaseLibs;	
+			}
+			if($option eq "libsearch"){
+				push @configs , $LibSearchPaths;	
+			}
+			if($option eq "header"){
+				push @configs , $HeaderSearchPaths;	
+			}
+			if(($option eq "preprocessor") && ($configuration eq "debug")){
+				push @configs , $debugPreProcessor;	
+			}
+			if($configuration eq "debug"){
+				ProcessText("debug",$option);
+			}
+			if($configuration eq "release"){
+				ProcessText("release",$option);
+			}
+			splice (@project, $ConfigStart, $ConfigLen, @configs);
+			ClearConfigs();
+		}
+	}
+		
+	#special case to get shipping config into project
+	#need to copy release section and create shipping
+	for ($i=0; $i < scalar(@project); $i++){
+		if($project[$i] =~ m/1D6058950D05DD3E006BFB54\s\/\*\sRelease\s\*\/\s\=\s\{/){
+			$parseState = "inRelease";
+			$temp = $project[$i];
+			$temp =~ s/Release/Shipping/g;
+			push @Shipping, $temp;
+		}
+		if($parseState eq "inRelease"){	
+			if($project[$i] =~ m/Release/){
+				$temp = $project[$i];
+				$temp =~ s/Release/Shipping/g;
+				push @Shipping, $temp;
+			}
+			elsif($project[$i] =~ m/1D6058950D05DD3E006BFB54/){
+				$temp = $project[$i];
+				$temp =~ s/1D6058950D05DD3E006BFB54/A47C55821713027900151939/g;
+				push @Shipping, $temp;
+			}
+			else{
+				push @Shipping, $project[$i];
+			}
+		}
+		if($project[$i] =~ m/567B6271114A9F340000AA1F\s\/\*\sRelease\s\*|C01FCF4F08A954540054247B\s\/\*\sDebug\s\*\//){
+			$parseState = "none";
+		}
+	}
+	
+	#remove extraneous lines in main shipping config
+	splice (@Shipping, 0, 1);
+	my $size = scalar(@Shipping);
+	splice (@Shipping, $size-1, 1);
+
+	ClearConfigs();
+	push @configs , $shippingPreProcessor;
+	#add preprocessor for shipping
+	for ($i=0; $i < scalar(@Shipping); $i++){
+			if($Shipping[$i] =~ m/GCC_PRECOMPILE_PREFIX_HEADER/){
+				$ConfigStart = $i;	
+				$ConfigLen = $i - $ConfigStart;
+				$projSection = "none";
+				$parseState = "none";
+		}
+	}
+	splice (@Shipping, $ConfigStart, $ConfigLen, @configs);
+	
+	#add remaing shipping configs to shipping array 
+	push @Shipping, $Shipping;
+		
+	##add in copied shipping config from release
+	for ($i=0; $i < scalar(@project); $i++){
+		if($project[$i] =~m/\/\*\sEnd\sXCBuildConfiguration\ssection\s\*/){
+			$ConfigStart = $i;	
+			$ConfigLen = $i - $ConfigStart;
+		}
+	}
+	splice (@project, $ConfigStart, $ConfigLen, @Shipping);
+	
+	
+	#config section at the end...will do if we end up generating entire shipping section for users
+	ClearConfigs();
+	push @configs, $configList;
+	for ($i=0; $i< scalar(@project); $i++){
+		if($project[$i] =~ m/Begin\sXCConfigurationList\ssection/){
+			$ConfigStart = $i;
+				
+		}
+		if($project[$i] =~ m/End\sXCConfigurationList\ssection/){
+			$ConfigLen = $i - $ConfigStart;
+		}
+	}
+	splice (@project, $ConfigStart, $ConfigLen, @configs);
+	
+	for ($i=0; $i< scalar(@project); $i++){
+		if($project[$i] =~ m/1D6058950D05DD3E006BFB54\s\/\*\sShipping\s\*\/\s\=\s\{/){
+			$project[$i] =~ s/1D6058950D05DD3E006BFB54/A47C55821713027900151939/g	
+		}
+	}
+	
+	#print out final project code
+	unless (open OUTF, ">$file")
+	{
+		die "\ERROR: cant open $file for writing: $! \n";
+	}
+	print OUTF @project;
+	close OUTF;
+	
+}
+
+#helper subroutines
+sub GetProject
+{
+	find(\&GetProject1, "$installPath");
+}
+sub GetProject1
+{
+	if($File::Find::name =~ m/\.pbxproj$/i){
+		$file = $File::Find::name;
+	}
+}
+sub ClearConfigs
+{
+	@configs = ();
+}
+#Subroutine to process the xcode text and get locations of where the array needs to be spliced
+sub ProcessText
+{
+	my $type = shift or die;
+	my $section = shift or die;
+	my $parseState = "none";
+	my $projSection = "none";
+	
+	if($type eq "debug"){
+		for ($i=0; $i < scalar(@project); $i++){
+			if($project[$i] =~ m/1D6058940D05DD3E006BFB54\s\/\*\sDebug\s\*\/\s=\s{/){
+				$parseState = "inDebug";
+			}
+			if($parseState eq "inDebug"){	
+				if(($project[$i] =~ m/OTHER_LDFLAGS/i) && ($section eq "ld_flag")){
+					$ConfigStart = $i;	
+					$projSection = "Lib";
+				}
+				if(($project[$i] =~ m/LIBRARY_SEARCH_PATHS/i) && ($section eq "libsearch")){
+					$ConfigStart = $i;	
+					$projSection = "LibSearch";
+				}
+				if(($project[$i] =~ m/GCC_USE_INDIRECT_FUNCTION_CALLS/i) && ($section eq "header")){
+					$ConfigStart = $i;	
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+				if(($project[$i] =~ m/\);/) && ($projSection eq "Lib")){
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+				if(($project[$i] =~ m/\);/) && ($projSection eq "LibSearch")){
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+				if(($project[$i] =~ m/GCC_PREFIX_HEADER/i) && ($section eq "preprocessor")){
+					$ConfigStart = $i;	
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+				
+			}
+		}	
+	}
+	if($type eq "release"){
+		for ($i=0; $i < scalar(@project); $i++){
+			if($project[$i] =~ m/1D6058950D05DD3E006BFB54\s\/\*\sRelease\s\*\/\s\=\s\{/){
+				$parseState = "inRelease";
+			}
+			if($parseState eq "inRelease"){	
+				if(($project[$i] =~ m/OTHER_LDFLAGS/i) && ($section eq "ld_flag")){
+					$ConfigStart = $i;	
+					$projSection = "Lib";
+				}
+				if(($project[$i] =~ m/LIBRARY_SEARCH_PATHS/i) && ($section eq "libsearch")){
+					$ConfigStart = $i;	
+					$projSection = "LibSearch";
+				}
+				if(($project[$i] =~ m/GCC_PREFIX_HEADER/i) && ($section eq "header")){
+					$ConfigStart = $i;	
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+				if(($project[$i] =~ m/\);/) && ($projSection eq "Lib")){
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+				if(($project[$i] =~ m/\);/) && ($projSection eq "LibSearch")){
+					$ConfigLen = $i - $ConfigStart;
+					$projSection = "none";
+					$parseState = "none";
+				}
+			}
+		}	
+	}
+}

@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: c7ac356dd0585c94690444775ba21fd3
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - UnavailableMaterial: {instanceID: 0}
+  - AvailableMaterial: {instanceID: 0}
+  - ConnectedMaterial: {instanceID: 0}
+  - PoweredMaterial: {instanceID: 0}
+  - JammedMaterial: {instanceID: 0}
+  - ConnectedNoise: {instanceID: 0}
+  - PoweredNoise: {instanceID: 0}
+  - ActiveState: {instanceID: 0}
+  - ResetState: {instanceID: 0}
+  - DeadState: {instanceID: 0}
+  - line: {instanceID: 0}
+  - activeTransmitter: {instanceID: 0}
+  - ghostTransmitter: {instanceID: 0}
+  - ghostScrambler: {instanceID: 0}
+  - activeScrambler: {instanceID: 0}
+  - resetTransmitter: {instanceID: 0}
+  - jammer: {instanceID: 0}
+  - pingRecievedIndicator: {instanceID: 0}
+  - pingRecievedOutline: {instanceID: 0}
+  - pingCreatedIndicator: {instanceID: 0}
+  - probablePingIndicator: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

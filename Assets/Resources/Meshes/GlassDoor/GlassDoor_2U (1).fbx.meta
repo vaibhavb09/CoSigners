@@ -1,0 +1,700 @@
+fileFormatVersion: 2
+guid: d5c362e523129ab49809fb847bea95cc
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Bolt01
+    100002: Bolt01 1
+    100004: Bolt01 2
+    100006: Bolt01 3
+    100008: Bolt02
+    100010: Bolt02 1
+    100012: Bolt02 2
+    100014: Bolt02 3
+    100016: DoorStrips01
+    100018: DoorStrips02
+    100020: //RootNode
+    100022: GlassDoor_CenterLock_Top01
+    100024: GlassDoor_CenterLock_Top02
+    100026: GlassDoor_CenterLock_Top03
+    100028: GlassDoor_CenterLock_Top04
+    100030: GlassDoor_DoorHStrips01
+    100032: GlassDoor_DoorHStrips02
+    100034: GlassDoor_DoorLockBottom01
+    100036: GlassDoor_DoorLockTop01
+    100038: GlassDoor_GlowMesh
+    100040: GlassDoor_GlowPlane04
+    100042: GlassDoor_GlowPlane05
+    100044: GlassDoor_GlowPlane06
+    100046: GlassDoor_GlowPlane07
+    100048: GlassDoor_GlowStrip
+    100050: GlassDoor_LC01
+    100052: GlassDoor_LC02
+    100054: GlassDoor_LC03
+    100056: GlassDoor_LC04
+    100058: L_Inner_back
+    100060: L_Inner_Front
+    100062: L_InnerBorder
+    100064: L_Outer_Back
+    100066: L_Outer_Front
+    100068: L_OutGBorder
+    100070: R_GlassDoorBorder
+    100072: R_Inner_Back
+    100074: R_Inner_Front
+    100076: R_InnerBorder
+    100078: R_Outer_Back
+    100080: R_Outer_Front
+    400000: Bolt01
+    400002: Bolt01 1
+    400004: Bolt01 2
+    400006: Bolt01 3
+    400008: Bolt02
+    400010: Bolt02 1
+    400012: Bolt02 2
+    400014: Bolt02 3
+    400016: DoorStrips01
+    400018: DoorStrips02
+    400020: //RootNode
+    400022: GlassDoor_CenterLock_Top01
+    400024: GlassDoor_CenterLock_Top02
+    400026: GlassDoor_CenterLock_Top03
+    400028: GlassDoor_CenterLock_Top04
+    400030: GlassDoor_DoorHStrips01
+    400032: GlassDoor_DoorHStrips02
+    400034: GlassDoor_DoorLockBottom01
+    400036: GlassDoor_DoorLockTop01
+    400038: GlassDoor_GlowMesh
+    400040: GlassDoor_GlowPlane04
+    400042: GlassDoor_GlowPlane05
+    400044: GlassDoor_GlowPlane06
+    400046: GlassDoor_GlowPlane07
+    400048: GlassDoor_GlowStrip
+    400050: GlassDoor_LC01
+    400052: GlassDoor_LC02
+    400054: GlassDoor_LC03
+    400056: GlassDoor_LC04
+    400058: L_Inner_back
+    400060: L_Inner_Front
+    400062: L_InnerBorder
+    400064: L_Outer_Back
+    400066: L_Outer_Front
+    400068: L_OutGBorder
+    400070: R_GlassDoorBorder
+    400072: R_Inner_Back
+    400074: R_Inner_Front
+    400076: R_InnerBorder
+    400078: R_Outer_Back
+    400080: R_Outer_Front
+    2300000: Bolt01
+    2300002: Bolt01 1
+    2300004: Bolt01 2
+    2300006: Bolt01 3
+    2300008: Bolt02
+    2300010: Bolt02 1
+    2300012: Bolt02 2
+    2300014: Bolt02 3
+    2300016: DoorStrips01
+    2300018: DoorStrips02
+    2300020: //RootNode
+    2300022: GlassDoor_CenterLock_Top01
+    2300024: GlassDoor_CenterLock_Top02
+    2300026: GlassDoor_CenterLock_Top03
+    2300028: GlassDoor_CenterLock_Top04
+    2300030: GlassDoor_DoorHStrips01
+    2300032: GlassDoor_DoorHStrips02
+    2300034: GlassDoor_DoorLockBottom01
+    2300036: GlassDoor_DoorLockTop01
+    2300038: GlassDoor_GlowMesh
+    2300040: GlassDoor_GlowPlane04
+    2300042: GlassDoor_GlowPlane05
+    2300044: GlassDoor_GlowPlane06
+    2300046: GlassDoor_GlowPlane07
+    2300048: GlassDoor_GlowStrip
+    2300050: GlassDoor_LC01
+    2300052: GlassDoor_LC02
+    2300054: GlassDoor_LC03
+    2300056: GlassDoor_LC04
+    2300058: L_Inner_back
+    2300060: L_Inner_Front
+    2300062: L_InnerBorder
+    2300064: L_Outer_Back
+    2300066: L_Outer_Front
+    2300068: L_OutGBorder
+    2300070: R_GlassDoorBorder
+    2300072: R_Inner_Back
+    2300074: R_Inner_Front
+    2300076: R_InnerBorder
+    2300078: R_Outer_Back
+    2300080: R_Outer_Front
+    3300000: Bolt01
+    3300002: Bolt01 1
+    3300004: Bolt01 2
+    3300006: Bolt01 3
+    3300008: Bolt02
+    3300010: Bolt02 1
+    3300012: Bolt02 2
+    3300014: Bolt02 3
+    3300016: DoorStrips01
+    3300018: DoorStrips02
+    3300020: //RootNode
+    3300022: GlassDoor_CenterLock_Top01
+    3300024: GlassDoor_CenterLock_Top02
+    3300026: GlassDoor_CenterLock_Top03
+    3300028: GlassDoor_CenterLock_Top04
+    3300030: GlassDoor_DoorHStrips01
+    3300032: GlassDoor_DoorHStrips02
+    3300034: GlassDoor_DoorLockBottom01
+    3300036: GlassDoor_DoorLockTop01
+    3300038: GlassDoor_GlowMesh
+    3300040: GlassDoor_GlowPlane04
+    3300042: GlassDoor_GlowPlane05
+    3300044: GlassDoor_GlowPlane06
+    3300046: GlassDoor_GlowPlane07
+    3300048: GlassDoor_GlowStrip
+    3300050: GlassDoor_LC01
+    3300052: GlassDoor_LC02
+    3300054: GlassDoor_LC03
+    3300056: GlassDoor_LC04
+    3300058: L_Inner_back
+    3300060: L_Inner_Front
+    3300062: L_InnerBorder
+    3300064: L_Outer_Back
+    3300066: L_Outer_Front
+    3300068: L_OutGBorder
+    3300070: R_GlassDoorBorder
+    3300072: R_Inner_Back
+    3300074: R_Inner_Front
+    3300076: R_InnerBorder
+    3300078: R_Outer_Back
+    3300080: R_Outer_Front
+    4300000: GlassDoor_DoorFrame_2U
+    4300002: GlassDoor_DoorLockBottom01
+    4300004: GlassDoor_CenterLock_Top02
+    4300006: Bolt01
+    4300008: Bolt02
+    4300010: GlassDoor_CenterLock_Top04
+    4300012: Bolt01
+    4300014: Bolt02
+    4300016: GlassDoor_LC02
+    4300018: GlassDoor_GlowPlane05
+    4300020: GlassDoor_LC04
+    4300022: GlassDoor_GlowPlane06
+    4300024: GlassDoor_DoorLockTop01
+    4300026: GlassDoor_LC03
+    4300028: GlassDoor_GlowPlane07
+    4300030: GlassDoor_CenterLock_Top03
+    4300032: Bolt01
+    4300034: Bolt02
+    4300036: GlassDoor_LC01
+    4300038: GlassDoor_GlowPlane04
+    4300040: GlassDoor_CenterLock_Top01
+    4300042: Bolt01
+    4300044: Bolt02
+    4300046: GlassDoor_GlowStrip
+    4300048: R_Inner_Back
+    4300050: R_Inner_Front
+    4300052: DoorStrips02
+    4300054: DoorStrips01
+    4300056: L_Outer_Front
+    4300058: L_Outer_Back
+    4300060: R_Outer_Back
+    4300062: R_Outer_Front
+    4300064: GlassDoor_DoorHStrips02
+    4300066: GlassDoor_DoorHStrips01
+    4300068: L_Inner_Front
+    4300070: L_Inner_back
+    4300072: R_GlassDoorBorder
+    4300074: L_OutGBorder
+    4300076: R_InnerBorder
+    4300078: L_InnerBorder
+    4300080: GlassDoor_GlowMesh
+    7400000: Door_Open
+    7400002: Door_Close
+    7400004: Secure_Lock_Open
+    7400006: Secure_Lock_Close
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Door_Open
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DoorStrips01
+        weight: 1
+      - path: DoorStrips02
+        weight: 1
+      - path: GlassDoor_DoorHStrips01
+        weight: 1
+      - path: GlassDoor_DoorHStrips02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt01 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt02 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02/GlassDoor_GlowPlane05
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04/GlassDoor_GlowPlane06
+        weight: 1
+      - path: GlassDoor_DoorLockTop01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt01 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt02 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt01 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt02 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01/GlassDoor_GlowPlane04
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03/GlassDoor_GlowPlane07
+        weight: 1
+      - path: GlassDoor_GlowMesh
+        weight: 1
+      - path: GlassDoor_GlowStrip
+        weight: 1
+      - path: L_Inner_back
+        weight: 1
+      - path: L_Inner_Front
+        weight: 1
+      - path: L_InnerBorder
+        weight: 1
+      - path: L_Outer_Back
+        weight: 1
+      - path: L_Outer_Front
+        weight: 1
+      - path: L_OutGBorder
+        weight: 1
+      - path: R_GlassDoorBorder
+        weight: 1
+      - path: R_Inner_Back
+        weight: 1
+      - path: R_Inner_Front
+        weight: 1
+      - path: R_InnerBorder
+        weight: 1
+      - path: R_Outer_Back
+        weight: 1
+      - path: R_Outer_Front
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Door_Close
+      takeName: Take 001
+      firstFrame: 17
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DoorStrips01
+        weight: 1
+      - path: DoorStrips02
+        weight: 1
+      - path: GlassDoor_DoorHStrips01
+        weight: 1
+      - path: GlassDoor_DoorHStrips02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt01 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt02 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02/GlassDoor_GlowPlane05
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04/GlassDoor_GlowPlane06
+        weight: 1
+      - path: GlassDoor_DoorLockTop01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt01 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt02 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt01 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt02 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01/GlassDoor_GlowPlane04
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03/GlassDoor_GlowPlane07
+        weight: 1
+      - path: GlassDoor_GlowMesh
+        weight: 1
+      - path: GlassDoor_GlowStrip
+        weight: 1
+      - path: L_Inner_back
+        weight: 1
+      - path: L_Inner_Front
+        weight: 1
+      - path: L_InnerBorder
+        weight: 1
+      - path: L_Outer_Back
+        weight: 1
+      - path: L_Outer_Front
+        weight: 1
+      - path: L_OutGBorder
+        weight: 1
+      - path: R_GlassDoorBorder
+        weight: 1
+      - path: R_Inner_Back
+        weight: 1
+      - path: R_Inner_Front
+        weight: 1
+      - path: R_InnerBorder
+        weight: 1
+      - path: R_Outer_Back
+        weight: 1
+      - path: R_Outer_Front
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Secure_Lock_Open
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 106
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DoorStrips01
+        weight: 1
+      - path: DoorStrips02
+        weight: 1
+      - path: GlassDoor_DoorHStrips01
+        weight: 1
+      - path: GlassDoor_DoorHStrips02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt01 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt02 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02/GlassDoor_GlowPlane05
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04/GlassDoor_GlowPlane06
+        weight: 1
+      - path: GlassDoor_DoorLockTop01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt01 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt02 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt01 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt02 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01/GlassDoor_GlowPlane04
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03/GlassDoor_GlowPlane07
+        weight: 1
+      - path: GlassDoor_GlowMesh
+        weight: 1
+      - path: GlassDoor_GlowStrip
+        weight: 1
+      - path: L_Inner_back
+        weight: 1
+      - path: L_Inner_Front
+        weight: 1
+      - path: L_InnerBorder
+        weight: 1
+      - path: L_Outer_Back
+        weight: 1
+      - path: L_Outer_Front
+        weight: 1
+      - path: L_OutGBorder
+        weight: 1
+      - path: R_GlassDoorBorder
+        weight: 1
+      - path: R_Inner_Back
+        weight: 1
+      - path: R_Inner_Front
+        weight: 1
+      - path: R_InnerBorder
+        weight: 1
+      - path: R_Outer_Back
+        weight: 1
+      - path: R_Outer_Front
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Secure_Lock_Close
+      takeName: Take 001
+      firstFrame: 34
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DoorStrips01
+        weight: 1
+      - path: DoorStrips02
+        weight: 1
+      - path: GlassDoor_DoorHStrips01
+        weight: 1
+      - path: GlassDoor_DoorHStrips02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt01
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top02/Bolt02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt01 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_CenterLock_Top04/Bolt02 1
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC02/GlassDoor_GlowPlane05
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04
+        weight: 1
+      - path: GlassDoor_DoorLockBottom01/GlassDoor_LC04/GlassDoor_GlowPlane06
+        weight: 1
+      - path: GlassDoor_DoorLockTop01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt01 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top01/Bolt02 2
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt01 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_CenterLock_Top03/Bolt02 3
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC01/GlassDoor_GlowPlane04
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03
+        weight: 1
+      - path: GlassDoor_DoorLockTop01/GlassDoor_LC03/GlassDoor_GlowPlane07
+        weight: 1
+      - path: GlassDoor_GlowMesh
+        weight: 1
+      - path: GlassDoor_GlowStrip
+        weight: 1
+      - path: L_Inner_back
+        weight: 1
+      - path: L_Inner_Front
+        weight: 1
+      - path: L_InnerBorder
+        weight: 1
+      - path: L_Outer_Back
+        weight: 1
+      - path: L_Outer_Front
+        weight: 1
+      - path: L_OutGBorder
+        weight: 1
+      - path: R_GlassDoorBorder
+        weight: 1
+      - path: R_Inner_Back
+        weight: 1
+      - path: R_Inner_Front
+        weight: 1
+      - path: R_InnerBorder
+        weight: 1
+      - path: R_Outer_Back
+        weight: 1
+      - path: R_Outer_Front
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

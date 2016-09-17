@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: a5bea27f97d39194eb6a9b38abc64a29
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Bar01_Mesh
+    100002: Bar02_Mesh
+    100004: BasePlane
+    100006: LidBarL
+    100008: LidBarR
+    100010: LidL
+    100012: LidR
+    100014: Satellite
+    100016: SatelliteBase01
+    100018: SatelliteBase02
+    100020: //RootNode
+    400000: Bar01_Mesh
+    400002: Bar02_Mesh
+    400004: BasePlane
+    400006: LidBarL
+    400008: LidBarR
+    400010: LidL
+    400012: LidR
+    400014: Satellite
+    400016: SatelliteBase01
+    400018: SatelliteBase02
+    400020: //RootNode
+    2300000: Bar01_Mesh
+    2300002: Bar02_Mesh
+    2300004: BasePlane
+    2300006: LidBarL
+    2300008: LidBarR
+    2300010: LidL
+    2300012: LidR
+    2300014: Satellite
+    2300016: SatelliteBase01
+    2300018: SatelliteBase02
+    2300020: //RootNode
+    3300000: Bar01_Mesh
+    3300002: Bar02_Mesh
+    3300004: BasePlane
+    3300006: LidBarL
+    3300008: LidBarR
+    3300010: LidL
+    3300012: LidR
+    3300014: Satellite
+    3300016: SatelliteBase01
+    3300018: SatelliteBase02
+    3300020: //RootNode
+    4300000: Case_Mesh
+    4300002: BasePlane
+    4300004: Bar01_Mesh
+    4300006: Bar02_Mesh
+    4300008: SatelliteBase01
+    4300010: SatelliteBase02
+    4300012: Satellite
+    4300014: LidR
+    4300016: LidBarR
+    4300018: LidL
+    4300020: LidBarL
+    7400000: opening
+    7400002: loop
+    7400004: closing
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: opening
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: loop
+      takeName: Take 001
+      firstFrame: 84.9000015
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: closing
+      takeName: Take 001
+      firstFrame: 106
+      lastFrame: 182
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

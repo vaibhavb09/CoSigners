@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{98A0AB35-00BC-73DE-759C-CF8F326D8E42}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_7;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\SF\SFCamera.cs" />
+     <Compile Include="Assets\Plugins\SF\SFCamera_Imports.cs" />
+     <Compile Include="Assets\Plugins\SF\SFCxForm.cs" />
+     <Compile Include="Assets\Plugins\SF\SFDisplayInfo.cs" />
+     <Compile Include="Assets\Plugins\SF\SFDisplayMatrix.cs" />
+     <Compile Include="Assets\Plugins\SF\SFEvents.cs" />
+     <Compile Include="Assets\Plugins\SF\SFGamepad.cs" />
+     <Compile Include="Assets\Plugins\SF\SFInitParams.cs" />
+     <Compile Include="Assets\Plugins\SF\SFKey.cs" />
+     <Compile Include="Assets\Plugins\SF\SFLifecycleEvent.cs" />
+     <Compile Include="Assets\Plugins\SF\SFManager.cs" />
+     <Compile Include="Assets\Plugins\SF\SFManager_Imports.cs" />
+     <Compile Include="Assets\Plugins\SF\SFMovie.cs" />
+     <Compile Include="Assets\Plugins\SF\SFMovieDef.cs" />
+     <Compile Include="Assets\Plugins\SF\SFMovieDef_Imports.cs" />
+     <Compile Include="Assets\Plugins\SF\SFMovie_Imports.cs" />
+     <Compile Include="Assets\Plugins\SF\SFRTT.cs" />
+     <Compile Include="Assets\Plugins\SF\SFRTT_Imports.cs" />
+     <Compile Include="Assets\Plugins\SF\SFSentinal.cs" />
+     <Compile Include="Assets\Plugins\SF\SFValue.cs" />
+     <Compile Include="Assets\Plugins\SF\SFValue_Imports.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\CallbackDispatcher.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\CallbackIdentity.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\ISteamMatchmakingResponses.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\InteropHelp.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\Packsize.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\Steam.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\NativeMethods.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\SteamCallbacks.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\SteamConstants.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\SteamEnums.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\SteamStructs.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamapplist.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamapps.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamclient.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamcontroller.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamfriends.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameserver.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameserverhttp.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameserverinventory.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameservernetworking.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameserverstats.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameserverugc.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamgameserverutils.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamhtmlsurface.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamhttp.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteaminventory.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteammatchmaking.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteammusic.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteammusicremote.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamnetworking.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamremotestorage.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamscreenshots.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamugc.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamunifiedmessages.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamuser.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamuserstats.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamutils.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\autogen\isteamvideo.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\MatchmakingTypes\gameserveritem_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\MatchmakingTypes\servernetadr_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClient\HSteamPipe.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClient\HSteamUser.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClient\SteamAPIWarningMessageHook_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClient\SteamAPI_CheckCallbackRegistered_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClient\SteamAPI_PostAPIResultInProcess_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClientPublic\CGameID.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClientPublic\CSteamID.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamClientPublic\HAuthTicket.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamFriends\FriendsGroupID_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamHTMLSurface\HHTMLBrowser.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamHTTP\HTTPCookieContainerHandle.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamHTTP\HTTPRequestHandle.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamInventory\SteamInventoryResult_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamInventory\SteamItemDef_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamInventory\SteamItemInstanceID_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamMatchmaking\HServerListRequest.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamMatchmaking\HServerQuery.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamNetworking\SNetListenSocket_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamNetworking\SNetSocket_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamRemoteStorage\PublishedFileId_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamRemoteStorage\PublishedFileUpdateHandle_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamRemoteStorage\UGCFileWriteStreamHandle_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamRemoteStorage\UGCHandle_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamScreenshots\ScreenshotHandle.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamTypes\AccountID_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamTypes\AppId_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamTypes\DepotId_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamTypes\ManifestId_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamTypes\SteamAPICall_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamUGC\UGCQueryHandle_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamUGC\UGCUpdateHandle_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamUnifiedMessages\ClientUnifiedMessageHandle.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamUserStats\SteamLeaderboardEntries_t.cs" />
+     <Compile Include="Assets\Plugins\Steamworks.NET\types\SteamUserStats\SteamLeaderboard_t.cs" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\ContrastStretchEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\EdgeDetectEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\GlowEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\GrayscaleEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\ImageEffectBase.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\MotionBlur.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\NoiseEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\SSAOEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\CombineChildren.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\MeshCombineUtility.cs" />
+     <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
+     <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
+     <None Include="Assets\Resources\Levels\JM_31\JM_31_SCENE.txt" />
+     <None Include="Assets\Behave\Changelog.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Level_01.txt" />
+     <None Include="Assets\Resources\Levels\JM_16\JM_16_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_45\JM_45_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_60\JM_60_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
+     <None Include="Assets\Resources\Levels\JM_12\JM_12_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\Resources\Levels\JM_15\JM_15_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_58\JM_58_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_17\CY_17_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_07\JM_07_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_40\JM_40_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_44\JM_44_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\The_Drone_Scare.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\GameAnalytics\Plugins\Framework\Shaders\GA_HeatMapSolidOverlay.shader" />
+     <None Include="Assets\Resources\Levels\JM_14\JM_14_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_30\JM_30_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_02.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\Resources\Levels\JM_34\JM_34_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\TL_05\TL_05_CONFIG.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V08.xml" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2G.txt" />
+     <None Include="Assets\Resources\Levels\JM_55\JM_55_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_05\CY_05_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2F.txt" />
+     <None Include="Assets\Resources\Levels\CY_16\CY_16_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\SceneBuilders\TSP_F_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\Resources\Levels\CY_11\CY_11_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_09\CY_09_CONFIG.txt" />
+     <None Include="Assets\GameAnalytics\Plugins\Framework\Shaders\GA_HeatMapTransparentOverlay.shader" />
+     <None Include="Assets\Shaders\WaterBlurFinal.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\Resources\Levels\JM_54\JM_54_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_33\JM_33_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_16\CY_16_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_07\JM_07_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_08\CY_08_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\LaserTest1.txt" />
+     <None Include="Assets\Resources\Levels\CY_05\CY_05_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Resources\Levels\TL_02\TL_02_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_01\JM_01_CONFIG.txt" />
+     <None Include="Assets\GameAnalytics\Plugins\Framework\Shaders\GA_HeatMapSolid.shader" />
+     <None Include="Assets\Resources\Levels\JM_08\JM_08_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Bot_In_A_Box.txt" />
+     <None Include="Assets\Resources\Levels\JM_41\JM_41_SCENE.txt" />
+     <None Include="Assets\Plugins\Android\Advanced\AndroidManifest.xml" />
+     <None Include="Assets\Resources\Levels\CY_07\CY_07_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Level_04.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
+     <None Include="Assets\SaveFile.txt" />
+     <None Include="Assets\Resources\Levels\JM_60\JM_60_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_04\CY_04_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
+     <None Include="Assets\Resources\Levels\JM_48\JM_48_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone4A.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old10.txt" />
+     <None Include="Assets\Resources\Levels\JM_19\JM_19_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_03.txt" />
+     <None Include="Assets\Resources\Levels\CR_02\CR_02_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_43\JM_43_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_24\JM_24_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Radar_Radar.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\Resources\Levels\JM_37\JM_37_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_51\JM_51_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_27\JM_27_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Resources\Levels\JM_27\JM_27_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Resources\Levels\TL_04\TL_04_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_06\JM_06_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_33\JM_33_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Resources\Levels\JM_02\JM_02_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_10\JM_10_CONFIG.txt" />
+     <None Include="Assets\Scaleform\Resources\Tools\MXP Assets\locale\en.xml" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Resources\Levels\JM_53\JM_53_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_13\JM_13_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Resources\Levels\JM_42\JM_42_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_28\JM_28_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_03\CY_03_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_48\JM_48_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_26\JM_26_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\GameAnalytics\Plugins\Framework\Shaders\GA_HeatMapTransparent.shader" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_MicrosoftBuild.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old8.txt" />
+     <None Include="Assets\Resources\Levels\JM_47\JM_47_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2B.txt" />
+     <None Include="Assets\Resources\Levels\CY_15\CY_15_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_39\JM_39_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old4.txt" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Resources\Levels\TL_03\TL_03_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old5.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Resources\Levels\JM_50\JM_50_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\TL_01\TL_01_CONFIG.txt" />
+     <None Include="Assets\Resources\TextAssets\PasswordDictionary.txt" />
+     <None Include="Assets\Resources\Levels\JM_23\JM_23_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_22\JM_22_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\TL_06\TL_06_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Level_02.txt" />
+     <None Include="Assets\Resources\Levels\TL_01\TL_01_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone1.txt" />
+     <None Include="Assets\Resources\Levels\JM_50\JM_50_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Tutorial_5.txt" />
+     <None Include="Assets\Resources\Levels\CY_13\CY_13_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Level_03.txt" />
+     <None Include="Assets\Resources\Levels\JM_31\JM_31_CONFIG.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V04.xml" />
+     <None Include="Assets\Resources\Levels\JM_05\JM_05_CONFIG.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V03.xml" />
+     <None Include="Assets\Resources\Levels\JM_28\JM_28_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old3.txt" />
+     <None Include="Assets\Shaders\WaterBlurModified.shader" />
+     <None Include="Assets\Resources\Levels\JM_26\JM_26_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_30\JM_30_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_25\JM_25_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_03\JM_03_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_52\JM_52_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\TL_03\TL_03_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2A.txt" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old9.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Level_05.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Resources\Levels\JM_32\JM_32_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_37\JM_37_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
+     <None Include="Assets\Resources\Levels\JM_57\JM_57_SCENE.txt" />
+     <None Include="Assets\GameAnalytics\Plugins\WebPlayer\Readme_WebPlayer.txt" />
+     <None Include="Assets\Plugins\Steamworks.NET\redist\steam_appid.txt" />
+     <None Include="Assets\Resources\Levels\JM_18\JM_18_CONFIG.txt" />
+     <None Include="Assets\Resources\TextAssets\SwfConfig.txt" />
+     <None Include="Assets\Resources\Levels\JM_17\JM_17_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_46\JM_46_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_04\JM_04_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_45\JM_45_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_10\CY_10_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone5.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SSAOShader.shader" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_01_Old2.txt" />
+     <None Include="Assets\Resources\Levels\JM_55\JM_55_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Resources\Levels\CY_15\CY_15_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Resources\Levels\JM_22\JM_22_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_38\JM_38_SCENE.txt" />
+     <None Include="Assets\Behave\Readme.txt" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
+     <None Include="Assets\Resources\Levels\TL_06\TL_06_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_06\JM_06_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\Resources\Levels\JM_29\JM_29_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_49\JM_49_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old6.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Level_X.txt" />
+     <None Include="Assets\Resources\Levels\CR_01\CR_01_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_02\CY_02_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_17\JM_17_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\ExcelToTextWith#.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Tutorial_4.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\Resources\Levels\JM_09\JM_09_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_03\JM_03_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_35\JM_35_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_02\CY_02_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+     <None Include="Assets\Resources\Levels\CY_12\CY_12_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Resources\Levels\JM_56\JM_56_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_03\CY_03_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_46\JM_46_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
+     <None Include="Assets\Resources\Levels\DT_01\DT_01_SCENE.txt" />
+     <None Include="Assets\GameAnalytics\Plugins\iOS\iOS_Readme.txt" />
+     <None Include="Assets\Resources\Levels\JM_59\JM_59_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\TL_02\TL_02_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_54\JM_54_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\LevelConfig.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Resources\Levels\TL_04\TL_04_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Resources\Levels\JM_42\JM_42_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_17\CY_17_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_58\JM_58_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_56\JM_56_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_59\JM_59_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_11\JM_11_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_47\JM_47_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old2.txt" />
+     <None Include="Assets\Resources\Levels\JM_04\JM_04_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Resources\Levels\CY_12\CY_12_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Tutorial_3.txt" />
+     <None Include="Assets\Resources\Levels\TL_05\TL_05_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_01_Old.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Tutorial_2.txt" />
+     <None Include="Assets\Source\GuardBehave\GuardBehaveLibraryInfo.txt" />
+     <None Include="Assets\Resources\Levels\JM_19\JM_19_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\TestCreate.txt" />
+     <None Include="Assets\Resources\Levels\JM_12\JM_12_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_57\JM_57_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_01.txt" />
+     <None Include="Assets\Resources\Levels\JM_36\JM_36_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Resources\Levels\JM_16\JM_16_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_11\CY_11_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_05\JM_05_SCENE.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V06.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Resources\Levels\JM_49\JM_49_SCENE.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V05.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Resources\Levels\DT_01\DT_01_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_35\JM_35_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\ESCMenu.txt" />
+     <None Include="Assets\Resources\Levels\JM_34\JM_34_CONFIG.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V07.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Behave\License.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\Resources\Levels\JM_14\JM_14_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone3.txt" />
+     <None Include="Assets\Resources\Levels\JM_41\JM_41_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2C.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
+     <None Include="Assets\GameAnalytics\Plugins\WebPlayer\crossdomain.xml" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\Resources\SFX\sound_descriptor.txt" />
+     <None Include="Assets\Resources\Levels\BT_19\BT_19_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Resources\Levels\AccessPoint.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Resources\Levels\CY_10\CY_10_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Resources\Levels\JM_18\JM_18_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Resources\Levels\CY_07\CY_07_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Resources\Levels\CY_09\CY_09_SCENE.txt" />
+     <None Include="Assets\GameAnalytics\Plugins\Android\Android_Readme.txt" />
+     <None Include="Assets\Source\GameManaging\Level_X_V02.xml" />
+     <None Include="Assets\Resources\Levels\CY_08\CY_08_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_43\JM_43_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_40\JM_40_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2D.txt" />
+     <None Include="Assets\Resources\Levels\JM_39\JM_39_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_44\JM_44_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\Drone2E.txt" />
+     <None Include="Assets\Resources\Levels\CR_01\CR_01_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Resources\Levels\JM_38\JM_38_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Resources\Levels\CY_14\CY_14_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Resources\Shaders\3DText.shader" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\sound_descriptor.txt" />
+     <None Include="Assets\Resources\Levels\JM_10\JM_10_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_11\JM_11_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Source\GameManaging\Level_X_new.xml" />
+     <None Include="Assets\Resources\Levels\CR_02\CR_02_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_06\CY_06_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Resources\Levels\JM_36\JM_36_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\level_descriptor.txt" />
+     <None Include="Assets\Resources\Levels\JM_15\JM_15_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_51\JM_51_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_08\JM_08_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\Old Files\Level_X_old7.txt" />
+     <None Include="Assets\Resources\Levels\BT_19\BT_19_CONFIG.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Resources\Levels\JM_01\JM_01_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_25\JM_25_CONFIG.txt" />
+     <None Include="Assets\Source\GameManaging\Level1.xml" />
+     <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\Resources\Levels\JM_23\JM_23_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\IGF_Levels\LevelConfig.txt" />
+     <None Include="Assets\Resources\Levels\JM_09\JM_09_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_06\CY_06_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectX.shader" />
+     <None Include="Assets\Resources\Levels\JM_32\JM_32_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\CY_13\CY_13_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_02\JM_02_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\JM_13\JM_13_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_24\JM_24_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_29\JM_29_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_53\JM_53_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\CY_04\CY_04_SCENE.txt" />
+     <None Include="Assets\Resources\Levels\JM_52\JM_52_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Resources\Levels\CY_14\CY_14_CONFIG.txt" />
+     <None Include="Assets\Resources\Levels\SceneBuilders\TSP_D_SCENE.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.7/Standalone/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Behave.Unity.Assets">
+ <HintPath>D:/CyberHeistProj/Cyber Heist/CyberHeist12182013 - Source for v1.6/Assets/Behave/Behave.Unity.Assets.dll</HintPath>
+ </Reference>
+ <Reference Include="Behave.Unity.Runtime">
+ <HintPath>D:/CyberHeistProj/Cyber Heist/CyberHeist12182013 - Source for v1.6/Assets/Behave/Behave.Unity.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Behave">
+ <HintPath>D:/CyberHeistProj/Cyber Heist/CyberHeist12182013 - Source for v1.6/Assets/Behave/Compatibility/Behave.dll</HintPath>
+ </Reference>
+ <Reference Include="Vectrosity">
+ <HintPath>D:/CyberHeistProj/Cyber Heist/CyberHeist12182013 - Source for v1.6/Assets/Plugins/Vectrosity/Vectrosity.dll</HintPath>
+ </Reference>
+ <Reference Include="GuardBehaveLibraryBuild">
+ <HintPath>D:/CyberHeistProj/Cyber Heist/CyberHeist12182013 - Source for v1.6/Assets/Source/GuardBehave/GuardBehaveLibraryBuild.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

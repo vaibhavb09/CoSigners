@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 8fc0ce5c024d9664491eea8113b37938
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: directionalLight1
+    100002: directionalLight2
+    100004: directionalLight3
+    100006: Drone_MainBody
+    100008: //RootNode
+    100010: L_Wing
+    100012: nurbsCircle1
+    100014: R_Wing
+    100016: SpikeL_01
+    100018: SpikeL_02
+    100020: SpikeL_03
+    100022: SpikeL_04
+    100024: SpikeR_01
+    100026: SpikeR_02
+    100028: SpikeR_03
+    100030: SpikeR_04
+    100032: Taser_Arm
+    100034: Taser_Point
+    100036: Turbine_Left
+    100038: Turbine_Right
+    400000: directionalLight1
+    400002: directionalLight2
+    400004: directionalLight3
+    400006: Drone_MainBody
+    400008: //RootNode
+    400010: L_Wing
+    400012: nurbsCircle1
+    400014: R_Wing
+    400016: SpikeL_01
+    400018: SpikeL_02
+    400020: SpikeL_03
+    400022: SpikeL_04
+    400024: SpikeR_01
+    400026: SpikeR_02
+    400028: SpikeR_03
+    400030: SpikeR_04
+    400032: Taser_Arm
+    400034: Taser_Point
+    400036: Turbine_Left
+    400038: Turbine_Right
+    2300000: Drone_MainBody
+    2300002: L_Wing
+    2300004: R_Wing
+    2300006: SpikeL_01
+    2300008: SpikeL_02
+    2300010: SpikeL_03
+    2300012: SpikeL_04
+    2300014: SpikeR_01
+    2300016: SpikeR_02
+    2300018: SpikeR_03
+    2300020: SpikeR_04
+    2300022: Taser_Arm
+    2300024: Taser_Point
+    2300026: Turbine_Left
+    2300028: Turbine_Right
+    3300000: Drone_MainBody
+    3300002: L_Wing
+    3300004: R_Wing
+    3300006: SpikeL_01
+    3300008: SpikeL_02
+    3300010: SpikeL_03
+    3300012: SpikeL_04
+    3300014: SpikeR_01
+    3300016: SpikeR_02
+    3300018: SpikeR_03
+    3300020: SpikeR_04
+    3300022: Taser_Arm
+    3300024: Taser_Point
+    3300026: Turbine_Left
+    3300028: Turbine_Right
+    4300000: Drone_MainBody
+    4300002: SpikeR_04
+    4300004: SpikeR_03
+    4300006: SpikeR_02
+    4300008: SpikeR_01
+    4300010: SpikeL_03
+    4300012: SpikeL_04
+    4300014: SpikeL_02
+    4300016: SpikeL_01
+    4300018: Turbine_Left
+    4300020: R_Wing
+    4300022: L_Wing
+    4300024: Turbine_Right
+    4300026: Taser_Arm
+    4300028: Taser_Point
+    7400000: idle
+    7400002: Take 0010
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 350
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: directionalLight1
+        weight: 1
+      - path: directionalLight2
+        weight: 1
+      - path: directionalLight3
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/L_Wing
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/R_Wing
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeL_01
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeL_02
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeL_03
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeL_04
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeR_01
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeR_02
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeR_03
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/SpikeR_04
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/Taser_Arm
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/Taser_Arm/Taser_Point
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/Turbine_Left
+        weight: 1
+      - path: nurbsCircle1/Drone_MainBody/Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

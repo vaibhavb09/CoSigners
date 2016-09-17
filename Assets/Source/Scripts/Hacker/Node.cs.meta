@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ffd4c0dc7bf329f4b899abad06eddc09
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - linePrefab: {instanceID: 0}
+  - captureButtonPrefab: {instanceID: 0}
+  - releaseButtonPrefab: {instanceID: 0}
+  - capturingTimerPrefab: {instanceID: 0}
+  - releasingTimerPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

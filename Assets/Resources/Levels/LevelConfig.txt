@@ -1,0 +1,24 @@
+0#JM_01#Welcome to CERTA!#Levels/JM_01/JM_01_THUMB#Levels/JM_01/JM_01_DETAIL#A gripping level that enjoys long walks on the beach and drinking mimosas in the shade.#3:00#5#30
+0#TL_01#Intro to Teamwork#Levels/TL_01/TL_01_THUMB#Levels/TL_01/TL_01_DETAIL#Become familiar with CERTA, learn how to navigate the world, and how to communicate to each other!#2:00#5#30
+0#TL_03#Override Management#Levels/TL_03/TL_03_THUMB#Levels/TL_03/TL_03_DETAIL#Work as a team to deal with a system in lockdown.#3:00#5#30
+0#TL_05#Barrier to Entry#Levels/TL_05/TL_05_THUMB#Levels/TL_05/TL_05_DETAIL#Learn some of the obstacles that exist for both players, and how to help each other get past them.#3:00#5#30
+0#TL_06#Careful Steps#Levels/TL_06/TL_06_THUMB#Levels/TL_06/TL_06_DETAIL#Work together to protect each other from dangers as you make your way through this level.#2:00#4#30
+1#JM_57#Six Months Later#Levels/JM_57/JM_57_THUMB#Levels/JM_57/JM_57_DETAIL#You’re been assigned a routine maintenance job in the ED data centers, but it’s time to begin your mission. Break into the restricted area to make your way towards the firewall security.#2:00#5#30
+1#JM_58#Crossing the Line#Levels/JM_58/JM_58_THUMB#Levels/JM_58/JM_58_DETAIL#You’ve infiltrated the restricted area of the Department of Education, and started your path to disable the firewall.#3:00#2#30
+1#JM_50#Trapped#Levels/JM_50/JM_50_THUMB#Levels/JM_50/JM_50_DETAIL#A single drone guards the exit, can you use your resources to get past?#2:00#1#30
+1#JM_43#Security Breach#Levels/JM_43/JM_43_THUMB#Levels/JM_43/JM_43_DETAIL#You’ve just broke into the restricted area of the Department of Education, and there’s no turning back.#4:00#8#30
+1#JM_51#Out of Reach#Levels/JM_51/JM_51_THUMB#Levels/JM_51/JM_51_DETAIL#Something is missing, and it won’t be easy to get...#3:00#5#30
+2#JM_16#Password Protected#Levels/JM_16/JM_16_THUMB#Levels/JM_16/JM_16_DETAIL#The ED has detected disturbances in their facilities despite their drones, and has begun to increase door security.#4:00#3#30
+2#JM_45#Supply Order#Levels/JM_45/JM_45_THUMB#Levels/JM_45/JM_45_DETAIL#Supplies are limited, and its time to be resourceful with your surroundings.#4:00#0#30
+2#JM_44#Consequences#Levels/JM_44/JM_44_THUMB#Levels/JM_44/JM_44_DETAIL#Don’t let your past mistakes catch up with you.#4:00#7#30
+2#JM_07#Snake#Levels/JM_07/JM_07_THUMB#Levels/JM_07/JM_07_DETAIL#Snake? SNAKE?? SNAAAAAAAAAAKE!!#3:00#4#30
+2#JM_05#Nautilus#Levels/JM_05/JM_05_THUMB#Levels/JM_05/JM_05_DETAIL#Sometimes backwards is the way forwards.#3:00#6#30
+3#JM_60#Blackout#Levels/JM_60/JM_60_THUMB#Levels/JM_60/JM_60_DETAIL#The Department of Education is on to your act, and has deployed counter-measures to stop you from infiltrating further.#4:00#5#30
+3#JM_54#Tripwire#Levels/JM_54/JM_54_THUMB#Levels/JM_54/JM_54_DETAIL#The Hacker is cornered with few options. Work to #3:00#3#30
+3#JM_06#Risky Business#Levels/JM_06/JM_06_THUMB#Levels/JM_06/JM_06_DETAIL#You can’t succeed without taking risks, but will they pay off?#6:00#7#30
+3#JM_56#Chokepoint#Levels/JM_56/JM_56_THUMB#Levels/JM_56/JM_56_DETAIL#Control of the floor lies in a single, small room. Can you capture the chokepoint?#4:00#5#30
+3#JM_10#Switchbacks#Levels/JM_10/JM_10_THUMB#Levels/JM_10/JM_10_DETAIL#Sometimes, there is no turning back...#6:00#8#30
+4#JM_53#Final#Levels/JM_53/JM_53_THUMB#Levels/JM_53/JM_53_DETAIL#You’ve finally made it to the central server room, but the security has never been higher. Hack the access terminal to eliminate student debt once and for all!#4:00#15#30
+5#JM_18#Exposed#Levels/JM_18/JM_18_THUMB#Levels/JM_18/JM_18_DETAIL#The next access point lies beyond a large, open room. Will you risk being exposed?#8:00#9#30
+5#CY_17#Centerpiece#Levels/CY_17/CY_17_THUMB#Levels/CY_17/CY_17_DETAIL#Work together, either side should not move too fast without considering your partner#6:00#10#30
+5#JM_59#Boxed Out#Levels/JM_59/JM_59_THUMB#Levels/JM_59/JM_59_DETAIL#The stakes have been raised, and the Department of Education is going to do anything it can to keep you from progressing further.#5:00#0#30

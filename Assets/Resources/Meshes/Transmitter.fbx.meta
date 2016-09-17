@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 6ac3c3a78c202a249ab2ad7686da3f63
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: GlowSurface_SpinningMesh
+    100002: GlowSurface_SpinningMesh 1
+    100004: GlowSurface_TopMesh
+    100006: //RootNode
+    100008: Transmitter_Cap_Mesh
+    100010: Transmitter_Spinner_Bottom
+    100012: Transmitter_Spinner_Bottom1
+    400000: GlowSurface_SpinningMesh
+    400002: GlowSurface_SpinningMesh 1
+    400004: GlowSurface_TopMesh
+    400006: //RootNode
+    400008: Transmitter_Cap_Mesh
+    400010: Transmitter_Spinner_Bottom
+    400012: Transmitter_Spinner_Bottom1
+    2300000: GlowSurface_SpinningMesh
+    2300002: GlowSurface_SpinningMesh 1
+    2300004: GlowSurface_TopMesh
+    2300006: //RootNode
+    2300008: Transmitter_Cap_Mesh
+    2300010: Transmitter_Spinner_Bottom
+    2300012: Transmitter_Spinner_Bottom1
+    3300000: GlowSurface_SpinningMesh
+    3300002: GlowSurface_SpinningMesh 1
+    3300004: GlowSurface_TopMesh
+    3300006: //RootNode
+    3300008: Transmitter_Cap_Mesh
+    3300010: Transmitter_Spinner_Bottom
+    3300012: Transmitter_Spinner_Bottom1
+    4300000: Transmitter_Base
+    4300002: Transmitter_Spinner_Bottom
+    4300004: GlowSurface_SpinningMesh
+    4300006: Transmitter_Spinner_Bottom1
+    4300008: GlowSurface_SpinningMesh
+    4300010: Transmitter_Cap_Mesh
+    4300012: GlowSurface_TopMesh
+    7400000: Opening
+    7400002: Running
+    7400004: Switch to Reset
+    7400006: Reset loop
+    7400008: Closing
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Opening
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Running
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 50
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Switch to Reset
+      takeName: Take 001
+      firstFrame: 51
+      lastFrame: 69
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Reset loop
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 150
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Closing
+      takeName: Take 001
+      firstFrame: 151
+      lastFrame: 200
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

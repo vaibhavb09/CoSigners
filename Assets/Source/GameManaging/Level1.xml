@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level>
+	<SourceNode>
+		<Index>2</Index>
+	</SourceNode>	
+    <Nodes>
+        <Node>
+            <Index>2</Index>
+            <Type>Door</Type>
+        </Node>		
+		<Node>
+            <Index>3</Index>
+            <Type>IR</Type>
+        </Node>
+		<Node>
+            <Index>5</Index>
+            <Type>Password</Type>
+        </Node>
+		<Node>
+            <Index>10</Index>
+            <Type>Camera</Type>
+        </Node>
+    </Nodes>
+</Level>

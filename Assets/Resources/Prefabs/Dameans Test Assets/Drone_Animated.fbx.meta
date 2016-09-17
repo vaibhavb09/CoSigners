@@ -1,0 +1,2186 @@
+fileFormatVersion: 2
+guid: 1de74d3ccf3674e60a974432d91bc8d9
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: L_Wing
+    100004: R_Wing
+    100006: SpikeL_01
+    100008: SpikeL_02
+    100010: SpikeL_03
+    100012: SpikeL_04
+    100014: SpikeR_01
+    100016: SpikeR_02
+    100018: SpikeR_03
+    100020: SpikeR_04
+    100022: Taser_Arm
+    100024: Taser_Point
+    100026: Turbine_Left
+    100028: Turbine_Right
+    400000: //RootNode
+    400002: L_Wing
+    400004: R_Wing
+    400006: SpikeL_01
+    400008: SpikeL_02
+    400010: SpikeL_03
+    400012: SpikeL_04
+    400014: SpikeR_01
+    400016: SpikeR_02
+    400018: SpikeR_03
+    400020: SpikeR_04
+    400022: Taser_Arm
+    400024: Taser_Point
+    400026: Turbine_Left
+    400028: Turbine_Right
+    2300000: //RootNode
+    2300002: L_Wing
+    2300004: R_Wing
+    2300006: SpikeL_01
+    2300008: SpikeL_02
+    2300010: SpikeL_03
+    2300012: SpikeL_04
+    2300014: SpikeR_01
+    2300016: SpikeR_02
+    2300018: SpikeR_03
+    2300020: SpikeR_04
+    2300022: Taser_Arm
+    2300024: Taser_Point
+    2300026: Turbine_Left
+    2300028: Turbine_Right
+    3300000: //RootNode
+    3300002: L_Wing
+    3300004: R_Wing
+    3300006: SpikeL_01
+    3300008: SpikeL_02
+    3300010: SpikeL_03
+    3300012: SpikeL_04
+    3300014: SpikeR_01
+    3300016: SpikeR_02
+    3300018: SpikeR_03
+    3300020: SpikeR_04
+    3300022: Taser_Arm
+    3300024: Taser_Point
+    3300026: Turbine_Left
+    3300028: Turbine_Right
+    4300000: Drone_MainBody
+    4300002: SpikeR_04
+    4300004: SpikeR_03
+    4300006: SpikeR_02
+    4300008: SpikeR_01
+    4300010: SpikeL_03
+    4300012: SpikeL_04
+    4300014: SpikeL_02
+    4300016: SpikeL_01
+    4300018: Turbine_Left
+    4300020: R_Wing
+    4300022: L_Wing
+    4300024: Turbine_Right
+    4300026: Taser_Arm
+    4300028: Taser_Point
+    7400000: stop
+    7400002: moveForward
+    7400004: leftTurnStart
+    7400006: leftTurnEnd
+    7400008: normalToDisturbed
+    7400010: disurbedIdle
+    7400012: disturbedLefrTurnStart
+    7400014: disturbedLeftTurnEnd
+    7400016: disturbedRightTurnStart
+    7400018: disturbedRightTurnEnd
+    7400020: disturbedToNormal
+    7400022: disturbedToChasing
+    7400024: searchingForward
+    7400026: searchingStop
+    7400028: searchingLeftTurnEnd
+    7400030: searchingLeftTurnStart
+    7400032: searchingRightTurnStart
+    7400034: searchingRightTurnEnd
+    7400036: searchingIdle
+    7400038: searchingToNormal
+    7400040: searchingToChasing
+    7400042: chasingForward
+    7400044: chasingStop
+    7400046: chasingLeftTurnStart
+    7400048: chasingLeftTurnEnd
+    7400050: chasingRightTurnStart
+    7400052: chasingRightTurnEnd
+    7400054: chasingRightBankStart
+    7400056: chasingRightBankEnd
+    7400058: chasingLefttBankStart
+    7400060: chasingLefttBankStart
+    7400062: angry
+    7400064: chasingToSearch
+    7400066: normalIdle
+    7400068: rightTurnStart
+    7400070: rightTurnEnd
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 1
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: moveForward
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 72
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: stop
+      takeName: Take 001
+      firstFrame: 72
+      lastFrame: 107
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: leftTurnStart
+      takeName: Take 001
+      firstFrame: 111
+      lastFrame: 127
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: leftTurnEnd
+      takeName: Take 001
+      firstFrame: 128
+      lastFrame: 152
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: normalToDisturbed
+      takeName: Take 001
+      firstFrame: 280
+      lastFrame: 350
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disurbedIdle
+      takeName: Take 001
+      firstFrame: 350
+      lastFrame: 400
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disturbedLefrTurnStart
+      takeName: Take 001
+      firstFrame: 400
+      lastFrame: 420
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disturbedLeftTurnEnd
+      takeName: Take 001
+      firstFrame: 421
+      lastFrame: 441
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disturbedRightTurnStart
+      takeName: Take 001
+      firstFrame: 441
+      lastFrame: 460
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disturbedRightTurnEnd
+      takeName: Take 001
+      firstFrame: 461
+      lastFrame: 482
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disturbedToNormal
+      takeName: Take 001
+      firstFrame: 592
+      lastFrame: 610
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: disturbedToChasing
+      takeName: Take 001
+      firstFrame: 611
+      lastFrame: 617
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingForward
+      takeName: Take 001
+      firstFrame: 483
+      lastFrame: 510
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingStop
+      takeName: Take 001
+      firstFrame: 511
+      lastFrame: 545
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingLeftTurnStart
+      takeName: Take 001
+      firstFrame: 400
+      lastFrame: 420
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingLeftTurnEnd
+      takeName: Take 001
+      firstFrame: 421
+      lastFrame: 441
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingRightTurnStart
+      takeName: Take 001
+      firstFrame: 441
+      lastFrame: 460
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingRightTurnEnd
+      takeName: Take 001
+      firstFrame: 461
+      lastFrame: 482
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingIdle
+      takeName: Take 001
+      firstFrame: 545
+      lastFrame: 592
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingToNormal
+      takeName: Take 001
+      firstFrame: 592
+      lastFrame: 610
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: searchingToChasing
+      takeName: Take 001
+      firstFrame: 611
+      lastFrame: 617
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingForward
+      takeName: Take 001
+      firstFrame: 635
+      lastFrame: 667
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingStop
+      takeName: Take 001
+      firstFrame: 668
+      lastFrame: 688
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingLeftTurnStart
+      takeName: Take 001
+      firstFrame: 689
+      lastFrame: 694
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingLeftTurnEnd
+      takeName: Take 001
+      firstFrame: 695
+      lastFrame: 707
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingRightTurnStart
+      takeName: Take 001
+      firstFrame: 710
+      lastFrame: 716
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingRightTurnEnd
+      takeName: Take 001
+      firstFrame: 717
+      lastFrame: 725
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingRightBankStart
+      takeName: Take 001
+      firstFrame: 731
+      lastFrame: 750
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingRightBankEnd
+      takeName: Take 001
+      firstFrame: 751
+      lastFrame: 779
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingLefttBankStart
+      takeName: Take 001
+      firstFrame: 781
+      lastFrame: 800
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingLefttBankStart
+      takeName: Take 001
+      firstFrame: 801
+      lastFrame: 829
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: angry
+      takeName: Take 001
+      firstFrame: 830
+      lastFrame: 1030
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: chasingToSearch
+      takeName: Take 001
+      firstFrame: 1100
+      lastFrame: 1121
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: normalIdle
+      takeName: Take 001
+      firstFrame: 196
+      lastFrame: 274
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: rightTurnStart
+      takeName: Take 001
+      firstFrame: 154
+      lastFrame: 170
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: rightTurnEnd
+      takeName: Take 001
+      firstFrame: 171
+      lastFrame: 194
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

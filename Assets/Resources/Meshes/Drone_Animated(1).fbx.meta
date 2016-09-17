@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 76d92fbbb4ec92145bed6bccb5578847
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: L_Wing
+    100004: R_Wing
+    100006: SpikeL_01
+    100008: SpikeL_02
+    100010: SpikeL_03
+    100012: SpikeL_04
+    100014: SpikeR_01
+    100016: SpikeR_02
+    100018: SpikeR_03
+    100020: SpikeR_04
+    100022: Taser_Arm
+    100024: Taser_Point
+    100026: Turbine_Left
+    100028: Turbine_Right
+    400000: //RootNode
+    400002: L_Wing
+    400004: R_Wing
+    400006: SpikeL_01
+    400008: SpikeL_02
+    400010: SpikeL_03
+    400012: SpikeL_04
+    400014: SpikeR_01
+    400016: SpikeR_02
+    400018: SpikeR_03
+    400020: SpikeR_04
+    400022: Taser_Arm
+    400024: Taser_Point
+    400026: Turbine_Left
+    400028: Turbine_Right
+    2300000: //RootNode
+    2300002: L_Wing
+    2300004: R_Wing
+    2300006: SpikeL_01
+    2300008: SpikeL_02
+    2300010: SpikeL_03
+    2300012: SpikeL_04
+    2300014: SpikeR_01
+    2300016: SpikeR_02
+    2300018: SpikeR_03
+    2300020: SpikeR_04
+    2300022: Taser_Arm
+    2300024: Taser_Point
+    2300026: Turbine_Left
+    2300028: Turbine_Right
+    3300000: //RootNode
+    3300002: L_Wing
+    3300004: R_Wing
+    3300006: SpikeL_01
+    3300008: SpikeL_02
+    3300010: SpikeL_03
+    3300012: SpikeL_04
+    3300014: SpikeR_01
+    3300016: SpikeR_02
+    3300018: SpikeR_03
+    3300020: SpikeR_04
+    3300022: Taser_Arm
+    3300024: Taser_Point
+    3300026: Turbine_Left
+    3300028: Turbine_Right
+    4300000: Drone_MainBody
+    4300002: SpikeR_04
+    4300004: SpikeR_03
+    4300006: SpikeR_02
+    4300008: SpikeR_01
+    4300010: SpikeL_03
+    4300012: SpikeL_04
+    4300014: SpikeL_02
+    4300016: SpikeL_01
+    4300018: Turbine_Left
+    4300020: R_Wing
+    4300022: L_Wing
+    4300024: Turbine_Right
+    4300026: Taser_Arm
+    4300028: Taser_Point
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 350
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: L_Wing
+        weight: 1
+      - path: R_Wing
+        weight: 1
+      - path: SpikeL_01
+        weight: 1
+      - path: SpikeL_02
+        weight: 1
+      - path: SpikeL_03
+        weight: 1
+      - path: SpikeL_04
+        weight: 1
+      - path: SpikeR_01
+        weight: 1
+      - path: SpikeR_02
+        weight: 1
+      - path: SpikeR_03
+        weight: 1
+      - path: SpikeR_04
+        weight: 1
+      - path: Taser_Arm
+        weight: 1
+      - path: Taser_Arm/Taser_Point
+        weight: 1
+      - path: Turbine_Left
+        weight: 1
+      - path: Turbine_Right
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

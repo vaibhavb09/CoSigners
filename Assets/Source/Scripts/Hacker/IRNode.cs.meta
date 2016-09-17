@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b2b81d25f76fd7b4ead0e49f1c883509
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - guardIconPrefab: {fileID: 100000, guid: 42a45be6e1ee0ab42a1881d86ca1f8fd, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

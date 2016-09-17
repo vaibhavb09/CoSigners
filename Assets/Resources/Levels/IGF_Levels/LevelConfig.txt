@@ -1,0 +1,22 @@
+0#Level_01#1: Asymmetry#Textures/StartScreenUI/T1_Thumb#Textures/StartScreenUI/T1_Detail#Learn about the Hex grid, the ping system, and how to move around.#3 min#2#None
+0#Tutorial_2#2: Lockdown!#Textures/StartScreenUI/T2_Thumb#Textures/StartScreenUI/T2_Detail#Learn about lockdown in a controlled environment.#5 min#1#None
+0#Tutorial_3#3: Power Management#Textures/StartScreenUI/T3_Thumb#Textures/StartScreenUI/T3_Detail#Learn how to avoid lockdown while in DoE facilities.#5 min#4#Low
+0#Tutorial_4#4: Drone Training#Textures/StartScreenUI/T4_Thumb#Textures/StartScreenUI/T4_Detail#Learn how to handle DoE drones.#5 min#5#Low
+0#Tutorial_5#5: Security Hacking#Textures/StartScreenUI/T5_Thumb#Textures/StartScreenUI/T4_Detail#Learn about Password systems#8 min#5#Low
+0#Level_03#6: CERTA-fication#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#Learn what Tracers do and how to avoid them.#5 min#5#Low
+0#Level_03_hard#7:CERTA-fication (Hard)#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#This is where the real Hackers and Thieves play.#8 min#5#Low
+0#Bot_In_A_Box#8:Bot in a Box#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#Bot In A Box level#8 min#4#Medium
+0#The_Drone_Scare#9: The Drone Scare#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Drone Scare Level#8 min#4#Medium
+0#Radar_Radar#10: Radar Radar#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#Radar Radar Level#8 min#4#Low
+2#Drone1#11: Drone Test level 1#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The First Drone Test Level#7 min#6#Low
+2#Drone2A#12: Drone Test level 2A#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Second Drone Test Level#5 min#6#Low
+2#Drone2B#13: Drone Test level 2B#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Third Drone Test Level#5 min#6#Low
+2#Drone2C#14: Drone Test level 2C#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Fourth Drone Test Level#5 min#6#Low
+2#Drone2D#15: Drone Test level 2D#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Fifth Drone Test Level#5 min#6#Low
+2#Drone2E#16: Drone Test level 2E#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Sixth Drone Test Level#5 min#6#Low
+2#Drone2F#17: Drone Test level 2F#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Seventh Drone Test Level#5 min#6#Low
+2#Drone2G#18: Drone Test level 2G#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Eighth Drone Test Level#5 min#6#Low
+2#Drone3#19: Drone Test level 3#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Ninth Drone Test Level#5 min#6#Low
+2#Drone4A#20: Drone Test level 4A#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Tenth Drone Test Level#5 min#6#Low
+2#Drone5#21: Drone Test level 5#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The Eleventh Drone Test Level#5 min#6# Low
+2#LaserTest1#22: Laser Test level 1#Textures/StartScreenUI/T6_Thumb#Textures/StartScreenUI/T6_Detail#The First Laser Test level#5 min#6#Low

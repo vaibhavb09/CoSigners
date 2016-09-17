@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: ffa7916c202d39548a59c9c76560b926
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: EndDoor_Frame1
+    100004: EndDoor_ScreenBack
+    100006: EndDoor_ScreenFront
+    100008: EndDoor_Table
+    100010: polySurface44
+    400000: //RootNode
+    400002: EndDoor_Frame1
+    400004: EndDoor_ScreenBack
+    400006: EndDoor_ScreenFront
+    400008: EndDoor_Table
+    400010: polySurface44
+    2300000: EndDoor_Frame1
+    2300002: EndDoor_ScreenBack
+    2300004: EndDoor_ScreenFront
+    2300006: EndDoor_Table
+    2300008: polySurface44
+    3300000: EndDoor_Frame1
+    3300002: EndDoor_ScreenBack
+    3300004: EndDoor_ScreenFront
+    3300006: EndDoor_Table
+    3300008: polySurface44
+    4300000: EndDoor_ScreenFront
+    4300002: EndDoor_ScreenBack
+    4300004: EndDoor_Frame1
+    4300006: EndDoor_Table
+    4300008: polySurface44
+    7400000: Enddoor_Open
+    7400002: Enddoor_Close
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Enddoor_Open
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: EndDoor_Frame1
+        weight: 1
+      - path: EndDoor_ScreenBack
+        weight: 1
+      - path: EndDoor_ScreenFront
+        weight: 1
+      - path: EndDoor_Table
+        weight: 1
+      - path: polySurface44
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Enddoor_Close
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: EndDoor_Frame1
+        weight: 1
+      - path: EndDoor_ScreenBack
+        weight: 1
+      - path: EndDoor_ScreenFront
+        weight: 1
+      - path: EndDoor_Table
+        weight: 1
+      - path: polySurface44
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

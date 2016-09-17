@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 161f4c736bf8e734586079d5b358a526
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: GlowingPlanes
+    100002: //RootNode
+    100004: ST_Computer01
+    100006: ST_Computer01 1
+    100008: ST_Computer01 2
+    100010: ST_ComputerPiston01
+    100012: ST_ComputerPiston02
+    100014: ST_ComputerPiston03
+    100016: ST_Piston
+    100018: ST_Terminal
+    400000: GlowingPlanes
+    400002: //RootNode
+    400004: ST_Computer01
+    400006: ST_Computer01 1
+    400008: ST_Computer01 2
+    400010: ST_ComputerPiston01
+    400012: ST_ComputerPiston02
+    400014: ST_ComputerPiston03
+    400016: ST_Piston
+    400018: ST_Terminal
+    2300000: GlowingPlanes
+    2300002: //RootNode
+    2300004: ST_Computer01
+    2300006: ST_Computer01 1
+    2300008: ST_Computer01 2
+    2300010: ST_ComputerPiston01
+    2300012: ST_ComputerPiston02
+    2300014: ST_ComputerPiston03
+    2300016: ST_Piston
+    2300018: ST_Terminal
+    3300000: GlowingPlanes
+    3300002: //RootNode
+    3300004: ST_Computer01
+    3300006: ST_Computer01 1
+    3300008: ST_Computer01 2
+    3300010: ST_ComputerPiston01
+    3300012: ST_ComputerPiston02
+    3300014: ST_ComputerPiston03
+    3300016: ST_Piston
+    3300018: ST_Terminal
+    4300000: ST_Base
+    4300002: ST_Piston
+    4300004: ST_Terminal
+    4300006: GlowingPlanes
+    4300008: ST_ComputerPiston01
+    4300010: ST_Computer01
+    4300012: ST_ComputerPiston02
+    4300014: ST_Computer01
+    4300016: ST_ComputerPiston03
+    4300018: ST_Computer01
+    7400000: Open_Override
+    7400002: LoopOpen_Override
+    7400004: Activate_Override
+    7400006: LoopActivate_Override
+    7400008: Close_Override
+    7400010: Retract_Override
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Open_Override
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: LoopOpen_Override
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Activate_Override
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: LoopActivate_Override
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 120
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Close_Override
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Retract_Override
+      takeName: Take 001
+      firstFrame: 166
+      lastFrame: 196
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

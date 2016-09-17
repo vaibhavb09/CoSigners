@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Source\Scripts\ScriptsForStartScreen\GameLobbyInterface.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Steamwork.NET\SteamManager.cs" Line="14" Column="26" />
+      <File FileName="Assets\Source\Scripts\ScriptsForStartScreen\GameLobbyInterface.cs" Line="608" Column="58" />
+      <File FileName="Assets\Plugins\Steamworks.NET\autogen\isteammatchmaking.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\Steamworks.NET\InteropHelp.cs" Line="23" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

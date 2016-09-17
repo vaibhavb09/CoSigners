@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Source\Scripts\ScriptsForStartScreen\GameLobbyInterface.cs">
+    <Files>
+      <File FileName="Assets\Source\Scripts\ScriptsForStartScreen\RoomInterface.cs" Line="738" Column="33" />
+      <File FileName="Assets\Source\Scripts\ScriptsForStartScreen\GameLobbyInterface.cs" Line="364" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

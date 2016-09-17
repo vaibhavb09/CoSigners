@@ -1,0 +1,6 @@
+0#Level_01#Asymmetry#Textures/StartScreenUI/LevelThumb_Prelude_01#Textures/StartScreenUI/LevelDetail_Prelude_02##3 min#5#None
+0#Level_02#Cooperation#Textures/StartScreenUI/LevelThumb_Prelude_02#Textures/StartScreenUI/LevelDetail_Prelude_02#You and your research partner continue testing CERTA's training protocol in preparation for product release. This phase of the training focuses on communication tools and additional security clearance.#3 min#5#None
+0#Level_03#CERTA-fication#Textures/StartScreenUI/LevelThumb_Prelude_03#Textures/StartScreenUI/LevelDetail_Prelude_02#During the final phase of CERTA training, your team will investigate CERTA's responsiveness to hostile entities found within the Department of Education#5 min#5#Low
+1#Level_04#Level 1#Textures/StartScreenUI/LevelThumb_Prelude_01#Textures/StartScreenUI/LevelDetail_Prelude_02#This level is fucked up, I'm assuming you still haven't finished it.#10 min#10#Low
+1#Level_05#Level 2#Textures/StartScreenUI/LevelThumb_Prelude_01#Textures/StartScreenUI/LevelDetail_Prelude_02#This level is fucked up, I'm assuming you still haven't finished it.#10 min#10#Low
+1#Level_X#The X-Files#Textures/Loading_Screen#Textures/Loading_Screen#This is for dev testing, you suckers.#20 min#69#Zac Sucks

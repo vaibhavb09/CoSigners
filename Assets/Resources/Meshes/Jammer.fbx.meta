@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: fe3ea63423f187d42b67ca2804880fb3
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: ArmInside_01
+    100002: ArmInside_02
+    100004: ArmInside_03
+    100006: ArmInside_04
+    100008: ArmOutside_01
+    100010: ArmOutside_01 1
+    100012: ArmOutside_01 2
+    100014: ArmOutside_01 3
+    100016: Door_01
+    100018: Door_02
+    100020: GlowMesh
+    100022: //RootNode
+    100024: Jammer_Screen
+    400000: ArmInside_01
+    400002: ArmInside_02
+    400004: ArmInside_03
+    400006: ArmInside_04
+    400008: ArmOutside_01
+    400010: ArmOutside_01 1
+    400012: ArmOutside_01 2
+    400014: ArmOutside_01 3
+    400016: Door_01
+    400018: Door_02
+    400020: GlowMesh
+    400022: //RootNode
+    400024: Jammer_Screen
+    2300000: ArmInside_01
+    2300002: ArmInside_02
+    2300004: ArmInside_03
+    2300006: ArmInside_04
+    2300008: ArmOutside_01
+    2300010: ArmOutside_01 1
+    2300012: ArmOutside_01 2
+    2300014: ArmOutside_01 3
+    2300016: Door_01
+    2300018: Door_02
+    2300020: GlowMesh
+    2300022: //RootNode
+    2300024: Jammer_Screen
+    3300000: ArmInside_01
+    3300002: ArmInside_02
+    3300004: ArmInside_03
+    3300006: ArmInside_04
+    3300008: ArmOutside_01
+    3300010: ArmOutside_01 1
+    3300012: ArmOutside_01 2
+    3300014: ArmOutside_01 3
+    3300016: Door_01
+    3300018: Door_02
+    3300020: GlowMesh
+    3300022: //RootNode
+    3300024: Jammer_Screen
+    4300000: Jammer_Main_Body
+    4300002: ArmInside_04
+    4300004: ArmOutside_01
+    4300006: ArmInside_03
+    4300008: ArmOutside_01
+    4300010: ArmInside_02
+    4300012: ArmOutside_01
+    4300014: Door_02
+    4300016: ArmInside_01
+    4300018: ArmOutside_01
+    4300020: Door_01
+    4300022: GlowMesh
+    4300024: Jammer_Screen
+    6400000: ArmInside_01
+    6400002: ArmInside_02
+    6400004: ArmInside_03
+    6400006: ArmInside_04
+    6400008: ArmOutside_01
+    6400010: ArmOutside_01 1
+    6400012: ArmOutside_01 2
+    6400014: ArmOutside_01 3
+    6400016: Door_01
+    6400018: Door_02
+    6400020: GlowMesh
+    6400022: //RootNode
+    6400024: Jammer_Screen
+    7400000: Turn off
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Turn off
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 50
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 
