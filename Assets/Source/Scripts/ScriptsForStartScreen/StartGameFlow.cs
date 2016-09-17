@@ -24,6 +24,15 @@ public class StartGameFlow : MonoBehaviour {
 	private bool _isInGameLobby  = false;
 	private bool _isInGameRoom = false;
 	#endregion
+
+	#region IPPortConfig
+	private string MasterServerIP;
+	private int MasterServerPort;
+	private string NATFacilitatorIP;
+	private int NATFacilitatorPort;
+	private string ConnectionTesterIP;
+	private int ConnectionTesterPort;
+	#endregion
 	
 	#region Properties
 	
@@ -129,6 +138,30 @@ public class StartGameFlow : MonoBehaviour {
 		}
 	}
 	#endregion
+
+	void ReadIPPortConfigValues()
+	{
+		string[] lines = System.IO.File.ReadAllLines(@"Config_IP_Ports.ini");
+		foreach (string line in lines) 
+		{
+			string[] substrings = line.Split('=');
+			if(substrings.Length == 2)
+			{
+				if(string.Equals(substrings[0],"MasterServerIP"))
+					MasterServerIP = substrings[1];
+				if(string.Equals(substrings[0],"MasterServerPort"))
+					MasterServerPort = int.Parse(substrings[1]);
+				if(string.Equals(substrings[0],"NATFacilitatorIP"))
+					NATFacilitatorIP = substrings[1];
+				if(string.Equals(substrings[0],"NATFacilitatorPort"))
+					NATFacilitatorPort = int.Parse(substrings[1]);
+				if(string.Equals(substrings[0],"ConnectionTesterIP"))
+					ConnectionTesterIP = substrings[1];
+				if(string.Equals(substrings[0],"ConnectionTesterPort"))
+					ConnectionTesterPort = int.Parse(substrings[1]);
+			}
+		}
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -137,13 +170,15 @@ public class StartGameFlow : MonoBehaviour {
 		_gameLobbyInterface = gameObject.GetComponent<GameLobbyInterface>();
 		_roomInterface	= gameObject.GetComponent<RoomInterface>();
 
-		MasterServer.ipAddress = "hacknhide.eaemgs.utah.edu";
+		ReadIPPortConfigValues();
+
+		MasterServer.ipAddress = MasterServerIP;
 		//MasterServer.ipAddress = "54.187.70.136";
-		MasterServer.port = 23466;
-		Network.natFacilitatorIP = "hacknhide.eaemgs.utah.edu";
-		Network.natFacilitatorPort = 50005;
-		Network.connectionTesterIP = "hacknhide.eaemgs.utah.edu";
-		Network.connectionTesterPort = 23467;
+		MasterServer.port = MasterServerPort;
+		Network.natFacilitatorIP = NATFacilitatorIP;
+		Network.natFacilitatorPort = NATFacilitatorPort;
+		Network.connectionTesterIP = ConnectionTesterIP;
+		Network.connectionTesterPort = ConnectionTesterPort;
 		//_startGameInterface.Show();
 		_buttonAccentLeft = Resources.Load("Textures/StartScreenUI/btnAccent_right", typeof(Texture2D)) as Texture2D;
 		_buttonAccentRight = Resources.Load("Textures/StartScreenUI/btnAccent_left", typeof(Texture2D)) as Texture2D;
