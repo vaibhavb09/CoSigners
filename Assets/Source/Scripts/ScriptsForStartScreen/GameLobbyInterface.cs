@@ -20,6 +20,8 @@ public struct SteamLobby
 	public CSteamID m_LobbyOwner;
 	public string 	m_LobbyOwnerIPAddress;
 	public string 	m_LobbyInfo;
+	public string 	m_GameName;
+	//public string	m_GameVersion;
 }
 
 public class GameLobbyInterface : MonoBehaviour {
@@ -836,6 +838,11 @@ public class GameLobbyInterface : MonoBehaviour {
 			SteamMatchmaking.SetLobbyData (lobbyID, "name", _serverName);
 			SteamMatchmaking.SetLobbyData (lobbyID, "host_ip", GetLocalIPAddress()); 
 			SteamMatchmaking.SetLobbyData (lobbyID, "lobby_info", "Undecided#Undecided");
+			// For extra safety check
+			SteamMatchmaking.SetLobbyData (lobbyID, "game_name", "Cyber_Heist");
+			// Add version checking also. For future.
+			// SteamMatchmaking.SetLobbyData (lobbyID, "game_version", GetGameVersionFromSavedFile());
+
 			Debug.LogError("Local Ip Address is:" + GetLocalIPAddress());
 		}
 	}
@@ -865,8 +872,13 @@ public class GameLobbyInterface : MonoBehaviour {
 				newLobby.m_LobbyName = SteamMatchmaking.GetLobbyData(currentLobbyID, "name");
 				newLobby.m_LobbyOwnerIPAddress = SteamMatchmaking.GetLobbyData(currentLobbyID, "host_ip");
 				newLobby.m_LobbyInfo = SteamMatchmaking.GetLobbyData(currentLobbyID, "lobby_info");
+				newLobby.m_GameName = SteamMatchmaking.GetLobbyData(currentLobbyID, "game_name");
+				//newLobby.m_GameVersion = SteamMatchmaking.GetLobbyData(currentLobbyID, "game_version");
 
-				_activeSteamLobbies.Add(newLobby);
+				if(newLobby.m_GameName == "Cyber_Heist" /*&& newLobby.m_GameVersion == GetGameVersionFromSavedFile()*/)
+				{
+					_activeSteamLobbies.Add(newLobby);
+				}
 			}
 		}
 	}
