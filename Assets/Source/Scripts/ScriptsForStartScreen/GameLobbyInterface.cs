@@ -150,8 +150,8 @@ public class GameLobbyInterface : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update () 
+	{
 		if(_showGameLobby)
 		{
 			if(Input.GetKeyDown(KeyCode.F1))
@@ -503,17 +503,17 @@ public class GameLobbyInterface : MonoBehaviour {
 	private void FilterHostList()
 	{
 		//MasterServer.RequestHostList("CH");
-		//_filteredLANData.Clear();
-		//if(_lanData.Count != 0)
-		//{
-		//	foreach(LANData ldata in _lanData)
-		//	{
-		//		if(CheckingNames(ldata.gameName))
-		//		{
-		//			_filteredLANData.Add(ldata);
-		//		}
-		//	}
-		//}
+		_filteredLANData.Clear();
+		if(_lanData.Count != 0)
+		{
+			foreach(LANData ldata in _lanData)
+			{
+				if(CheckingNames(ldata.gameName))
+				{
+					_filteredLANData.Add(ldata);
+				}
+			}
+		}
 
 		if (SteamManager.Initialized) 
 		{
@@ -553,18 +553,18 @@ public class GameLobbyInterface : MonoBehaviour {
 			_gameroomName = VirtualKeyboard.text;
 		_gameroomName = ScreenHelper.DrawTextField(47, 1, 13, 1, _gameroomName, 30);
 		
-		if(ScreenHelper.DrawButton(48, 33, 8, 2, _refreshButtonActive, _refreshButtonNormal))
-		{
-			MasterServer.RequestHostList("CH");
-		}
+		//if(ScreenHelper.DrawButton(48, 33, 8, 2, _refreshButtonActive, _refreshButtonNormal))
+		//{
+		//	MasterServer.RequestHostList("CH");
+		//}
 		//Debug.Log("I'm polling host list... please don't show up while playing games");
 		
 		//_LANGames = _lanData.Count;
 		//_serverGames =  _hostData.Length;
 		
 		
-		//_LANGames = _filteredLANData.Count;
-		_LANGames = 0;
+		_LANGames = _filteredLANData.Count;
+		//_LANGames = 0;
 		_serverGames = _activeSteamLobbies.Count;
 		
 		_totalGames = _LANGames + _serverGames;
@@ -594,25 +594,14 @@ public class GameLobbyInterface : MonoBehaviour {
 				{
 					if(ScreenHelper.SlideInButton(65, ListStartPosition_Y + i * ListInterval_Y, 23, ListStartPosition_Y + i * ListInterval_Y, 39, 2, _joinButtonActive, _joinButton, _constantTimer, 0.5f, 0, 0))
 					{
-						//if(_filteredLANData[i + i_startIndex].roomFull == "false")
-						//{
-						//	_connStatus = ConnectionStatus.Connecting;
-						//	Network.Connect(_lanData[i + i_startIndex].ip, 25566);
-						//}
-						//else
-						//{
-						//	_connStatus = ConnectionStatus.RoomFull;
-						//}
-
-						if(i + i_startIndex < _activeSteamLobbies.Count)
+						if(_filteredLANData[i + i_startIndex].roomFull == "false")
 						{
 							_connStatus = ConnectionStatus.Connecting;
-							SteamAPICall_t handle = SteamMatchmaking.JoinLobby(_activeSteamLobbies[i + i_startIndex].m_LobbyID);
-							Network.Connect(_activeSteamLobbies[i + i_startIndex].m_LobbyOwnerIPAddress, 25566);
+							Network.Connect(_lanData[i + i_startIndex].ip, 25566);
 						}
 						else
 						{
-							_connStatus = ConnectionStatus.Failed;
+							_connStatus = ConnectionStatus.RoomFull;
 						}
 
 						_menuActive = false;
@@ -632,29 +621,6 @@ public class GameLobbyInterface : MonoBehaviour {
 				ScreenHelper.SlideInText(88, ListStartPosition_Y + i * ListInterval_Y, RoleStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, RoleWidth, 2,
 				                         _filteredLANData[i + i_startIndex].roleNeeded,
 				                         _constantTimer, 0.5f, 0, 0);
-//				ScreenHelper.DrawGameNameText(GameNameStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, GameNameWidth, 2, 
-//				                              _filteredLANData[i + i_startIndex].gameName);
-//				ScreenHelper.DrawGameListText(LocationStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, LocationWidth, 2,
-//				                              _filteredLANData[i + i_startIndex].mapName);
-//				ScreenHelper.DrawGameListText(RoleStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, LocationWidth, 2,
-//				                              _filteredLANData[i + i_startIndex].roleNeeded);
-
-				//if(ScreenHelper.D)
-//
-//				if(_filteredLANData[i + i_startIndex].roomFull == "false")
-//				{
-//					if(ScreenHelper.DrawButton(JoinButtonStartPosition_X, (float)ListStartPosition_Y + (float)(i * ListInterval_Y) - JoinButtonOffset, JoinButtonWidth,
-//					                           2, _joinButton))
-//					{
-//						_connStatus = ConnectionStatus.Connecting;
-//						Network.Connect(_lanData[i + i_startIndex].ip, 25566);
-//					}
-//				}
-//				else if(_filteredLANData[i + i_startIndex].roomFull == "true")
-//				{
-//					ScreenHelper.DrawGameListText(JoinButtonStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, JoinButtonWidth, 1,
-//					                              "RoomFull");
-//				}
 			}
 			else
 			{
@@ -662,21 +628,16 @@ public class GameLobbyInterface : MonoBehaviour {
 				{
 					if(ScreenHelper.SlideInButton(65, ListStartPosition_Y + i * ListInterval_Y, 23, ListStartPosition_Y + i * ListInterval_Y, 39, 2, _joinButtonActive, _joinButton, _constantTimer, 0.5f, 0, 0))
 					{
-						//if(_filteredhostData[i + i_startIndex - i_lanGameNumber].connectedPlayers <= 1)
-						//{
-						//	_connStatus = ConnectionStatus.Connecting;
-						//	Network.Connect(_filteredhostData[i + i_startIndex - i_lanGameNumber]);
-						//}
-						//else
-						//{
-						//	_connStatus = ConnectionStatus.RoomFull;
-						//}
-
-						if(i + i_startIndex < _activeSteamLobbies.Count)
+						int connectedPlayersInLobby = SteamMatchmaking.GetNumLobbyMembers(_activeSteamLobbies[i + i_startIndex - i_lanGameNumber].m_LobbyID);
+						if(connectedPlayersInLobby <= 1)
 						{
 							_connStatus = ConnectionStatus.Connecting;
 							SteamAPICall_t handle = SteamMatchmaking.JoinLobby(_activeSteamLobbies[i + i_startIndex - i_lanGameNumber].m_LobbyID);
 							Network.Connect(_activeSteamLobbies[i + i_startIndex - i_lanGameNumber].m_LobbyOwnerIPAddress, 25566);
+						}
+						else
+						{
+							_connStatus = ConnectionStatus.RoomFull;
 						}
 
 						_menuActive = false;
@@ -709,9 +670,9 @@ public class GameLobbyInterface : MonoBehaviour {
 				}
 				else
 				{
-					ScreenHelper.SlideInText(66, ListStartPosition_Y + i * ListInterval_Y, GameNameStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, GameNameWidth, 2,
-					                         _filteredhostData[i + i_startIndex - i_lanGameNumber].ip[0] + ": "+ _filteredhostData[i + i_startIndex - i_lanGameNumber].port,
-					                         _constantTimer, 0.5f, 0, 0);
+					//ScreenHelper.SlideInText(66, ListStartPosition_Y + i * ListInterval_Y, GameNameStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, GameNameWidth, 2,
+					//                         _filteredhostData[i + i_startIndex - i_lanGameNumber].ip[0] + ": "+ _filteredhostData[i + i_startIndex - i_lanGameNumber].port,
+					//                         _constantTimer, 0.5f, 0, 0);
 				}
 
 
