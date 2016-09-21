@@ -24,8 +24,8 @@ public struct SteamLobby
 	//public string	m_GameVersion;
 }
 
-public class GameLobbyInterface : MonoBehaviour {
-	
+public class GameLobbyInterface : MonoBehaviour 
+{
 	private bool _showGameLobby = false;
 	private Rect windowRect = new Rect(Screen.width/2, Screen.height/2, 600, 400);
 	private StartGameFlow _flow;
@@ -70,6 +70,8 @@ public class GameLobbyInterface : MonoBehaviour {
 
 	private List<SteamLobby> _activeSteamLobbies = new List<SteamLobby>();
 
+	private CSteamID 		_currentSteamLobbyID = CSteamID.Nil;
+
 	private HostData[] 		_hostData;
 	private List<HostData>  _filteredhostData = new List<HostData>();
 	private List<LANData> 	_lanData = new List<LANData>();
@@ -108,6 +110,12 @@ public class GameLobbyInterface : MonoBehaviour {
 	private string _customSPort = "25566";
 	private int _customPort = 0;
 	private bool _menuActive = true;
+
+	public void LeaveSteamLobby()
+	{
+		SteamMatchmaking.LeaveLobby (_currentSteamLobbyID);
+		_currentSteamLobbyID = CSteamID.Nil;
+	}
 	
 	#endregion
 
@@ -632,7 +640,8 @@ public class GameLobbyInterface : MonoBehaviour {
 						if(connectedPlayersInLobby <= 1)
 						{
 							_connStatus = ConnectionStatus.Connecting;
-							SteamAPICall_t handle = SteamMatchmaking.JoinLobby(_activeSteamLobbies[i + i_startIndex - i_lanGameNumber].m_LobbyID);
+							_currentSteamLobbyID = _activeSteamLobbies[i + i_startIndex - i_lanGameNumber].m_LobbyID;
+							SteamAPICall_t handle = SteamMatchmaking.JoinLobby(_currentSteamLobbyID);
 							Network.Connect(_activeSteamLobbies[i + i_startIndex - i_lanGameNumber].m_LobbyOwnerIPAddress, 25566);
 						}
 						else
@@ -792,25 +801,25 @@ public class GameLobbyInterface : MonoBehaviour {
 	
 	void OnLobbyCreated(LobbyCreated_t pCallback, bool bIOFailure) 
 	{
-		Debug.LogError("[" + LobbyCreated_t.k_iCallback + " - LobbyCreated] - " + pCallback.m_eResult + " -- " + pCallback.m_ulSteamIDLobby);
+		Debug.Log ("[" + LobbyCreated_t.k_iCallback + " - LobbyCreated] - " + pCallback.m_eResult + " -- " + pCallback.m_ulSteamIDLobby);
 		if (SteamManager.Initialized) 
 		{
-			CSteamID lobbyID = new CSteamID(pCallback.m_ulSteamIDLobby);
-			SteamMatchmaking.SetLobbyData (lobbyID, "name", _serverName);
-			SteamMatchmaking.SetLobbyData (lobbyID, "host_ip", GetLocalIPAddress()); 
-			SteamMatchmaking.SetLobbyData (lobbyID, "lobby_info", "Undecided#Undecided");
+			_currentSteamLobbyID = new CSteamID(pCallback.m_ulSteamIDLobby);
+			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "name", _serverName);
+			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "host_ip", GetLocalIPAddress()); 
+			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "lobby_info", "Undecided#Undecided");
 			// For extra safety check
-			SteamMatchmaking.SetLobbyData (lobbyID, "game_name", "Cyber_Heist");
+			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "game_name", "Cyber_Heist");
 			// Add version checking also. For future.
 			// SteamMatchmaking.SetLobbyData (lobbyID, "game_version", GetGameVersionFromSavedFile());
 
-			Debug.LogError("Local Ip Address is:" + GetLocalIPAddress());
+			Debug.Log ("Local Ip Address is:" + GetLocalIPAddress());
 		}
 	}
 
 	void OnLobbyEntered(LobbyEnter_t pCallback)
 	{
-		Debug.LogError ("Joined Lobby:" + pCallback.m_ulSteamIDLobby);
+		Debug.Log ("Joined Lobby:" + pCallback.m_ulSteamIDLobby);
 	}
 	
 	void OnLobbyMatchListReceived(LobbyMatchList_t pCallback, bool bIOFailure) 
