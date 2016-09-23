@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MessageBox : MonoBehaviour {
+public class MessageBox : Photon.MonoBehaviour {
 	
 	//int numberOfScenes = 6;
 	
@@ -236,7 +236,7 @@ public class MessageBox : MonoBehaviour {
 	
 	void DrawFailReplayButton()
 	{
-		if(Network.connections.Length == 0)
+		if(PhotonNetwork.playerList.Length == 0)
 		{
 			ScreenHelper.SlideInTexture(-26, 32, 0, 32, 26, 3, LevelSelectButtonNormal, _constantTicker, 0.5f, 0.4f, 0.0f);
 			ScreenHelper.SlideInTexture(64, 31, 40, 31, 28, 3, RestartButtonNormal, _constantTicker, 0.5f, 0.2f, 0.0f);
@@ -290,13 +290,13 @@ public class MessageBox : MonoBehaviour {
 			showGUI = false;
 			EnableHackerAndThiefInput();
 			Screen.lockCursor = false;
-			if(Network.isServer)
+			if(PhotonNetwork.isMasterClient)
 			{
 				MasterServer.UnregisterHost();
 			}
 			_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
 			//PlayerProfile.SavePlayerProfile();
-			Network.Disconnect();	
+			//PhotonNetwork.Disconnect();	
 			//BasicScoreSystem.Manager.ResetData();
 			Application.LoadLevel(0);
 		}
@@ -316,16 +316,16 @@ public class MessageBox : MonoBehaviour {
 			Time.timeScale = 1;
 			EnableHackerAndThiefInput();
 			Screen.lockCursor = false;
-			if(Network.isServer)
+			if(PhotonNetwork.isMasterClient)
 			{
 				MasterServer.UnregisterHost();
 			}
 			_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
-			Network.Disconnect();									
+			//PhotonNetwork.Disconnect();									
 			Application.LoadLevel(0);
 		}
 
-		if(Network.connections.Length == 0)
+		if(PhotonNetwork.playerList.Length == 0)
 		{
 			ScreenHelper.SlideInTexture(-26, 32, 0, 32, 26, 3, LevelSelectButtonNormal, _constantTicker, 0.5f, 0.4f, 0.0f);
 			ScreenHelper.SlideInTexture(64, 27, 36, 27, 28, 3, RestartButtonNormal, _constantTicker, 0.5f, 0.2f, 0.0f);
@@ -456,7 +456,7 @@ public class MessageBox : MonoBehaviour {
 							if (GameManager.Manager.PlayerType == 1)
 							{
 								mainMenuThief = !mainMenuThief;
-								if(Network.connections.Length <=1)
+								if(PhotonNetwork.playerList.Length <=1)
 								{
 									NetworkManager.Manager.endLevelMenuResponseRPC(5,mainMenuThief);
 								}
@@ -474,7 +474,7 @@ public class MessageBox : MonoBehaviour {
 							if (GameManager.Manager.PlayerType == 2)
 							{
 								mainMenuHacker = !mainMenuHacker;
-								if(Network.connections.Length <=1)
+								if(PhotonNetwork.playerList.Length <=1)
 								{
 									NetworkManager.Manager.endLevelMenuResponseRPC(6,mainMenuHacker);
 								}
@@ -508,12 +508,12 @@ public class MessageBox : MonoBehaviour {
 				
 						        if (Application.loadedLevel == (numberOfScenes - 1))
 								{		
-										if(Network.isServer)
+										if(PhotonNetwork.isMasterClient)
 										{
 											MasterServer.UnregisterHost();
 										}
 										_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
-										Network.Disconnect();
+										//PhotonNetwork.Disconnect();
 										Application.LoadLevel(0);
 								}
 								else
@@ -536,12 +536,12 @@ public class MessageBox : MonoBehaviour {
 									showGUI = false;
 									Time.timeScale = 1;
 									Screen.lockCursor = false;
-									if(Network.isServer)
+									if(PhotonNetwork.isMasterClient)
 									{
 										MasterServer.UnregisterHost();
 									}
 									_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
-									Network.Disconnect();									
+									//PhotonNetwork.Disconnect();									
 									Application.LoadLevel(0);
 									GameObject.Find("Playertheif(Clone)").GetComponent<MouseLookAround>().enabled = true;
 							}

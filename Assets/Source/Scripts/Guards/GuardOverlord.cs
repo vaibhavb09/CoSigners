@@ -155,7 +155,7 @@ public class GuardPath
 
 }
 
-public class GuardOverlord : MonoBehaviour 
+public class GuardOverlord : Photon.MonoBehaviour 
 {
 	/// <summary>
 	/// The Static instance of the Guard overlord singleton
@@ -375,14 +375,14 @@ public class GuardOverlord : MonoBehaviour
 			foreach(GuardPath guardPath_temp in GuardPaths)
 			{
 				//Debug.Log("in guard instantiate");
-				string tempPlayerString = Network.player.ToString();
+				string tempPlayerString = PhotonNetwork.player.ToString();
 				int playerNumber =  Convert.ToInt32(tempPlayerString);
 
 				Vector3 _guardLookDirection = GuardPaths[i].WayPoints[1].Position - GuardPaths[i].WayPoints[0].Position;
 				Quaternion initialLook = Quaternion.identity;
 				initialLook.SetLookRotation(_guardLookDirection,Vector3.up);
 
-				//Transform newPlayer = (Transform)Network.Instantiate(player2DPrefab,
+				//Transform newPlayer = (Transform)PhotonNetwork.Instantiate(player2DPrefab,
 				//new Vector3(StartPoint.transform.position.x, 60, StartPoint.transform.position.z), transform.rotation, playerNumber);
 				GameObject tempGuard = (GameObject)Instantiate(GuardPrefab, GuardPaths[i].WayPoints[0].Position, initialLook);
 				tempGuard.GetComponent<GuardSync>().GuardId = i;

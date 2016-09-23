@@ -66,7 +66,7 @@ public class GA_Inspector : Editor
 	private GUIContent _triggerSceneChange		= new GUIContent("Level Change", "Trigger an ad when a new scene is loaded.");
 	private GUIContent _triggerCustomCat		= new GUIContent("Category:", "The event category of the custom event which should trigger an ad.");
 	private GUIContent _triggerCustomID			= new GUIContent("Event ID:", "The event ID (event name) of the custom event which should trigger an ad.");
-	private GUIContent _triggerAdNetwork		= new GUIContent("Network:", "The ad network which should show an ad when the event is triggered. 'Any' will show an ad from one of the available ad networks.");
+	private GUIContent _triggerAdNetwork		= new GUIContent("PhotonNetwork:", "The ad network which should show an ad when the event is triggered. 'Any' will show an ad from one of the available ad networks.");
 	private GUIContent _triggerAdNotEnabled		= new GUIContent("!", "You must enable the selected ad network, otherwise this event trigger will have no effect.");
 	//private GUIContent _iAd					= new GUIContent("iAd:", "This fold out contains options for using iOS iAd banner ads.");
 	private GUIContent _iAdenabled				= new GUIContent("iAd", "Enable/diable iOS iAd banner ads.");

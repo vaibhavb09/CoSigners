@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-public class NameSystem : MonoBehaviour {
+public class NameSystem : Photon.MonoBehaviour {
 	
 	private string _playerName = "type your ID";
 	private bool _nameExist = false;
@@ -33,52 +33,52 @@ public class NameSystem : MonoBehaviour {
 		}
 	}
 	
-	void OnConnectedToServer()
+	void OnJoinedRoom()
 	{
 		if(_nameExist)
 		{
 			//Debug.Log("Hit this?");
-			int playerID = Convert.ToInt32(Network.player.ToString());
+			int playerID = Convert.ToInt32(PhotonNetwork.player.ToString());
 			if(_playerNames.ContainsKey(playerID))
 			{
 				//_playerNames[playerID] = _playerName;
-				networkView.RPC("UpdateNameByID", RPCMode.All, playerID, _playerName);
+				photonView.RPC("UpdateNameByID", PhotonTargets.All, playerID, _playerName);
 			}
 			else
 			{
 				//_playerNames.Add(playerID, _playerName);
-				networkView.RPC("AddName", RPCMode.All, playerID, _playerName);
+				photonView.RPC("AddName", PhotonTargets.All, playerID, _playerName);
 			}
 		}
 	}
 	
-	void OnServerInitialized()
+	void OnCreatedRoom()
 	{
 		if(_nameExist)
 		{
 			if(_playerNames.ContainsKey(0))
 			{
 				//_playerNames[playerID] = _playerName;
-				networkView.RPC("UpdateNameByID", RPCMode.All, 0, _playerName);
+				photonView.RPC("UpdateNameByID", PhotonTargets.All, 0, _playerName);
 				_connections++;
 			}
 			else
 			{
 				//_playerNames.Add(playerID, _playerName);
-				networkView.RPC("AddName", RPCMode.All, 0, _playerName);
+				photonView.RPC("AddName", PhotonTargets.All, 0, _playerName);
 				_connections++;
 			}
 		}
 	}
 	
-	void OnPlayerConnected(NetworkPlayer player)
+	void OnPhotonPlayerConnected(PhotonPlayer player)
 	{
 		_connections++;
-		networkView.RPC("UpdateConnections", RPCMode.All, _connections);
-		//Debug.Log("connects when logged in:" + Network.connections.Length);
+		photonView.RPC("UpdateConnections", PhotonTargets.All, _connections);
+		//Debug.Log("connects when logged in:" + PhotonNetwork.playerList.Length);
 	}
 	
-	[RPC]
+	[PunRPC]
 	void UpdateConnections(int i_length)
 	{
 		if(i_length > _connections)
@@ -107,7 +107,7 @@ public class NameSystem : MonoBehaviour {
 		}
 		else 
 		{
-			networkView.RPC("RequestServerUpdateNames", RPCMode.Server, true);
+			photonView.RPC("RequestServerUpdateNames", PhotonTargets.MasterClient, true);
 			return "";
 		}
 	}
@@ -123,18 +123,18 @@ public class NameSystem : MonoBehaviour {
 		
 		if(_playerNames.Count < _connections)
 		{
-			networkView.RPC("RequestServerUpdateNames", RPCMode.Server, true);
+			photonView.RPC("RequestServerUpdateNames", PhotonTargets.MasterClient, true);
 		}
 		
-		if(Network.isServer)
+		if(PhotonNetwork.isMasterClient)
 		{
 			if(_requireUpdate)
 			{
 				//the server name is put at first
-				networkView.RPC ("InitPlayerName", RPCMode.All, 0, _playerName);
+				photonView.RPC ("InitPlayerName", PhotonTargets.All, 0, _playerName);
 			
 				for(int i = 1; i < _connections; i++)
-					networkView.RPC ("InitPlayerName", RPCMode.All, i, _playerNames[i]);
+					photonView.RPC ("InitPlayerName", PhotonTargets.All, i, _playerNames[i]);
 				_requireUpdate = false;
 			}
 		}
@@ -145,7 +145,7 @@ public class NameSystem : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void InitPlayerName(int id, string i_name)	
 	{
 		if(!_playerNames.ContainsKey(id))
@@ -158,7 +158,7 @@ public class NameSystem : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void RequestServerUpdateNames(bool i_bool)
 	{
 		_requireUpdate = i_bool;
@@ -186,44 +186,44 @@ public class NameSystem : MonoBehaviour {
 			_nameExist = true;
 			File.WriteAllText(Application.dataPath + "UserProfile/name.txt", _playerName);
 			
-			if(Network.isClient)
+			if(PhotonNetwork.isNonMasterClientInRoom)
 			{
-				int playerID = Convert.ToInt32(Network.player.ToString());
+				int playerID = Convert.ToInt32(PhotonNetwork.player.ToString());
 				if(_playerNames.ContainsKey(playerID))
 				{
 					//_playerNames[playerID] = _playerName;
-					networkView.RPC("UpdateNameByID", RPCMode.All, playerID, _playerName);
+					photonView.RPC("UpdateNameByID", PhotonTargets.All, playerID, _playerName);
 				}
 				else
 				{
 					//_playerNames.Add(playerID, _playerName);
-					networkView.RPC("AddName", RPCMode.All, playerID, _playerName);
+					photonView.RPC("AddName", PhotonTargets.All, playerID, _playerName);
 				}
 			}
-			else if(Network.isServer)
+			else if(PhotonNetwork.isMasterClient)
 			{
 				if(_playerNames.ContainsKey(0))
 				{
 					//_playerNames[playerID] = _playerName;
-					networkView.RPC("UpdateNameByID", RPCMode.All, 0, _playerName);
+					photonView.RPC("UpdateNameByID", PhotonTargets.All, 0, _playerName);
 				}
 				else
 				{
 					//_playerNames.Add(playerID, _playerName);
-					networkView.RPC("AddName", RPCMode.All, 0, _playerName);
+					photonView.RPC("AddName", PhotonTargets.All, 0, _playerName);
 				}				
 			}
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void UpdateNameByID(int i_id, string i_name)
 	{
 		_playerNames[i_id] = i_name;
 	}
 	
 	
-	[RPC]
+	[PunRPC]
 	void AddName(int i_id, string i_name)
 	{
 		_playerNames.Add(i_id, i_name);

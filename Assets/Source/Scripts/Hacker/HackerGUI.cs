@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class HackerGUI : MonoBehaviour {
+public class HackerGUI : Photon.MonoBehaviour {
 	
 	private int sWidth;
 	private int sHeight;
@@ -223,7 +223,7 @@ public class HackerGUI : MonoBehaviour {
 	
 	private void CheckConnectionStatus()
 	{
-		if(Network.connections.Length == 0)
+		if(PhotonNetwork.playerList.Length == 0)
 		{
 			GUI.depth = -1;
 			ScreenHelper.DrawTexture(0, 0, 64, 36, _goneDarkBKG);

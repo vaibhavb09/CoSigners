@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-public class RoomInterface : MonoBehaviour {
+public class RoomInterface : Photon.MonoBehaviour {
 	
 	public Transform playerPrefab;
 	public GUISkin customSkin;
@@ -63,8 +63,8 @@ public class RoomInterface : MonoBehaviour {
 
 		if(_requireUpdate)
 		{
-			networkView.RPC("SyncChapter", RPCMode.Others, _currentChapter);
-			networkView.RPC("SyncLevelSelection", RPCMode.Others, _currentSelectionIndex, _selectedLevel);
+			photonView.RPC("SyncChapter", PhotonTargets.Others, _currentChapter);
+			photonView.RPC("SyncLevelSelection", PhotonTargets.Others, _currentSelectionIndex, _selectedLevel);
 			_requireUpdate = false;
 		}
 
@@ -76,17 +76,26 @@ public class RoomInterface : MonoBehaviour {
 
 				roleNeeded = _roleContent[3- _playerRole];
 				
-				if(_playerIDs.Count < 2)
+				if(PhotonNetwork.playerList.Length < 2)
 				{
-					_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#false");
+					//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#false");
+					ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of Hashtable
+					roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#false";
+					PhotonNetwork.room.SetCustomProperties(	roomProperty );	
 				}
-				else if(_playerIDs.Count >= 2)
+				else if(PhotonNetwork.playerList.Length >= 2)
 				{
-					_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#true");
+					//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#true");
+					ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of ExitGames.Client.Photon.Hashtable
+					roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#true";
+					PhotonNetwork.room.SetCustomProperties(	roomProperty )	;
 				}
 				else if(_gameStarted)
 				{
-					_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true");
+					//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true");
+					ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of ExitGames.Client.Photon.Hashtable
+					roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true";
+					PhotonNetwork.room.SetCustomProperties(	roomProperty )	;
 				}
 			}
 			_currentTimer = 0.0f;
@@ -108,7 +117,7 @@ public class RoomInterface : MonoBehaviour {
 		_currentTimer = 0.0f;
 		_currentTicker = 0.0f;
 		_selectedLevel = 0;
-		networkView.RPC("RequestServerUpdate",RPCMode.Server, true);
+		photonView.RPC("RequestServerUpdate",PhotonTargets.MasterClient, true);
 //		if(GameManager.Manager.FirstLogin)
 //		{
 //			ReRegisterRoom();
@@ -118,8 +127,8 @@ public class RoomInterface : MonoBehaviour {
 	
 	public void SetupStuffForRoomInterface()
 	{
-		//_playerID = Convert.ToInt32(Network.player.ToString());
-		if(Network.isServer)
+		//_playerID = Convert.ToInt32(PhotonNetwork.player.ToString());
+		if(PhotonNetwork.isMasterClient)
 		{
 			_playerID = 0;
 		}
@@ -144,27 +153,30 @@ public class RoomInterface : MonoBehaviour {
 	
 	public void ShutDown()
 	{
-		if(Network.isServer)
+		if(PhotonNetwork.isMasterClient)
 		{
 			//Debug.Log(" #Max: unreg");
 			MasterServer.UnregisterHost();
-			networkView.RPC("ForceShutDown",RPCMode.Others);		
+			photonView.RPC("ForceShutDown",PhotonTargets.Others);		
 			_showRoomInterface = false;
 			_flow.ReturnToLobbyFromRoom();
 			ExitCleanUp();
-			_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#Undecided#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true");
+			//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#Undecided#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true");
+			ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of ExitGames.Client.Photon.Hashtable
+			roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#Undecided#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true";
+			PhotonNetwork.room.SetCustomProperties(	roomProperty )	;
 		}
 		else
 		{
 			ForceShutDown();
 		}
-		Network.Disconnect();
+		//PhotonNetwork.Disconnect();
 	}
 
 	private void ExitCleanUp()
 	{
-		if(Network.connections.Length != 0)
-			networkView.RPC("RemoveMyExistence", RPCMode.Others, _playerID);
+		if(PhotonNetwork.playerList.Length != 0)
+			photonView.RPC("RemoveMyExistence", PhotonTargets.Others, _playerID);
 		else
 			RemoveMyExistence(_playerID);
 		_playerIDs.Clear();
@@ -273,8 +285,8 @@ public class RoomInterface : MonoBehaviour {
 		}
 	}
 
-	#region Network Events
-	void OnServerInitialized()
+	#region PhotonNetwork Events
+	void OnCreatedRoom()
 	{
 		_playerID = 0;
 		_playerRole = 1;
@@ -286,37 +298,37 @@ public class RoomInterface : MonoBehaviour {
 		_showRoomInterface = true;
 	}
 	
-	void OnPlayerConnected(NetworkPlayer player)
+	void OnPhotonPlayerConnected(PhotonPlayer player)
 	{		
 		//this is server's doing
-		networkView.RPC("SyncPlayerRole", RPCMode.Others, 0, _playerRole);
-		networkView.RPC("SyncLevelSelection", RPCMode.Others, _currentSelectionIndex, _selectedLevel);
+		photonView.RPC("SyncPlayerRole", PhotonTargets.Others, 0, _playerRole);
+		photonView.RPC("SyncLevelSelection", PhotonTargets.Others, _currentSelectionIndex, _selectedLevel);
 	}
 
-	void OnConnectedToServer()
+	void OnJoinedRoom()
 	{
 		_flow.EnterRoomFromLobby();
 		_showRoomInterface = true;
-		//_playerID = Convert.ToInt32(Network.player.ToString());
+		//_playerID = Convert.ToInt32(PhotonNetwork.player.ToString());
 		_playerID = 1;
-		networkView.RPC("AddPlayerID", RPCMode.All, _playerID);
-		networkView.RPC("RequestServerUpdate",RPCMode.Server, true);
+		photonView.RPC("AddPlayerID", PhotonTargets.All, _playerID);
+		photonView.RPC("RequestServerUpdate",PhotonTargets.MasterClient, true);
 	}
 	
-	void OnPlayerDisconnected(NetworkPlayer player)
+	void OnPhotonPlayerDisconnected(PhotonPlayer player)
 	{
 		//int ID = Convert.ToInt32(player.ToString());
 		int ID = 1;
-		networkView.RPC("RemovePlayerID", RPCMode.All, ID);
+		photonView.RPC("RemovePlayerID", PhotonTargets.All, ID);
 
-		Network.RemoveRPCs(player);
-		Network.DestroyPlayerObjects(player);
+		PhotonNetwork.RemoveRPCs(player);
+		PhotonNetwork.DestroyPlayerObjects(player);
 	}
 	#endregion
 
 	#region RPCs
 	
-	[RPC]
+	[PunRPC]
 	void InitPlayerID(int i_id)
 	{
 		if(_playerIDs.Count == 0)
@@ -330,13 +342,13 @@ public class RoomInterface : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void RemovePlayerID(int i_id)
 	{
 		_playerIDs.Remove(i_id);	
 	}
 		
-	[RPC]
+	[PunRPC]
 	void AddPlayerID(int i_id)
 	{
 		if(_playerIDs.Count != 0)
@@ -350,7 +362,7 @@ public class RoomInterface : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void SyncPlayerRole(int i_id, int i_role)
 	{
 		_playerRoles[i_id] = i_role;
@@ -358,7 +370,7 @@ public class RoomInterface : MonoBehaviour {
 		_playerRole = (i_id == _playerID? i_role: (3 - i_role));
 	}
 	
-	[RPC]
+	[PunRPC]
 	void SyncLevelSelection(int i_index, int i_level)
 	{	
 		_currentSelectionIndex = i_index;
@@ -366,21 +378,21 @@ public class RoomInterface : MonoBehaviour {
 		//Debug.Log("#Max:The level I'm getting: " + i_level);
 	}
 
-	[RPC]
+	[PunRPC]
 	void SyncChapter(int i_chapter)
 	{	
 		_currentChapter = i_chapter;
 		//Debug.Log("#Max:The Chapter I'm getting: " + i_chapter);
 	}
 	
-	[RPC]
+	[PunRPC]
 	void BackToLevelSelection()
 	{
 		_selectedLevel = 0;
 		_currentChapter = 0;
 	}
 
-	[RPC]
+	[PunRPC]
 	public void ForceShutDown()
 	{
 		_showRoomInterface = false;
@@ -388,14 +400,14 @@ public class RoomInterface : MonoBehaviour {
 		ExitCleanUp();
 	}
 	
-	[RPC]
+	[PunRPC]
 	private void RemoveMyExistence(int i_playerID)
 	{
 		_playerIDs.Remove(i_playerID);
 	}
 
 	
-	[RPC]
+	[PunRPC]
 	void RequestServerUpdate(bool i_bool)
 	{
 		_requireUpdate = i_bool;
@@ -442,14 +454,14 @@ public class RoomInterface : MonoBehaviour {
 			}
 			else
 			{
-				if(Network.isServer)
+				if(PhotonNetwork.isMasterClient)
 				{
 					if(ScreenHelper.DrawButton(19 + i*5, 1, 4, 4, _Areas[i], OnHoverAreaButton))
 					{
 						_currentChapter = i;
 						_currentSelectionIndex = 0;
-						networkView.RPC("SyncChapter", RPCMode.All, _currentChapter);
-						networkView.RPC("SyncLevelSelection", RPCMode.All, _currentSelectionIndex, _levelDict[_currentChapter][0].Index);
+						photonView.RPC("SyncChapter", PhotonTargets.All, _currentChapter);
+						photonView.RPC("SyncLevelSelection", PhotonTargets.All, _currentSelectionIndex, _levelDict[_currentChapter][0].Index);
 						ReRegisterRoom();
 					}
 				}
@@ -480,7 +492,7 @@ public class RoomInterface : MonoBehaviour {
 		if ( _levelDict.ContainsKey( _currentChapter ) )
 		{
 			//if it is server, let him select
-			if(Network.isServer)
+			if(PhotonNetwork.isMasterClient)
 			{
 				for(int i = 0; i < _levelDict[_currentChapter].Count; i++)
 				{
@@ -488,7 +500,7 @@ public class RoomInterface : MonoBehaviour {
 					{
 						if(ScreenHelper.DrawButton(18 + (i%3)*12, 8 + ((int)(i/3))*10, 8, 8, _levelDict[_currentChapter][i].LevelThumbnail, OnHoverLevelButton))
 						{
-							networkView.RPC("SyncLevelSelection", RPCMode.All, i, _levelDict[_currentChapter][i].Index);
+							photonView.RPC("SyncLevelSelection", PhotonTargets.All, i, _levelDict[_currentChapter][i].Index);
 							ReRegisterRoom();
 						}
 						ScreenHelper.DrawText(18 + (i%3)*12, 16 + ((int)(i/3))*10, 8, 1, _levelDict[_currentChapter][i].LevelName, 20, Color.white);
@@ -542,9 +554,9 @@ public class RoomInterface : MonoBehaviour {
 //		ScreenHelper.DrawGrayText(Detail_Val_X, Detail_Transmitter_Val_Y, Detail_Val_Width, Detail_Val_Height, _levelDetails[_selectedLevel].TransmitterNumber.ToString(), Detail_Val_FontSize);
 //		ScreenHelper.DrawGrayText(Detail_Val_X, Detail_Difficulty_Val_Y, Detail_Val_Width, Detail_Val_Height, _levelDetails[_selectedLevel].Difficulty, Detail_Val_FontSize);
 //		
-//		if(Network.isServer && ScreenHelper.DrawButton(BackButton_X, BackButton_Y, BackButton_Width, BackButton_Height, _backButton))
+//		if(PhotonNetwork.isMasterClient && ScreenHelper.DrawButton(BackButton_X, BackButton_Y, BackButton_Width, BackButton_Height, _backButton))
 //		{
-//			networkView.RPC("BackToLevelSelection", RPCMode.All);
+//			photonView.RPC("BackToLevelSelection", PhotonTargets.All);
 //			ReRegisterRoom();
 //		}
 //	}
@@ -571,13 +583,13 @@ public class RoomInterface : MonoBehaviour {
 			}
 			else
 			{
-				if(Network.connections.Length == 0)
+				if(PhotonNetwork.playerList.Length == 0)
 				{
 					ScreenHelper.DrawText(2, 11.5f, 10, 2, "Waiting...", 30, Color.green);
 				}
 				else
 				{
-					if(Network.isServer)
+					if(PhotonNetwork.isMasterClient)
 					{
 						ScreenHelper.DrawText(2, 11.5f, 10, 2, AccountSystem.ClientPlayerName, 30, Color.green);
 					}
@@ -586,14 +598,13 @@ public class RoomInterface : MonoBehaviour {
 						ScreenHelper.DrawText(2, 11.5f, 10, 2, AccountSystem.ServerPlayerName, 30, Color.green);
 					}
 				}
-
-				if(Network.isServer)
+				if(PhotonNetwork.isMasterClient)
 				{
 					ShowRoleSelection();
 				}
 				else
 				{
-					//Debug.Log("Max#: PlayerID:" + _playerID);
+					Debug.Log("Max#: PlayerID:" + _playerID);
 					if(_playerRoles[_playerID] == 1)
 					{
 						ScreenHelper.DrawTexture(2, 4, 11, 3, _thiefButtonActive);
@@ -609,13 +620,13 @@ public class RoomInterface : MonoBehaviour {
 		
 		#region Start and Cancel Button
 		//if it is server, show startgame option
-		if(Network.isServer)
+		if(PhotonNetwork.isMasterClient)
 		{				
-			if(Network.connections.Length == 1)
+			if(PhotonNetwork.playerList.Length == 2)
 			{
 				if(ScreenHelper.SlideInButton(64, 30, 34, 30, 30, 4, _startButtonActive, _startButtonNormal, _currentTicker, 0.5f, 0.0f, 0.0f))
 				{
-					networkView.RPC("StartGame", RPCMode.All, _selectedLevel);
+					photonView.RPC("StartGame", PhotonTargets.All, _selectedLevel);
 				}				
 			}
 			else
@@ -645,9 +656,9 @@ public class RoomInterface : MonoBehaviour {
 			if(ScreenHelper.DrawButton(2, 6, 11, 3, _hackerButtonActive, _hackerButtonNormal))
 			{
 				_playerRole = 2;
-				networkView.RPC("SyncPlayerRole", RPCMode.All, _playerID, _playerRole);
+				photonView.RPC("SyncPlayerRole", PhotonTargets.All, _playerID, _playerRole);
 				
-				if(Network.isServer)
+				if(PhotonNetwork.isMasterClient)
 				{
 					ReRegisterRoom();
 				}
@@ -659,9 +670,9 @@ public class RoomInterface : MonoBehaviour {
 			if(ScreenHelper.DrawButton(2, 3, 11, 3, _thiefButtonActive, _thiefButtonNormal))
 			{
 				_playerRole = 1;
-				networkView.RPC("SyncPlayerRole", RPCMode.All, _playerID, _playerRole);
+				photonView.RPC("SyncPlayerRole", PhotonTargets.All, _playerID, _playerRole);
 				
-				if(Network.isServer)
+				if(PhotonNetwork.isMasterClient)
 				{
 					ReRegisterRoom();
 				}
@@ -717,11 +728,17 @@ public class RoomInterface : MonoBehaviour {
 		{
 			if(_playerIDs.Count < 2)
 			{
-				_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#false");
+				//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#false");
+				ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of ExitGames.Client.Photon.Hashtable
+				roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#false";
+				PhotonNetwork.room.SetCustomProperties(	roomProperty )	;
 			}
 			else
 			{
-				_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#true");
+				//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#true");
+				ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of ExitGames.Client.Photon.Hashtable
+				roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#" + roleNeeded + "#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#true#true";
+				PhotonNetwork.room.SetCustomProperties(	roomProperty )	;
 			}
 		}
 		else
@@ -736,7 +753,8 @@ public class RoomInterface : MonoBehaviour {
 			//Debug.Log("#Max: " + PlayerProfile.PlayerName + "'s Game");
 			//Debug.Log("GameTypeGame:" + _flow.GameTypeName);
 			//CH16 is to be used for Steam release of CH
-			MasterServer.RegisterHost("CH16", PlayerProfile.PlayerName + "'s Game", roleNeeded + "#" + _chapterPrefixs[_currentChapter]+": " + _levelDetails[_selectedLevel].LevelName);
+			//Kiran
+			//MasterServer.RegisterHost("CH16", PlayerProfile.PlayerName + "'s Game", roleNeeded + "#" + _chapterPrefixs[_currentChapter]+": " + _levelDetails[_selectedLevel].LevelName);
 		}
 	}
 	
@@ -766,28 +784,31 @@ public class RoomInterface : MonoBehaviour {
 	}
 	
 	
-	[RPC]
+	[PunRPC]
 	void StartGame(int i_selectedLevel)
 	{
 		GameManager.Manager.PlayerType = _playerRole;
 		_gameStarted = true;
 		if(_flow.IsLANGame)
 		{
-			_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#Undecided#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true");
+			//_flow.LANBroadcastRoomMessage(PlayerProfile.PlayerName + "'s Game#Undecided#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true");
+			ExitGames.Client.Photon.Hashtable roomProperty = new ExitGames.Client.Photon.Hashtable();  // using PUN's implementation of ExitGames.Client.Photon.Hashtable
+			roomProperty["roleAndScore"] = PlayerProfile.PlayerName + "'s Game#Undecided#" + _chapterPrefixs[_currentChapter] +": " + _levelDetails[_selectedLevel].LevelName + "#false#true";
+			PhotonNetwork.room.SetCustomProperties(	roomProperty )	;
 		}
 		
 		// omitted code
-		//Network.SetSendingEnabled(0, false);
-		//Network.isMessageQueueRunning = false;
+		//PhotonNetwork.SetSendingEnabled(0, false);
+		//PhotonNetwork.isMessageQueueRunning = false;
 		GameManager.Manager.CurrentLevelTexture =  _levelDetails[_selectedLevel].LevelDetail;
 		GameManager.Manager.CurrentLevelName = GameManager.Manager.LevelNames[i_selectedLevel];
 		GameManager.Manager.InStartMenu = true;
 		Application.LoadLevel("LevelTransition");
 			
 		// Allow receiving data again
-		//Network.isMessageQueueRunning = true;
+		//PhotonNetwork.isMessageQueueRunning = true;
 		// Now the level has been loaded and we can start sending out data
-		//Network.SetSendingEnabled(0, true);
+		//PhotonNetwork.SetSendingEnabled(0, true);
 		//GameManager.Manager.LevelName = "Levels/" + _levelContent[i_selectedLevel];
 		
 	}

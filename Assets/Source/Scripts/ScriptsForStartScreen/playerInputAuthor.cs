@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class playerInputAuthor : MonoBehaviour {
+public class playerInputAuthor : Photon.MonoBehaviour {
 	
-	public NetworkPlayer Owner;
+	public PhotonPlayer Owner;
 	float lastClientHInput = 0f;
 	float lastClientVInput = 0f;
 	float serverCurrentHInput = 0f;
@@ -11,21 +11,21 @@ public class playerInputAuthor : MonoBehaviour {
 	
 	void Awake()
 	{
-		if(Network.isClient)
+		if(PhotonNetwork.isNonMasterClientInRoom)
 			enabled = false;
 	}
 	
-	[RPC]
-	void SetPlayer(NetworkPlayer player)
+	[PunRPC]
+	void SetPlayer(PhotonPlayer player)
 	{
 		Owner = player;
-		if(player == Network.player)
+		if(player == PhotonNetwork.player)
 			enabled = true;
 	}
 	
 	void Update()
 	{
-		if((Owner != null) && (Network.player == Owner))
+		if((Owner != null) && (PhotonNetwork.player == Owner))
 		{
 			float HInput = Input.GetAxis("Horizontal");
 			float VInput = Input.GetAxis("Vertical");
@@ -34,18 +34,18 @@ public class playerInputAuthor : MonoBehaviour {
 			{
 				lastClientHInput = HInput;
 				lastClientVInput = VInput;
-				if(Network.isServer)
+				if(PhotonNetwork.isMasterClient)
 				{
 					SendMovementInput(HInput, VInput);
 				}
-				else if(Network.isClient)
+				else if(PhotonNetwork.isNonMasterClientInRoom)
 				{
-					networkView.RPC("SendMovementInput", RPCMode.Server, HInput, VInput);
+					photonView.RPC("SendMovementInput", PhotonTargets.MasterClient, HInput, VInput);
 				}
 			}
 		}
 		
-		if(Network.isServer)
+		if(PhotonNetwork.isMasterClient)
 		{
 			Vector3 moveDirection = new Vector3(serverCurrentHInput, 0, serverCurrentVInput);
 			float speed =5;
@@ -53,14 +53,14 @@ public class playerInputAuthor : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void SendMovementInput(float HInput, float VInput)
 	{
 		serverCurrentHInput = HInput;
 		serverCurrentVInput = VInput;
 	}
 	
-	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{	
 		if(stream.isWriting)
 		{
@@ -76,7 +76,7 @@ public class playerInputAuthor : MonoBehaviour {
 	}
 	
 	void OnDisconnectedFromServer(NetworkDisconnection info) {
-        if (Network.isServer)
+        if (PhotonNetwork.isMasterClient)
 		{
             //Debug.Log("Local server connection disconnected");
 		}
@@ -92,8 +92,8 @@ public class playerInputAuthor : MonoBehaviour {
 			}
 		}
 		
-		Network.RemoveRPCs(Network.player);
-        Network.DestroyPlayerObjects(Network.player);
+		PhotonNetwork.RemoveRPCs(PhotonNetwork.player);
+        PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.player);
 		Destroy(gameObject);
     }
 }

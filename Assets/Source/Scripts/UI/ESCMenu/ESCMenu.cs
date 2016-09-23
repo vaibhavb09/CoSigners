@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -181,12 +181,12 @@ public class ESCMenu {
 		{
 			Time.timeScale = 1;
 			Screen.lockCursor = false;
-			if(Network.isServer)
+			if(PhotonNetwork.isMasterClient)
 			{
 				MasterServer.UnregisterHost();
 			}
 			_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
-			Network.Disconnect();									
+			//PhotonNetwork.Disconnect();									
 			Application.LoadLevel(0);
 		}
 
@@ -197,7 +197,7 @@ public class ESCMenu {
 			_showLevelImage = !_showLevelImage;
 		}
 
-		if(Network.connections.Length == 0)
+		if(PhotonNetwork.playerList.Length == 0)
 		{
 			ScreenHelper.SlideInTexture(-26, 32, 0, 32, 26, 3, LevelSelectButtonNormal, _constantTicker, 0.5f, 0.4f, 0.0f);
 			ScreenHelper.SlideInTexture(64, 27, 36, 27, 28, 3, RestartButtonNormal, _constantTicker, 0.5f, 0.2f, 0.0f);

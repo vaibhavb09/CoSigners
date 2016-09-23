@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Networkconnection : MonoBehaviour {
+public class Networkconnection : Photon.MonoBehaviour {
 	
 	//private int _playerType = 0; //1 for prisoner, 2 for hacker, 3 for Observer 
 	private bool _createGame = false;
@@ -34,7 +34,7 @@ public class Networkconnection : MonoBehaviour {
 		}
 		
 
-		if(Network.peerType == NetworkPeerType.Disconnected)
+		if(PhotonNetwork.connectionState == ConnectionState.Disconnected)
 		{
 			if((_createGame == false)&&(_joinGame == false))
 			{
@@ -59,22 +59,24 @@ public class Networkconnection : MonoBehaviour {
 			}
 		}
 
-		else if(Network.peerType == NetworkPeerType.Server)
+		//else if(PhotonNetwork.connectionState == PhotonNetwork.isMasterClient)
+		else if(PhotonNetwork.connectionState == ConnectionState.Connected)
 		{
 			GUI.Label(new Rect(10, 10, 300, 20), "Status: Connected as Server");
 			if(GUI.Button(new Rect(10, 30, 120, 20), "Disconnect"))
 			{
-				Network.Disconnect(200);
+				//PhotonNetwork.Disconnect();
 				_createGame = false;
 				_joinGame = false;
 			}
 		}
-		else if(Network.peerType == NetworkPeerType.Client)
+		//else if(PhotonNetwork.connectionState == PhotonNetwork.isNonMasterClientInRoom)
+		else if(PhotonNetwork.connectionState == ConnectionState.Connecting)
 		{
 			GUI.Label(new Rect(10, 10, 300, 20), "Status: Connected as Client");
 			if(GUI.Button(new Rect(10, 30, 120, 20), "Disconnect"))
 			{
-				Network.Disconnect(200);
+				//PhotonNetwork.Disconnect();
 				_createGame = false;
 				_joinGame = false;
 			}		
@@ -103,11 +105,11 @@ public class Networkconnection : MonoBehaviour {
 		if(GUILayout.Button("Create"))
 		{
 			// Initialize the Server
-			Network.InitializeSecurity();
-			Network.InitializeServer(int.Parse(_maxPlayers), int.Parse(_port), !Network.HavePublicAddress());
-			
+			//PhotonNetwork.InitializeSecurity();
+			//PhotonNetwork.CreateRoom(int.Parse(_maxPlayers), int.Parse(_port), !PhotonNetwork.HavePublicAddress());
+			PhotonNetwork.CreateRoom(_serverName);
 			// NIK REGISTER HOST [CHANGE THIS]
-			MasterServer.RegisterHost("CeilBlock", _serverName);
+			//MasterServer.RegisterHost("CeilBlock", _serverName);
 		}
 	}
 	
@@ -134,7 +136,7 @@ public class Networkconnection : MonoBehaviour {
 				GUILayout.Box(i_data.gameName);
 				if(GUILayout.Button("Connect"))
 				{
-					Network.Connect(i_data.ip, i_data.port);
+					PhotonNetwork.JoinRoom(i_data.gameName);
 				}
 			}
 			GUILayout.EndHorizontal();

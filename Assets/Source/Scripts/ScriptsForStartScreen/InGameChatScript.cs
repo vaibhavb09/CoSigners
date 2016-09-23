@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
-public class InGameChatScript : MonoBehaviour {
+public class InGameChatScript : Photon.MonoBehaviour {
 	
 	private Rect _chatWindow = new Rect(200, 200, 200, 400);
 	private string _messBox = "Press enter to text chat.\n", _messageToSend = "";
@@ -46,7 +46,7 @@ public class InGameChatScript : MonoBehaviour {
 	{
 		GUI.skin = _customSkin;
 		GUI.depth = 1;
-		if(Network.peerType != NetworkPeerType.Disconnected)
+		if(PhotonNetwork.connectionState != ConnectionState.Disconnected)
 		{
 			chatFunc();
 		}

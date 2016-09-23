@@ -155,7 +155,7 @@ public class GuardActions : MonoBehaviour
 	void Start () 
 	{
 		//Debug.Log("Actions of Guards Instantiated");
-		//if(networkView.isMine)
+		//if(photonView.isMine)
 		if ( GameManager.Manager.PlayerType == 1 )
 		{
 			Player = GameObject.FindGameObjectWithTag("Player");
@@ -1469,13 +1469,13 @@ public class GuardActions : MonoBehaviour
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void SetPosition(Vector3 newPosition)
 	{
 	    transform.position = newPosition;
 	}
 	
-	[RPC]
+	[PunRPC]
 	void SetRotation(Quaternion newRotation)
 	{
 	    transform.rotation = newRotation;

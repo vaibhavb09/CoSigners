@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class ConnectionTesterNAT : MonoBehaviour {
+public class ConnectionTesterNAT : Photon.MonoBehaviour {
 	string testStatus = "Testing network connection capabilities.";
 	string testMessage = "Test in progress";
 	string shouldEnableNatMessage = "";
@@ -40,9 +40,9 @@ public class ConnectionTesterNAT : MonoBehaviour {
 	}
 	
 	void TestConnection()
-	{
+	{/*
 		//Debug.Log(connectionTestResult);
-		connectionTestResult = Network.TestConnectionNAT();
+		connectionTestResult = PhotonNetwork.TestConnectionNAT();
 		switch (connectionTestResult)
 		{
 		case ConnectionTesterStatus.Error: 
@@ -70,7 +70,7 @@ public class ConnectionTesterNAT : MonoBehaviour {
 			// If no NAT punchthrough test has been performed on this public 
 			// IP, force a test
 			if (!probingPublicIP) {
-				connectionTestResult = Network.TestConnectionNAT();
+				connectionTestResult = PhotonNetwork.TestConnectionNAT();
 				probingPublicIP = true;
 				testStatus = "Testing if blocked public IP can be circumvented";
 				timer = Time.time + 10;
@@ -130,7 +130,7 @@ public class ConnectionTesterNAT : MonoBehaviour {
 			else
 				shouldEnableNatMessage = "NAT punchthrough not needed";
 			testStatus = "Done testing";
-		}
+		}*/
 	}
 	
 	// Update is called once per frame

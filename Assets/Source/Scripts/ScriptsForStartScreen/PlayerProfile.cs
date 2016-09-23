@@ -22,6 +22,8 @@ public class PlayerProfile {
 	{
 		if(string.IsNullOrEmpty(_playerName))
 			_playerName = SteamFriends.GetPersonaName ();
+		if (string.IsNullOrEmpty (_playerName))
+			_playerName = "TestPlayer";
 		return _playerName;
 	}
 	#endregion

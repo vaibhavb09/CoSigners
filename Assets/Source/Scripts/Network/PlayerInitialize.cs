@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 
-public class PlayerInitialize : MonoBehaviour {
+public class PlayerInitialize : Photon.MonoBehaviour {
 	
 	
 	public Transform playerPrefab;
@@ -40,25 +40,25 @@ public class PlayerInitialize : MonoBehaviour {
 		
 		//if(GameManager.Manager.PlayerType == 1) //prisoner
 		{
-			SpawnPrisoner(Network.player);
+			SpawnPrisoner(PhotonNetwork.player);
 		}
 		//if(GameManager.Manager.PlayerType == 2) //hacker
 		{
-			SpawnHacker(Network.player);
+			SpawnHacker(PhotonNetwork.player);
 		}
 	}
 
-	void SpawnPrisoner(NetworkPlayer i_player)
+	void SpawnPrisoner(PhotonPlayer i_player)
 	{
 		//Debug.Log("#Max:Spawned player" + i_player.ToString());
 		SpawnPlayer(i_player);
 		InitCamera();
 	}
 
-	void SpawnHacker(NetworkPlayer i_player)
+	void SpawnHacker(PhotonPlayer i_player)
 	{
 		string tempPlayerString = i_player.ToString();
-		int playerNumber =  Convert.ToInt32(tempPlayerString);
+		//int playerNumber =  Convert.ToInt32(tempPlayerString);
 		Transform newPlayer = (Transform)Instantiate(player2DPrefab,
 			new Vector3(StartPoint.transform.position.x, 60, StartPoint.transform.position.z), transform.rotation);
 		InitCamera();
@@ -95,10 +95,10 @@ public class PlayerInitialize : MonoBehaviour {
 		}
 	}
 	
-	void SpawnPlayer(NetworkPlayer player)
+	void SpawnPlayer(PhotonPlayer player)
 	{
 		string tempPlayerString = player.ToString();
-		int playerNumber =  Convert.ToInt32(tempPlayerString);
+		//int playerNumber =  Convert.ToInt32(tempPlayerString);
 		Transform newPlayer;
 		GameObject[] startDoor = PointmanNetManager.Manager.GetDoorsOfType(DoorType.StartDoor);
 
@@ -113,10 +113,10 @@ public class PlayerInitialize : MonoBehaviour {
 		}
 	}
 	
-	void OnPlayerDisconnected(NetworkPlayer player) {
+	void OnPhotonPlayerDisconnected(PhotonPlayer player) {
         //Debug.Log("Clean up after player " + player);
 
-        Network.RemoveRPCs(player);
-        Network.DestroyPlayerObjects(player);
+        PhotonNetwork.RemoveRPCs(player);
+        PhotonNetwork.DestroyPlayerObjects(player);
     }
 }

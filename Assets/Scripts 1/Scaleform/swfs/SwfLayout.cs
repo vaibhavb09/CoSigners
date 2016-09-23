@@ -170,7 +170,7 @@ public class SwfLayout : Movie
 		NetworkManager.Manager.StopMovieRPC("LevelLoadMenu5_New.swf", 0);
 	}
 
-	//since function may called only on one side, so to sync, use Network manager.
+	//since function may called only on one side, so to sync, use PhotonNetwork manager.
 	public void StartNextLevelUnity()
 	{
 		_playerUtil = GameObject.Find("PlayerUtil");
@@ -196,12 +196,12 @@ public class SwfLayout : Movie
 		if (Application.loadedLevelName == "JM_53")
 		{		
 			Debug.Log("Final Level Started");
-			if(Network.isServer)
+			if(PhotonNetwork.isMasterClient)
 			{
 				MasterServer.UnregisterHost();
 			}
 			_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
-			Network.Disconnect();
+			PhotonNetwork.Disconnect();
 			//BasicScoreSystem.Manager.ResetData();
 			Screen.lockCursor = false;
 			Application.LoadLevel(0);

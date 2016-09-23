@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ScoreTest : MonoBehaviour {
+public class ScoreTest : Photon.MonoBehaviour {
 	
 	private GameObject _playerUtil;
 	// Use this for initialization
@@ -57,7 +57,7 @@ public class ScoreTest : MonoBehaviour {
 			//PlayerProfile.SavePlayerProfile();
 			//PlayerProfile.SavePlayerProfile();
 			Application.LoadLevel(0);
-			Network.Disconnect();
+			//PhotonNetwork.Disconnect();
 		}
 	}
 }

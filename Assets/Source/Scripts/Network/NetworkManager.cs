@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class NetworkManager : MonoBehaviour {
+public class NetworkManager : Photon.PunBehaviour {
 	
 	#region Singleton Declaration
 	
@@ -30,6 +30,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	void Awake()
 	{
+		Debug.Log("Connecting to photon Server");
 		if(_initTime == 0 && _initTimes == 0)
 		{
 			DontDestroyOnLoad(transform.gameObject);
@@ -53,10 +54,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SyncPlayerPosition(Vector3 i_position)
 	{
-		networkView.RPC("SyncPlayerPositionRPC", RPCMode.Others, i_position);
+		photonView.RPC("SyncPlayerPositionRPC", PhotonTargets.Others, i_position);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void SyncPlayerPositionRPC(Vector3 i_position)
 	{
 		if(_playerThief != null)
@@ -67,10 +68,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SyncPlayerRotation(Quaternion i_rotation)
 	{
-		networkView.RPC("SyncPlayerRotationnRPC", RPCMode.Others, i_rotation);
+		photonView.RPC("SyncPlayerRotationnRPC", PhotonTargets.Others, i_rotation);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SyncPlayerRotationnRPC(Quaternion i_rotation)
 	{
 		if(_playerThief != null)
@@ -85,11 +86,11 @@ public class NetworkManager : MonoBehaviour {
 	{
 		if(GameManager.Manager.ThiefReady && GameManager.Manager.HackerReady && !GameManager.Manager.LevelStarted)
 		{
-			networkView.RPC("PostGameStartRPC", RPCMode.All);
+			photonView.RPC("PostGameStartRPC", PhotonTargets.All);
 		}
 	}
 
-	[RPC]
+	[PunRPC]
 	public void PostGameStartRPC()
 	{
 		InitControl.PostGameStart();
@@ -100,16 +101,16 @@ public class NetworkManager : MonoBehaviour {
 		switch(i_playerType)
 		{
 		case 1://thief
-			networkView.RPC("ThiefReadyRPC", RPCMode.All, i_inTransition);
+			photonView.RPC("ThiefReadyRPC", PhotonTargets.All, i_inTransition);
 			break;
 
 		case 2://hacker
-			networkView.RPC("HackerReadyRPC", RPCMode.All, i_inTransition);
+			photonView.RPC("HackerReadyRPC", PhotonTargets.All, i_inTransition);
 			break;
 		}
 	}
 
-	[RPC]
+	[PunRPC]
 	private void ThiefReadyRPC(bool i_inTransition)
 	{
 		if(!i_inTransition)
@@ -129,7 +130,7 @@ public class NetworkManager : MonoBehaviour {
 		}
 	}
 
-	[RPC]
+	[PunRPC]
 	private void HackerReadyRPC(bool i_inTransition)
 	{
 		if(!i_inTransition)
@@ -154,11 +155,11 @@ public class NetworkManager : MonoBehaviour {
 	#region ScaleForm
 	public void ChangeInStartMenuStatus(bool i_isInStartMenu)
 	{
-		networkView.RPC("ChangeInStartMenuStatusRPC", RPCMode.All, i_isInStartMenu);
+		photonView.RPC("ChangeInStartMenuStatusRPC", PhotonTargets.All, i_isInStartMenu);
 	}
 
 
-	[RPC]
+	[PunRPC]
 	public void ChangeInStartMenuStatusRPC(bool i_isInStartMenu)
 	{
 		GameManager.Manager.InStartMenu = i_isInStartMenu;
@@ -180,9 +181,9 @@ public class NetworkManager : MonoBehaviour {
 	//1 - thief 2 - Hacker
 	public void PlayMovie(string i_swfName, int i_playerType = 0)
 	{
-		networkView.RPC("PlayMovieRPC", RPCMode.All, i_swfName, i_playerType);
+		photonView.RPC("PlayMovieRPC", PhotonTargets.All, i_swfName, i_playerType);
 	}
-	[RPC]
+	[PunRPC]
 	public void PlayMovieRPC(string i_swfName, int i_playerType)
 	{
 		GameObject scaleformCamera =  GameObject.FindGameObjectWithTag("ScaleformCamera");
@@ -192,10 +193,10 @@ public class NetworkManager : MonoBehaviour {
 	public void PlayAnimation(string i_swfName, string i_functionCall, int i_playerType = 0)
 	{
 
-		networkView.RPC("PlayAnimationRPC", RPCMode.All, i_swfName, i_functionCall, i_playerType);
+		photonView.RPC("PlayAnimationRPC", PhotonTargets.All, i_swfName, i_functionCall, i_playerType);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void PlayAnimationRPC(string i_swfName, string i_functionCall, int i_playerType = 0)
 	{
 		GameObject scaleformCamera =  GameObject.FindGameObjectWithTag("ScaleformCamera");
@@ -204,12 +205,12 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void StopMovie(string i_swfName, int i_playerType = 0)
 	{
-		networkView.RPC("StopMovieRPC", RPCMode.All, i_swfName, i_playerType);
+		photonView.RPC("StopMovieRPC", PhotonTargets.All, i_swfName, i_playerType);
 
 	}
 
 
-	[RPC]
+	[PunRPC]
 	public void StopMovieRPC(string i_swfName, int i_playerType)
 	{
 		GameObject scaleformCamera =  GameObject.FindGameObjectWithTag("ScaleformCamera");
@@ -223,10 +224,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ChangeTestMode()
 	{
-		networkView.RPC("ChangeTestModeRPC", RPCMode.All);
+		photonView.RPC("ChangeTestModeRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ChangeTestModeRPC()
 	{
 		GameObject.Find("TestingModeController").GetComponent<TestingMode>().ChangeTestMode();
@@ -235,10 +236,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void endLevelMenuResponse( int selection, bool value)
 	{
-		networkView.RPC("endLevelMenuResponseRPC", RPCMode.All, selection, value);
+		photonView.RPC("endLevelMenuResponseRPC", PhotonTargets.All, selection, value);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void endLevelMenuResponseRPC(int selection, bool value)
 	{
 		switch (selection)
@@ -279,10 +280,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void RestartLevel()
 	{
-		networkView.RPC("RestartLevelRPC", RPCMode.All);
+		photonView.RPC("RestartLevelRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void RestartLevelRPC()
 	{
 		//Debug.Log("#Max:Restart");
@@ -292,10 +293,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void GoBackToLoginScreen()
 	{
-		networkView.RPC("GoBackToLoginScreenRPC", RPCMode.All );
+		photonView.RPC("GoBackToLoginScreenRPC", PhotonTargets.All );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void GoBackToLoginScreenRPC()
 	{	
 		//Application.LoadLevel("Level_X");
@@ -314,21 +315,21 @@ public class NetworkManager : MonoBehaviour {
 //			HackerManager.Manager.EnableHackerActions();
 //		}
 		Screen.lockCursor = false;
-		if(Network.isServer)
+		if(PhotonNetwork.isMasterClient)
 		{
 			MasterServer.UnregisterHost();
 		}
 		_playerUtil.GetComponent<AccountSystem>().ResetNamesAfterForceShutDown();
-		Network.Disconnect();
+		//PhotonNetwork.Disconnect();
 		Application.LoadLevel(0);
 	}
 
 	public void LoadLevel( int levelNumber)
 	{
-		networkView.RPC("LoadLevelRPC", RPCMode.All,levelNumber );
+		photonView.RPC("LoadLevelRPC", PhotonTargets.All,levelNumber );
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void LoadLevelRPC(int levelNumber)
 	{
 		//Debug.Log("Restart");
@@ -338,10 +339,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void LoadLevel( string LevelName )
 	{
-		networkView.RPC("LoadLevelUsingStringRPC", RPCMode.All, LevelName );
+		photonView.RPC("LoadLevelUsingStringRPC", PhotonTargets.All, LevelName );
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void LoadLevelUsingStringRPC( string LevelName )
 	{
 		GameManager.Manager.CurrentLevelName = Application.loadedLevelName;
@@ -353,10 +354,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void ShowLevelEndScreen( int value)
 	{
-		networkView.RPC("ShowLevelEndScreenRPC", RPCMode.All,value );
+		photonView.RPC("ShowLevelEndScreenRPC", PhotonTargets.All,value );
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ShowLevelEndScreenRPC(int value)
 	{
 		//Debug.Log("Level End");
@@ -368,10 +369,10 @@ public class NetworkManager : MonoBehaviour {
 	#region ChatRelated
 	public void SendChatMessage(string i_message)
 	{
-		networkView.RPC("SendChatMessageRPC", RPCMode.All, i_message);
+		photonView.RPC("SendChatMessageRPC", PhotonTargets.All, i_message);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void SendChatMessageRPC(string i_message)
 	{
 		_chatInstance = GameObject.Find("Chat");
@@ -389,17 +390,17 @@ public class NetworkManager : MonoBehaviour {
 		{	
 			int temp = i;
 			int packedData = i_ConnectionArray[i]? 1 + (temp << 1): 0 + (temp << 1);
-			networkView.RPC("SendConnectionDataRPC", RPCMode.All, packedData);
+			photonView.RPC("SendConnectionDataRPC", PhotonTargets.All, packedData);
 		}
 	}
 	
 
 	public void RotatePivot( int i_index, bool i_clear)
 	{
-		networkView.RPC("RotatePivotRPC", RPCMode.All, i_index, i_clear);
+		photonView.RPC("RotatePivotRPC", PhotonTargets.All, i_index, i_clear);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void RotatePivotRPC( int i_index, bool i_clear )
 	{
 		PivotManager.Manager.RotatePivot(i_index, i_clear);
@@ -408,10 +409,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void RefreshConnections()
 	{
-		networkView.RPC("RefreshConnectionsRPC", RPCMode.All);
+		photonView.RPC("RefreshConnectionsRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void RefreshConnectionsRPC( )
 	{
 		PivotManager.Manager.RefreshConnections();
@@ -420,10 +421,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void CreatePivot( int i_index, bool i_centered, int i_armA, int i_armB )
 	{
-		networkView.RPC("CreatePivotRPC", RPCMode.All, i_index, i_centered, i_armA, i_armB);
+		photonView.RPC("CreatePivotRPC", PhotonTargets.All, i_index, i_centered, i_armA, i_armB);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void CreatePivotRPC(int i_index, bool i_centered, int i_armA, int i_armB )
 	{
 		PivotManager.Manager.AddPivot(i_index, i_centered, i_armA, i_armB);
@@ -432,10 +433,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void RemovePivot( int i_index, bool i_refresh )
 	{
-		networkView.RPC("RemovePivotRPC", RPCMode.All, i_index, i_refresh);
+		photonView.RPC("RemovePivotRPC", PhotonTargets.All, i_index, i_refresh);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void RemovePivotRPC(int i_index, bool i_refresh )
 	{
 		PivotManager.Manager.RemovePivot( i_index, i_refresh );
@@ -446,10 +447,10 @@ public class NetworkManager : MonoBehaviour {
 	{
 		//Debug.Log ("Ran UpdateConnectiosn Manager");
 
-		networkView.RPC("UpdateConnectionManagerRPC", RPCMode.Others, i_connections);
+		photonView.RPC("UpdateConnectionManagerRPC", PhotonTargets.Others, i_connections);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void UpdateConnectionManagerRPC( byte[] i_connections )
 	{
 		//Debug.Log ("Ran UpdateConnectionManager RPC");
@@ -458,10 +459,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void RaiseSecurityClearance()
 	{
-		networkView.RPC("RaiseSecurityClearanceRPC", RPCMode.All);
+		photonView.RPC("RaiseSecurityClearanceRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void RaiseSecurityClearanceRPC()
 	{
 		GraphManager.Manager.RaiseSecurityClearance();
@@ -471,10 +472,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void AlterFloorLine(int i_line, bool i_addLine)
 	{
-		networkView.RPC("AlterFloorLineRPC", RPCMode.Others, i_line, i_addLine);
+		photonView.RPC("AlterFloorLineRPC", PhotonTargets.Others, i_line, i_addLine);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void AlterFloorLineRPC( int i_line, bool i_addLine )
 	{
 		ThiefGrid.Manager.AlterLine( i_line, i_addLine);
@@ -485,10 +486,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SyncDoorType( int i_doorIndex, int i_type )
 	{
-		networkView.RPC("SyncDoorTypeRPC", RPCMode.All, i_doorIndex, i_type);
+		photonView.RPC("SyncDoorTypeRPC", PhotonTargets.All, i_doorIndex, i_type);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SyncDoorTypeRPC( int i_doorIndex, int i_type )
 	{
 		DoorNode thisDoor = (DoorNode)GraphManager.Manager.GetNode( i_doorIndex );
@@ -500,10 +501,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetDoorClearance( int i_doorIndex, bool i_clear )
 	{
-		networkView.RPC("SetDoorClearanceRPC", RPCMode.All, i_doorIndex, i_clear);
+		photonView.RPC("SetDoorClearanceRPC", PhotonTargets.All, i_doorIndex, i_clear);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetDoorClearanceRPC( int i_doorIndex, bool i_clear )
 	{
 		GameObject door = PointmanNetManager.Manager.GetDoorObject(i_doorIndex);
@@ -518,10 +519,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetGuardProximity( int i_doorIndex, bool closeEnough )
 	{
-		networkView.RPC("SetGuardProximityRPC", RPCMode.All, closeEnough);
+		photonView.RPC("SetGuardProximityRPC", PhotonTargets.All, closeEnough);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetGuardProximityRPC( int i_doorIndex, bool closeEnough )
 	{
 		PointmanNetManager.Manager.GetDoorObject(i_doorIndex).GetComponent<DoorController>().guardCloseEnoughToOpen = closeEnough;
@@ -530,10 +531,10 @@ public class NetworkManager : MonoBehaviour {
 	//passing door number
 	public void OpenDoor(int i_doorIndex)
 	{
-		networkView.RPC("OpenDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("OpenDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void OpenDoorRPC(int i_doorIndex)
 	{
 		PointmanNetManager.Manager.OpenDoor(i_doorIndex);
@@ -542,10 +543,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void CloseDoor(int i_doorIndex)
 	{
-		networkView.RPC("CloseDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("CloseDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void CloseDoorRPC(int i_doorIndex)
 	{
 		PointmanNetManager.Manager.CloseDoor(i_doorIndex);		
@@ -554,10 +555,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void DisableDoorTimer(int i_doorIndex, float i_time)
 	{
-		networkView.RPC("DisableDoorTimerRPC", RPCMode.All, i_doorIndex, i_time);
+		photonView.RPC("DisableDoorTimerRPC", PhotonTargets.All, i_doorIndex, i_time);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DisableDoorTimerRPC(int i_doorIndex, float i_time)
 	{
 		DoorNode thisDoor = (DoorNode)GraphManager.Manager.GetNode( i_doorIndex );
@@ -566,10 +567,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void BlockDoor(int i_doorIndex)
 	{
-		networkView.RPC("BlockDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("BlockDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void BlockDoorRPC(int i_doorIndex)
 	{
 		DoorNode thisDoor = (DoorNode)GraphManager.Manager.GetNode( i_doorIndex );
@@ -578,10 +579,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void UnBlockDoor(int i_doorIndex)
 	{
-		networkView.RPC("UnBlockDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("UnBlockDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void UnBlockDoorRPC(int i_doorIndex)
 	{
 		DoorNode thisDoor = (DoorNode)GraphManager.Manager.GetNode( i_doorIndex );
@@ -590,10 +591,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void LockDoor(int i_doorIndex)
 	{
-		networkView.RPC("LockDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("LockDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void LockDoorRPC(int i_doorIndex)
 	{
 		HackerNetManager.Manager.LockDoor( i_doorIndex );
@@ -602,10 +603,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void UnlockDoor(int i_doorIndex)
 	{
-		networkView.RPC("UnlockDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("UnlockDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void UnlockDoorRPC(int i_doorIndex)
 	{
 		HackerNetManager.Manager.UnlockDoor( i_doorIndex );
@@ -614,10 +615,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SecureLockDoor(int i_doorIndex)
 	{
-		networkView.RPC("SecureLockDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("SecureLockDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SecureLockDoorRPC(int i_doorIndex)
 	{
 		PointmanNetManager.Manager.SecureLockDoor( i_doorIndex ); //Thief
@@ -626,10 +627,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void UnSecureLockDoor(int i_doorIndex)
 	{
-		networkView.RPC("UnSecureLockDoorRPC", RPCMode.All, i_doorIndex);
+		photonView.RPC("UnSecureLockDoorRPC", PhotonTargets.All, i_doorIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void UnSecureLockDoorRPC(int i_doorIndex)
 	{
 		HackerNetManager.Manager.UnSecureLockDoor ( i_doorIndex );
@@ -641,10 +642,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void PauseGame(bool pause)
 	{
-		networkView.RPC("PauseGameRPC", RPCMode.All, pause);
+		photonView.RPC("PauseGameRPC", PhotonTargets.All, pause);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void PauseGameRPC(bool pause)
 	{
 		if(GameManager.Manager.PlayerType == 1)
@@ -665,10 +666,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void RemoveScrambler(int i_hexIndex)
 	{
-		networkView.RPC("RemoveScramblerRPC", RPCMode.All, i_hexIndex);
+		photonView.RPC("RemoveScramblerRPC", PhotonTargets.All, i_hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void RemoveScramblerRPC(int i_hexIndex)
 	{
 		HackerNetManager.Manager.RemoveScrambler(i_hexIndex);
@@ -678,10 +679,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetCurrentInfoDataParams( string i_movieName, int playerType )
 	{
-		networkView.RPC ("SetCurrentInfoDataParamsRPC", RPCMode.All, i_movieName, playerType );
+		photonView.RPC ("SetCurrentInfoDataParamsRPC", PhotonTargets.All, i_movieName, playerType );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void SetCurrentInfoDataParamsRPC( string i_movieName, int playerType )
 	{
 		GameManager.Manager._currentInfoData.m_currentMovie = i_movieName;
@@ -698,10 +699,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void PlayInfoNodeAudio(string audioName, int playerType = -1)
 	{
-		networkView.RPC ("PlayInfoNodeAudioRPC", RPCMode.All, audioName, playerType);
+		photonView.RPC ("PlayInfoNodeAudioRPC", PhotonTargets.All, audioName, playerType);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void PlayInfoNodeAudioRPC(string audioName, int playerType = -1)
 	{
 		AudioSource i_audioSource = GameObject.Find("InfoNodeSource").audio;
@@ -710,10 +711,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SilenceInfoNodeSource()
 	{
-		networkView.RPC("SilenceInfoNodeSourceRPC", RPCMode.All);
+		photonView.RPC("SilenceInfoNodeSourceRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	private void SilenceInfoNodeSourceRPC()
 	{
 		InfoNodeManager.Manager.SilenceInfoNodeSource();
@@ -723,10 +724,10 @@ public class NetworkManager : MonoBehaviour {
 	#region LevelTransition
 	public void PlayerReady(int i_ready)
 	{
-		networkView.RPC("PlayerReadyRPC", RPCMode.All, i_ready);
+		photonView.RPC("PlayerReadyRPC", PhotonTargets.All, i_ready);
 	}
 
-	[RPC]
+	[PunRPC]
 	private void PlayerReadyRPC(int i_ready)
 	{
 		GameManager.Manager.m_roleReady = i_ready;
@@ -737,7 +738,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SendPing(Vector3 i_pos)
 	{
-		networkView.RPC("SendPingRPC", RPCMode.All, i_pos);
+		photonView.RPC("SendPingRPC", PhotonTargets.All, i_pos);
 	}
 	#endregion
 	
@@ -751,24 +752,24 @@ public class NetworkManager : MonoBehaviour {
 	//considering the fact that I'll have to pass a extra int to sync the guard than do it directly, I won't do it for now.
 	public void UpdateGuardPosition(Vector3 i_guardPosition, int i_guardID)
 	{
-		networkView.RPC("UpdateGuardPositionRPC", RPCMode.All, i_guardPosition, i_guardID);
+		photonView.RPC("UpdateGuardPositionRPC", PhotonTargets.All, i_guardPosition, i_guardID);
 	}
 
 	public void UpdateGuardRotation(Quaternion i_guardQuaternion, int i_guardID)
 	{
-		networkView.RPC("UpdateGuardRotationRPC", RPCMode.All, i_guardQuaternion, i_guardID);
+		photonView.RPC("UpdateGuardRotationRPC", PhotonTargets.All, i_guardQuaternion, i_guardID);
 	}
 
 	
 	#region GuardRelated
 	
-	[RPC]
+	[PunRPC]
 	public void UpdateGuardPositionRPC(Vector3 i_guardPosition, int i_guardID)
 	{
 		PointmanNetManager.Manager.UpdateGuardPos(i_guardPosition, i_guardID);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void UpdateGuardRotationRPC(Quaternion i_guardQuaternion, int i_guardID)
 	{
 		PointmanNetManager.Manager.UpdateGuardRot(i_guardQuaternion, i_guardID);
@@ -782,7 +783,7 @@ public class NetworkManager : MonoBehaviour {
 	//pass in the number of the control panel that's supposed to be activated. The number should be coherent with the node number
 	public void PowerNode(int PowerNodeID, bool status)
 	{
-		networkView.RPC("PowerNodeRPC", RPCMode.All, PowerNodeID, status);
+		photonView.RPC("PowerNodeRPC", PhotonTargets.All, PowerNodeID, status);
 	}
 
 	#endregion
@@ -791,7 +792,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void EMPactivated(float i_EmpPos_x, float i_EmpPos_z, float EMP_Influence_Radius)
 	{
-		networkView.RPC("EMPActivated", RPCMode.All, i_EmpPos_x, i_EmpPos_z, EMP_Influence_Radius);
+		photonView.RPC("EMPActivated", PhotonTargets.All, i_EmpPos_x, i_EmpPos_z, EMP_Influence_Radius);
 	}
 	
 	#endregion
@@ -801,10 +802,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ScramblerPlaced(int hexIndex)
 	{
-		networkView.RPC("ScramblerPlacedRPC",RPCMode.All, hexIndex);
+		photonView.RPC("ScramblerPlacedRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ScramblerPlacedRPC( int hexIndex )
 	{
 		HackerNetManager.Manager.ScramblerPlaced( hexIndex );
@@ -815,11 +816,11 @@ public class NetworkManager : MonoBehaviour {
 
 	public void ToggleESCMenu()
 	{
-		networkView.RPC("ToggleESCMenuRPC", RPCMode.All);
+		photonView.RPC("ToggleESCMenuRPC", PhotonTargets.All);
 		PauseGame(true);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void ToggleESCMenuRPC()
 	{
 		if(_hackGUI == null)
@@ -829,11 +830,11 @@ public class NetworkManager : MonoBehaviour {
 
 	public void ShutDownESCMenu()
 	{
-		networkView.RPC("ShutDownESCMenuRPC", RPCMode.All);
+		photonView.RPC("ShutDownESCMenuRPC", PhotonTargets.All);
 		PauseGame(false);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ShutDownESCMenuRPC()
 	{
 		if(_hackGUI == null)
@@ -843,10 +844,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void DisableActions()
 	{
-		networkView.RPC("DisableActionsRPC", RPCMode.All);
+		photonView.RPC("DisableActionsRPC", PhotonTargets.All);
 	}
 
-	[RPC]
+	[PunRPC]
 	public void DisableActionsRPC()
 	{
 		if(GameManager.Manager.PlayerType == 1)
@@ -864,10 +865,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void EnableActions()
 	{
-		networkView.RPC("EnableActionsRPC", RPCMode.All);
+		photonView.RPC("EnableActionsRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void EnableActionsRPC()
 	{
 		if(GameManager.Manager.PlayerType == 1)
@@ -885,10 +886,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void Silence()
 	{
-		networkView.RPC("EnableActionsRPC", RPCMode.All);
+		photonView.RPC("EnableActionsRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SilenceRPC()
 	{
 		if(GameManager.Manager.PlayerType == 1)
@@ -910,10 +911,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void InfoNodeHexCaptured( int i_ID, bool i_open )
 	{
-		networkView.RPC("InfoNodeHexCapturedRPC", RPCMode.Others, i_ID, i_open );
+		photonView.RPC("InfoNodeHexCapturedRPC", PhotonTargets.Others, i_ID, i_open );
 	}
 
-	[RPC]
+	[PunRPC]
 	private void InfoNodeHexCapturedRPC( int i_ID, bool i_open )
 	{
 		PointmanNetManager.Manager.InfoNodePlatformStateChange( i_ID, i_open );
@@ -921,10 +922,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void PlayInformation( int i_ID )
 	{
-		networkView.RPC ( "PlayInformationRPC", RPCMode.All, i_ID );
+		photonView.RPC ( "PlayInformationRPC", PhotonTargets.All, i_ID );
 	}
 
-	[RPC]
+	[PunRPC]
 	private void PlayInformationRPC( int i_ID )
 	{
 		ThiefManager.Manager.PlayInformation(i_ID);
@@ -937,10 +938,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void InitializeLockDownSequence(int hexIndex)
 	{
-		networkView.RPC("InitializeLockDownSequenceRPC",RPCMode.All, hexIndex);
+		photonView.RPC("InitializeLockDownSequenceRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void InitializeLockDownSequenceRPC(int hexIndex)
 	{
 		BasicScoreSystem.Manager.LockdownsNeeded++;
@@ -956,10 +957,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SyncOverrideLosingState()
 	{
-		networkView.RPC("SyncOverrideLosingStateRPC",RPCMode.All);
+		photonView.RPC("SyncOverrideLosingStateRPC",PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SyncOverrideLosingStateRPC()
 	{
 		OverrideManager.Manager.SyncLose();
@@ -967,10 +968,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SyncOverrideTimer(float i_timer)
 	{
-		networkView.RPC("SyncOverrideTimerRPC",RPCMode.Others, i_timer);
+		photonView.RPC("SyncOverrideTimerRPC",PhotonTargets.Others, i_timer);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SyncOverrideTimerRPC(float i_timer)
 	{
 		OverrideManager.Manager.SyncTimer(i_timer);
@@ -978,10 +979,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void OverrideSuccess()
 	{
-		networkView.RPC("OverrideSuccessRPC",RPCMode.All);
+		photonView.RPC("OverrideSuccessRPC",PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void OverrideSuccessRPC()
 	{
 		HackerNetManager.Manager.OverrideSuccess();
@@ -995,10 +996,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void EnableOverride()
 	{
-		networkView.RPC("EnableOverrideRPC",RPCMode.All);
+		photonView.RPC("EnableOverrideRPC",PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void EnableOverrideRPC()
 	{
 		HackerNetManager.Manager.EnableOverride();
@@ -1007,10 +1008,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void DisableOverride()
 	{
-		networkView.RPC("DisableOverrideRPC",RPCMode.All);
+		photonView.RPC("DisableOverrideRPC",PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DisableOverrideRPC()
 	{
 		HackerNetManager.Manager.DisableOverride();
@@ -1021,11 +1022,11 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void TransmitterPlaced( int hexIndex )
 	{
-		networkView.RPC("TransmitterPlacedRPC",RPCMode.All, hexIndex); // notify Hacker
+		photonView.RPC("TransmitterPlacedRPC",PhotonTargets.All, hexIndex); // notify Hacker
 		HexGrid.Manager.AddHotSpot( hexIndex ); // Add Hotspot for thief
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void TransmitterPlacedRPC( int hexIndex )
 	{
 		HackerNetManager.Manager.TransmitterPlaced( hexIndex );
@@ -1033,10 +1034,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void TransmitterReset( int hexIndex )
 	{
-		networkView.RPC("TransmitterResetRPC",RPCMode.All, hexIndex);
+		photonView.RPC("TransmitterResetRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void TransmitterResetRPC( int hexIndex )
 	{
 		HackerNetManager.Manager.TransmitterReset( hexIndex );
@@ -1045,10 +1046,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void TransmitterPickUp( int hexIndex )
 	{
-		networkView.RPC("TransmitterPickUpRPC",RPCMode.All, hexIndex);
+		photonView.RPC("TransmitterPickUpRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void TransmitterPickUpRPC( int hexIndex )
 	{
 		HackerNetManager.Manager.TransmitterPickUp( hexIndex );
@@ -1056,10 +1057,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void DisableTransmitter( int hexIndex )
 	{
-		networkView.RPC("DisableTransmitterRPC",RPCMode.All, hexIndex);
+		photonView.RPC("DisableTransmitterRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DisableTransmitterRPC( int hexIndex )
 	{
 		PointmanNetManager.Manager.DisableTransmitter( hexIndex );
@@ -1068,10 +1069,10 @@ public class NetworkManager : MonoBehaviour {
 	#region Tracer Related Functions 
 	public void HackerCaught( int hexIndex )
 	{
-		networkView.RPC("HackerCaughtRPC",RPCMode.All, hexIndex);
+		photonView.RPC("HackerCaughtRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void HackerCaughtRPC( int hexIndex )
 	{
 		PointmanNetManager.Manager.HackerCaught( hexIndex );
@@ -1080,10 +1081,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void CreateTracer( int i_index, float i_delay, float i_calibration, float i_active)
 	{
-		networkView.RPC("CreateTracerRPC",RPCMode.All, i_index, i_delay, i_calibration, i_active);
+		photonView.RPC("CreateTracerRPC",PhotonTargets.All, i_index, i_delay, i_calibration, i_active);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void CreateTracerRPC( int i_index, float i_delay, float i_calibration, float i_active)
 	{
 		SecurityManager.Manager.CreateTracer(i_index, i_delay, i_calibration, i_active);
@@ -1094,9 +1095,9 @@ public class NetworkManager : MonoBehaviour {
 	// Functions for TestingMode
 	public void PausingStateChange(bool i_pause)
 	{
-		networkView.RPC("PausingStateChangeRPC",RPCMode.All,i_pause);	
+		photonView.RPC("PausingStateChangeRPC",PhotonTargets.All,i_pause);	
 	}
-	[RPC]
+	[PunRPC]
 	public void PausingStateChangeRPC(bool i_pause)
 	{
 		GameObject.Find("TestingModeController").GetComponent<TestingMode>().ChangeToPause(i_pause);
@@ -1105,10 +1106,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void PausingGame(bool i_pause)
 	{
-		networkView.RPC("PausingGameRPC",RPCMode.All,i_pause);
+		photonView.RPC("PausingGameRPC",PhotonTargets.All,i_pause);
 		
 	}
-	[RPC]
+	[PunRPC]
 	public void PausingGameRPC(bool i_pause)
 	{
 		if(i_pause==false) 
@@ -1126,10 +1127,10 @@ public class NetworkManager : MonoBehaviour {
 	}
 	public void AllPointsAccessable()
 	{
-		networkView.RPC("AllPointsAccessableRPC",RPCMode.All);
+		photonView.RPC("AllPointsAccessableRPC",PhotonTargets.All);
 		
 	}
-	[RPC]
+	[PunRPC]
 	public void AllPointsAccessableRPC()
 	{
 		HexGrid.Manager.DebugMakeAllAvailable();
@@ -1137,10 +1138,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void DisableDrones()
 	{
-		networkView.RPC("DisableDronesRPC",RPCMode.All);
+		photonView.RPC("DisableDronesRPC",PhotonTargets.All);
 		
 	}
-	[RPC]
+	[PunRPC]
 	public void DisableDronesRPC()
 	{
 		var AllGuard2= GameObject.FindWithTag("Guard");
@@ -1156,9 +1157,9 @@ public class NetworkManager : MonoBehaviour {
 	}
 	public void KillAllGuards()
 	{
-		networkView.RPC("KillAllGuardsRPC",RPCMode.All);	
+		photonView.RPC("KillAllGuardsRPC",PhotonTargets.All);	
 	}
-	[RPC]
+	[PunRPC]
 	public void KillAllGuardsRPC()
 	{
 		var AllGuard = GameObject.FindWithTag("Guard");
@@ -1166,18 +1167,18 @@ public class NetworkManager : MonoBehaviour {
 	}
 	public void UnlockAllDoors()
 	{
-		networkView.RPC("UnlockAllDoorsRPC",RPCMode.All);	
+		photonView.RPC("UnlockAllDoorsRPC",PhotonTargets.All);	
 	}
-	[RPC]
+	[PunRPC]
 	public void UnlockAllDoorsRPC()
 	{
 		DoorManager.Manager.UnlockAllDoors();
 	}
 	public void ResetHackerThreatMeter()
 	{
-		networkView.RPC("ResetHackerThreatMeterRPC",RPCMode.All);	
+		photonView.RPC("ResetHackerThreatMeterRPC",PhotonTargets.All);	
 	}
-	[RPC]
+	[PunRPC]
 	public void ResetHackerThreatMeterRPC()
 	{
 		HackerThreat.Manager.ResetThreatLevel();
@@ -1185,9 +1186,9 @@ public class NetworkManager : MonoBehaviour {
 	public void SetSecurityClearance(int level)
 	{
 		
-		networkView.RPC("DisableAllJammersRPC",RPCMode.All,level);
+		photonView.RPC("DisableAllJammersRPC",PhotonTargets.All,level);
 	}
-	[RPC]
+	[PunRPC]
 	public void SetSecurityClearanceRPC(int level)
 	{
 		HackerManager.Manager.HackerClearance = level;
@@ -1195,9 +1196,9 @@ public class NetworkManager : MonoBehaviour {
 	public void DisableAllJammers()
 	{
 		
-		networkView.RPC("DisableAllJammersRPC",RPCMode.All);
+		photonView.RPC("DisableAllJammersRPC",PhotonTargets.All);
 	}
-	[RPC]
+	[PunRPC]
 	public void DisableAllJammersRPC()
 	{	
 		//Debug.Log ("Disabling All Jammers");
@@ -1206,9 +1207,9 @@ public class NetworkManager : MonoBehaviour {
 	public void DisableAllTracers()
 	{
 		
-		networkView.RPC("DisableAllTracersRPC",RPCMode.All);
+		photonView.RPC("DisableAllTracersRPC",PhotonTargets.All);
 	}
-	[RPC]
+	[PunRPC]
 	public void DisableAllTracersRPC()
 	{
 		SecurityManager.Manager.DisableTracer();
@@ -1218,10 +1219,10 @@ public class NetworkManager : MonoBehaviour {
 	}
 	public void DisableJammer( int i_hexIndex )
 	{
-		networkView.RPC("DisableJammerRPC",RPCMode.All, i_hexIndex);
+		photonView.RPC("DisableJammerRPC",PhotonTargets.All, i_hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DisableJammerRPC( int i_hexIndex )
 	{
 		//Debug.Log ("Disabling Jammer on index " + i_hexIndex);
@@ -1233,10 +1234,10 @@ public class NetworkManager : MonoBehaviour {
 	#region Pings
 	public void HackerPing( int hexIndex )
 	{
-		networkView.RPC("HackerPingRPC",RPCMode.All, hexIndex);
+		photonView.RPC("HackerPingRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void HackerPingRPC( int hexIndex )
 	{
 		PointmanNetManager.Manager.HackerPing( hexIndex );
@@ -1244,10 +1245,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ThiefPing( int hexIndex )
 	{
-		networkView.RPC("ThiefPingRPC",RPCMode.All, hexIndex);
+		photonView.RPC("ThiefPingRPC",PhotonTargets.All, hexIndex);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ThiefPingRPC( int hexIndex )
 	{
 		HackerNetManager.Manager.ThiefPing( hexIndex );
@@ -1257,10 +1258,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void CreateThiefObjectPing( float rotation, float xScale, float zScale, float xPosition, float zPosition )
 	{
-		networkView.RPC("CreateThiefObjectPingRPC",RPCMode.All, rotation, xScale, zScale, xPosition, zPosition );
+		photonView.RPC("CreateThiefObjectPingRPC",PhotonTargets.All, rotation, xScale, zScale, xPosition, zPosition );
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void CreateThiefObjectPingRPC( float rotation, float xScale, float zScale, float xPosition, float zPosition )
 	{
 		BasicScoreSystem.Manager.ObjectPingsSentByThief += 1;
@@ -1271,12 +1272,12 @@ public class NetworkManager : MonoBehaviour {
 	#region IR
 	public void EnableIR(int i_nodeNumber)
 	{
-		networkView.RPC("EnableIRRPC", RPCMode.All, i_nodeNumber);
+		photonView.RPC("EnableIRRPC", PhotonTargets.All, i_nodeNumber);
 	}
 	
 	public void DisableIR(int i_nodeNumber)
 	{
-		networkView.RPC("DisableIRRPC", RPCMode.All, i_nodeNumber);
+		photonView.RPC("DisableIRRPC", PhotonTargets.All, i_nodeNumber);
 	}	
 	#endregion
 	
@@ -1284,7 +1285,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SetLinkState( int i_index, ThiefGrid.LinkState i_state )
 	{
-		networkView.RPC("SetLinkStateRPC",RPCMode.Others, i_index, (int)i_state);
+		photonView.RPC("SetLinkStateRPC",PhotonTargets.Others, i_index, (int)i_state);
 	}
 	
 	#endregion
@@ -1294,33 +1295,33 @@ public class NetworkManager : MonoBehaviour {
 	
 	#region RPC functions related to the public functions
 	
-	[RPC]
+	[PunRPC]
 	public void PowerNodeRPC(int PowerNodeID, bool status)
 	{
 		//PointmanNetManager.Manager.PowerNode(PowerNodeID, status);
 	}
 	
-    [RPC]
+    [PunRPC]
 	public void EMPActivated(float i_EmpPos_x, float i_EmpPos_z, float EMP_Influence_Radius)
 	{
 		//Empty
 	}
 	
 	
-	[RPC]
+	[PunRPC]
 	public void SendPingRPC(Vector3 i_pos)
 	{
 		//PointmanNetManager.Manager.GetPingPosition(i_pos);
 	}
 	
 	#region IR
-	[RPC]
+	[PunRPC]
 	public void EnableIRRPC(int i_nodeNumber)
 	{
 		HackerNetManager.Manager.EnableIR(i_nodeNumber);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DisableIRRPC(int i_nodeNumber)
 	{
 		HackerNetManager.Manager.DisableIR(i_nodeNumber);
@@ -1330,7 +1331,7 @@ public class NetworkManager : MonoBehaviour {
 
 	
 	#region ConnectionRelated
-	[RPC]
+	[PunRPC]
 	public void SendConnectionDataRPC(int i_packedData)
 	{
 		bool isConnected = (i_packedData & 1) == 1? true: false;
@@ -1342,10 +1343,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void AddPassword( string i_password )
 	{
-		networkView.RPC("AddPassowordRPC", RPCMode.Others, i_password );
+		photonView.RPC("AddPassowordRPC", PhotonTargets.Others, i_password );
 	}
 
-	[RPC]
+	[PunRPC]
 	private void AddPassowordRPC( string i_password )
 	{
 		HackerNetManager.Manager.AddPassword( i_password );
@@ -1353,10 +1354,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void PasswordPlatformStateChange( int i_hexID, bool i_open )
 	{
-		networkView.RPC("PasswordPlatformStateChangeRPC", RPCMode.Others, i_hexID, i_open );
+		photonView.RPC("PasswordPlatformStateChangeRPC", PhotonTargets.Others, i_hexID, i_open );
 	}
 	
-	[RPC]
+	[PunRPC]
 	private void PasswordPlatformStateChangeRPC( int i_hexID, bool i_open )
 	{
 		PointmanNetManager.Manager.PasswordPlatformStateChange( i_hexID, i_open );
@@ -1366,7 +1367,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	#region FloorGrid
 
-	[RPC]
+	[PunRPC]
 	public void SetLinkStateRPC( int i_index, int i_state )
 	{
 		PointmanNetManager.Manager.SetLinkState( i_index, (ThiefGrid.LinkState)i_state );
@@ -1378,10 +1379,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ActivateGroup( int i_groupID )
 	{
-		networkView.RPC("ActivateGroupRPC", RPCMode.All, i_groupID);
+		photonView.RPC("ActivateGroupRPC", PhotonTargets.All, i_groupID);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ActivateGroupRPC( int i_groupID )
 	{
 		PointmanNetManager.Manager.ActivateGroup(i_groupID);
@@ -1389,10 +1390,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void DeactivateGroup( int i_groupID )
 	{
-		networkView.RPC("DeactivateGroupRPC", RPCMode.All, i_groupID);
+		photonView.RPC("DeactivateGroupRPC", PhotonTargets.All, i_groupID);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DeactivateGroupRPC( int i_groupID )
 	{
 		PointmanNetManager.Manager.DeactivateGroup(i_groupID);
@@ -1404,10 +1405,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SetPowerMultiplierForThreatLevel( float i_multiplier )
 	{
-		networkView.RPC("SetPowerMultiplierForThreatLevelRPC", RPCMode.All, i_multiplier);
+		photonView.RPC("SetPowerMultiplierForThreatLevelRPC", PhotonTargets.All, i_multiplier);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetPowerMultiplierForThreatLevelRPC( float i_multiplier )
 	{
 		HackerThreat.Manager.SetPowerMultiplier( i_multiplier );
@@ -1415,10 +1416,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ResetThreatLevel()
 	{
-		networkView.RPC("ResetThreatLevelRPC", RPCMode.All);
+		photonView.RPC("ResetThreatLevelRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ResetThreatLevelRPC()
 	{
 		HackerThreat.Manager.ResetThreatLevel();
@@ -1426,10 +1427,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SetConnectedCount( int i_count )
 	{
-		networkView.RPC("SetConnectedCountRPC", RPCMode.All, i_count);
+		photonView.RPC("SetConnectedCountRPC", PhotonTargets.All, i_count);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetConnectedCountRPC( int i_count )
 	{
 		HackerThreat.Manager.SetConnectedCount(i_count);
@@ -1437,10 +1438,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void BoostAlertLevelForTime( float time, float amount )
 	{
-		networkView.RPC("BoostAlertLevelForTimeRPC", RPCMode.All, time, amount);
+		photonView.RPC("BoostAlertLevelForTimeRPC", PhotonTargets.All, time, amount);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void BoostAlertLevelForTimeRPC( float time, float amount )
 	{
 		HackerThreat.Manager.BoostAlertLevelForTime(time,amount);
@@ -1448,10 +1449,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ModifyThreatRate(float i_rate)
 	{
-		networkView.RPC("ModifyThreatRateRPC", RPCMode.All, i_rate);
+		photonView.RPC("ModifyThreatRateRPC", PhotonTargets.All, i_rate);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ModifyThreatRateRPC(float i_rate)
 	{
 		HackerThreat.Manager.ModifyAlertRate( i_rate );
@@ -1459,10 +1460,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void ActivateSecurityPanel() //Drops hacker threat level
 	{
-		networkView.RPC("DropAlertLevelRPC", RPCMode.All);
+		photonView.RPC("DropAlertLevelRPC", PhotonTargets.All);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DropAlertLevelRPC()
 	{
 		HackerThreat.Manager.DecreaseThreatAmount(10);
@@ -1471,10 +1472,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetLevelCompletionTime(float i_time) //Set level completion time on both player's BasicScorindSystem
 	{
-		networkView.RPC("SetLevelCompletionTimeRPC", RPCMode.All, i_time);
+		photonView.RPC("SetLevelCompletionTimeRPC", PhotonTargets.All, i_time);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetLevelCompletionTimeRPC(float i_time)
 	{
 		BasicScoreSystem.Manager.LevelCompleteTime = (int) i_time;
@@ -1482,10 +1483,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetTransmittersPlaced(int i_number) //Set transmitters placed on both player's BasicScorindSystem
 	{
-		networkView.RPC("SetTransmittersPlacedRPC", RPCMode.All, i_number);
+		photonView.RPC("SetTransmittersPlacedRPC", PhotonTargets.All, i_number);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetTransmittersPlacedRPC(int i_number)
 	{
 		BasicScoreSystem.Manager.TransmittersPlaced += i_number;
@@ -1493,10 +1494,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetTimesSeenByGuard(int i_number) //Set times seen by guard on both player's BasicScorindSystem
 	{
-		networkView.RPC("SetTimesSeenByGuardRPC", RPCMode.All, i_number);
+		photonView.RPC("SetTimesSeenByGuardRPC", PhotonTargets.All, i_number);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetTimesSeenByGuardRPC(int i_number)
 	{
 		BasicScoreSystem.Manager.TimesSeen += i_number;
@@ -1504,10 +1505,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetTimesChasedByGuard(int i_number) //Set times seen by guard on both player's BasicScorindSystem
 	{
-		networkView.RPC("SetTimesChasedByGuardRPC", RPCMode.All, i_number);
+		photonView.RPC("SetTimesChasedByGuardRPC", PhotonTargets.All, i_number);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetTimesChasedByGuardRPC(int i_number)
 	{
 		BasicScoreSystem.Manager.TimesChased += i_number;
@@ -1515,10 +1516,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void SetTimesCaughtByTracer(int i_number) //SetTimesCaughtByTracer on both player's BasicScorindSystem
 	{
-		networkView.RPC("SetTimesCaughtByTracerRPC", RPCMode.All, i_number);
+		photonView.RPC("SetTimesCaughtByTracerRPC", PhotonTargets.All, i_number);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void SetTimesCaughtByTracerRPC(int i_number)
 	{
 		BasicScoreSystem.Manager.HackerCaughtByTracer += i_number;
@@ -1526,10 +1527,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void DecreaseThreatAmount( int i_amount ) //Drops hacker threat level
 	{
-		networkView.RPC("DecreaseThreatAmountRPC", RPCMode.All, i_amount);
+		photonView.RPC("DecreaseThreatAmountRPC", PhotonTargets.All, i_amount);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void DecreaseThreatAmountRPC( int i_amount )
 	{
 		HackerThreat.Manager.DecreaseThreatAmount( i_amount );
@@ -1537,10 +1538,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void IncreaseThreatAmount( int i_amount ) //Drops hacker threat level
 	{
-		networkView.RPC("IncreaseThreatAmountRPC", RPCMode.All, i_amount);
+		photonView.RPC("IncreaseThreatAmountRPC", PhotonTargets.All, i_amount);
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void IncreaseThreatAmountRPC( int i_amount )
 	{
 		HackerThreat.Manager.IncreaseThreatAmount( i_amount );
@@ -1550,10 +1551,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SetPasswordHacker( string i_password )
 	{
-		networkView.RPC ( "SetPasswordHackerRPC", RPCMode.Others, i_password );
+		photonView.RPC ( "SetPasswordHackerRPC", PhotonTargets.Others, i_password );
 	}
 	
-	[RPC]
+	[PunRPC]
 	private void SetPasswordHackerRPC( string i_password )
 	{
 		HackerNetManager.Manager.SetPasswordHacker( i_password );
@@ -1563,7 +1564,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void SendGameInfoAsEmail( string i_receipnts, string i_subject )
 	{
-		networkView.RPC ( "SendGameInfoAsEmailRPC", RPCMode.All, i_receipnts, i_subject );
+		photonView.RPC ( "SendGameInfoAsEmailRPC", PhotonTargets.All, i_receipnts, i_subject );
 	}
 
 	private string GetAnalytics()
@@ -1576,14 +1577,14 @@ public class NetworkManager : MonoBehaviour {
 			else
 				playerType = " Hacker.";
 			
-			if( Network.isServer )
+			if( PhotonNetwork.isMasterClient )
 				body += "This is the server\n";
 			else
 				body += "This is the client\n";
 			
-			foreach ( NetworkPlayer conn in Network.connections )
+			foreach ( PhotonPlayer conn in PhotonNetwork.playerList )
 			{
-				body += "IP: " + conn.ipAddress + " Port: " + conn.port + "\n";
+				//body += "IP: " + conn. + " Port: " + conn.port + "\n";
 			}
 			
 			body += "Game Info: \nPlayer Type:" + playerType + "\nLevel:" + Application.loadedLevelName ;
@@ -1591,7 +1592,7 @@ public class NetworkManager : MonoBehaviour {
 		return body;
 	}
 	
-	[RPC]
+	[PunRPC]
 	private void SendGameInfoAsEmailRPC( string i_receipnts, string i_subject )
 	{	
 		EmailClient.Manager.SendEmail(i_receipnts, i_subject, GetAnalytics() );
@@ -1599,10 +1600,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void KillTracers()
 	{
-		networkView.RPC ( "KillTracersRPC", RPCMode.Others );
+		photonView.RPC ( "KillTracersRPC", PhotonTargets.Others );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void KillTracersRPC()
 	{
 		SecurityManager.Manager.DisableTracerCreators();
@@ -1616,10 +1617,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void ExposeHexGrid()
 	{
-		networkView.RPC ( "ExposeHexGridRPC", RPCMode.Others );
+		photonView.RPC ( "ExposeHexGridRPC", PhotonTargets.Others );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void ExposeHexGridRPC()
 	{
 		HexGrid.Manager.ExposeHexGrid();
@@ -1627,10 +1628,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void DeleteGuards()
 	{
-		networkView.RPC ( "DeleteGuardsRPC", RPCMode.All );
+		photonView.RPC ( "DeleteGuardsRPC", PhotonTargets.All );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void DeleteGuardsRPC()
 	{
 		GuardOverlord.Manager.m_Guards.Clear();
@@ -1661,10 +1662,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void ShowEndScreen(int m_type)
 	{
-		networkView.RPC ( "ShowEndScreenRPC", RPCMode.All, m_type );
+		photonView.RPC ( "ShowEndScreenRPC", PhotonTargets.All, m_type );
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void ShowEndScreenRPC(int m_type)
 	{
 		GameObject.Find("MessageBox").GetComponent<MessageBox>().MessageBoxShow(m_type);
@@ -1672,10 +1673,10 @@ public class NetworkManager : MonoBehaviour {
 	
 	public void CloseInfoVideoAudio()
 	{
-		networkView.RPC ( "CloseInfoVideoAudioRPC", RPCMode.All );
+		photonView.RPC ( "CloseInfoVideoAudioRPC", PhotonTargets.All );
 	}
 	
-	[RPC]
+	[PunRPC]
 	public void CloseInfoVideoAudioRPC()
 	{
 		InfoNodeManager.Manager.CloseInfoVideoAudio();
@@ -1683,10 +1684,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void DisableThreat()
 	{
-		networkView.RPC ( "DisableThreatRPC", RPCMode.All );
+		photonView.RPC ( "DisableThreatRPC", PhotonTargets.All );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void DisableThreatRPC()
 	{
 		HackerThreat.Manager.ResetThreatLevel();
@@ -1695,10 +1696,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void PlayBackgroundMusic()
 	{
-		networkView.RPC ( "PlayBackgroundMusicRPC", RPCMode.All );
+		photonView.RPC ( "PlayBackgroundMusicRPC", PhotonTargets.All );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void PlayBackgroundMusicRPC()
 	{
 		soundMan.soundMgr.silenceSource(null,GameManager.Manager.PlayerType);
@@ -1715,10 +1716,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void LastMenuAction(bool playClicked, bool levelClicked, bool exitClicked)
 	{
-		networkView.RPC ( "LastMenuActionRPC", RPCMode.All, playClicked, levelClicked, exitClicked );
+		photonView.RPC ( "LastMenuActionRPC", PhotonTargets.All, playClicked, levelClicked, exitClicked );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void LastMenuActionRPC(bool playClicked, bool levelClicked, bool exitClicked)
 	{
 		GameManager.Manager.playClicked = playClicked;
@@ -1728,10 +1729,10 @@ public class NetworkManager : MonoBehaviour {
 
 	public void OnFinalVideoEnd()
 	{
-		networkView.RPC ( "OnFinalVideoEndRPC", RPCMode.All );
+		photonView.RPC ( "OnFinalVideoEndRPC", PhotonTargets.All );
 	}
 
-	[RPC]
+	[PunRPC]
 	public void OnFinalVideoEndRPC()
 	{
 		/*** Kill Tracers ***/

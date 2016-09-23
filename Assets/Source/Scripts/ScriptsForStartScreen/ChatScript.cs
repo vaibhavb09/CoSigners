@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.IO;
 
-public class ChatScript : MonoBehaviour 
+public class ChatScript : Photon.MonoBehaviour 
 {
 	private Rect _chatWindow = new Rect(200, 200, 200, 400);
 	private string _messBox = "Press enter to text chat.\n", _messageToSend = "";
@@ -24,7 +24,7 @@ public class ChatScript : MonoBehaviour
 	{
 		GUI.skin = CustomSkin;
 		GUI.depth = 1;
-		if(Network.peerType != NetworkPeerType.Disconnected)
+		if(PhotonNetwork.connectionState != ConnectionState.Disconnected)
 		{
 			chatFunc();
 			//_chatWindow = GUI.Window(3, _chatWindow, chatFunc, "Chat");
@@ -66,7 +66,7 @@ public class ChatScript : MonoBehaviour
 			{
 				if(_messageToSend != "")
 				{
-					networkView.RPC("SendMessage", RPCMode.All, _playerUtil.GetComponent<AccountSystem>().GetName() + ": " +  _messageToSend + "\r\n");
+					photonView.RPC("SendMessage", PhotonTargets.All, _playerUtil.GetComponent<AccountSystem>().GetName() + ": " +  _messageToSend + "\r\n");
 					_messageToSend = "";
 					if (VirtualKeyboard.enabled == true)
 						VirtualKeyboard.text = _messageToSend ;
@@ -122,7 +122,7 @@ public class ChatScript : MonoBehaviour
 			{
 				if(_messageToSend != "")
 				{
-					networkView.RPC("SendMessage", RPCMode.All, _playerUtil.GetComponent<AccountSystem>().GetName() + ": " +  _messageToSend + "\r\n");
+					photonView.RPC("SendMessage", PhotonTargets.All, _playerUtil.GetComponent<AccountSystem>().GetName() + ": " +  _messageToSend + "\r\n");
 					_messageToSend = "";
 				}
 				_showTextField = false;
@@ -132,7 +132,7 @@ public class ChatScript : MonoBehaviour
 	}
 	
 	
-	[RPC]
+	[PunRPC]
 	private void SendMessage(string i_mess)
 	{
 		_messBox += i_mess;

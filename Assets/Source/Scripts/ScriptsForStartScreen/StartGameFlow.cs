@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class StartGameFlow : MonoBehaviour {
+public class StartGameFlow : Photon.MonoBehaviour{
 	
 	#region Field
 	private StartGameInterface 		_startGameInterface;
@@ -175,10 +175,10 @@ public class StartGameFlow : MonoBehaviour {
 		MasterServer.ipAddress = MasterServerIP;
 		//MasterServer.ipAddress = "54.187.70.136";
 		MasterServer.port = MasterServerPort;
-		Network.natFacilitatorIP = NATFacilitatorIP;
-		Network.natFacilitatorPort = NATFacilitatorPort;
-		Network.connectionTesterIP = ConnectionTesterIP;
-		Network.connectionTesterPort = ConnectionTesterPort;
+		//PhotonNetwork.natFacilitatorIP = NATFacilitatorIP;
+		//PhotonNetwork.natFacilitatorPort = NATFacilitatorPort;
+		//PhotonNetwork.connectionTesterIP = ConnectionTesterIP;
+		//PhotonNetwork.connectionTesterPort = ConnectionTesterPort;
 		//_startGameInterface.Show();
 		_buttonAccentLeft = Resources.Load("Textures/StartScreenUI/btnAccent_right", typeof(Texture2D)) as Texture2D;
 		_buttonAccentRight = Resources.Load("Textures/StartScreenUI/btnAccent_left", typeof(Texture2D)) as Texture2D;
@@ -269,6 +269,7 @@ public class StartGameFlow : MonoBehaviour {
 		_roomInterface.Show();
 		_isInGameLobby = false;
 		_isInGameRoom = true;
+		_roomInterface.SetupStuffForRoomInterface();
 	}
 	
 	public void EnterRoomFromLobby()
@@ -299,7 +300,7 @@ public class StartGameFlow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Network.connections.Length != 0 && (_isInGameRoom == false || _startGameInterface.IsStillActive()))
+		if(PhotonNetwork.playerList.Length == 3 && (_isInGameRoom == false || _startGameInterface.IsStillActive()))
 		{
 			_startGameInterface.ShutDownStartGameInterface();
 			_roomInterface.Show();
@@ -309,9 +310,9 @@ public class StartGameFlow : MonoBehaviour {
 
 		if(_isInGameLobby)
 		{
-			if(_receiver != null && !_receiver.IsBound())
+			//if(_receiver != null && !_receiver.IsBound())
 			{
-				_receiver.Init();
+				//_receiver.Init();
 			}
 		}
 	}

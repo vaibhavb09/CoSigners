@@ -11,7 +11,7 @@ public class ThreatRateModifier
 }
 
 
-public class HackerThreat : MonoBehaviour {
+public class HackerThreat : Photon.MonoBehaviour {
 	
 	private static HackerThreat _instance;
 	
@@ -135,7 +135,7 @@ public class HackerThreat : MonoBehaviour {
 		threatLevel = 0.0f;
 	}
 	
-	#region Public Network API
+	#region Public PhotonNetwork API
 	
 	// Resets the threat amount to some specified amount
 	// If you do not send any parameter it will reset to 0

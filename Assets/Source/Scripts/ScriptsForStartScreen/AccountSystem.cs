@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-public class AccountSystem : MonoBehaviour {
+public class AccountSystem : Photon.MonoBehaviour {
 	
 	public static string ClientPlayerName = " ";
 	public static string ServerPlayerName = " ";
@@ -82,23 +82,23 @@ public class AccountSystem : MonoBehaviour {
 		return false;
 	}
 	
-	void OnConnectedToServer()
+	void OnJoinedRoom()
 	{
 		if(_nameExist)
 		{
 			//Debug.Log("Hit this?");
-			int playerID = Convert.ToInt32(Network.player.ToString());
+			int playerID = Convert.ToInt32(PhotonNetwork.player.ToString());
 			if(_playerNames.ContainsKey(playerID))
 			{
 				//_playerNames[playerID] = _playerName;
-				networkView.RPC("UpdateNameByID", RPCMode.All, playerID, _playerName);
+				photonView.RPC("UpdateNameByID", PhotonTargets.All, playerID, _playerName);
 			}
 			else
 			{
 				//Debug.Log("#Max:Yea, that happened");
 				//_playerNames.Add(playerID, _playerName);
 				++_connections;
-				networkView.RPC("AddName", RPCMode.All, playerID, _playerName);
+				photonView.RPC("AddName", PhotonTargets.All, playerID, _playerName);
 			}
 		}
 	}
@@ -109,7 +109,7 @@ public class AccountSystem : MonoBehaviour {
 		_playerName = "ANONYMOUS";	
 	}
 	
-	void OnServerInitialized()
+	void OnCreatedRoom()
 	{
 		if(_nameExist)
 		{
@@ -117,7 +117,7 @@ public class AccountSystem : MonoBehaviour {
 			if(_playerNames.ContainsKey(0))
 			{
 				//_playerNames[playerID] = _playerName;
-				networkView.RPC("UpdateNameByID", RPCMode.All, 0, _playerName);
+				photonView.RPC("UpdateNameByID", PhotonTargets.All, 0, _playerName);
 				//_connections++;
 			}
 			else
@@ -126,24 +126,24 @@ public class AccountSystem : MonoBehaviour {
 				//_playerNames.Add(playerID, _playerName);
 				_connections++;
 				//Debug.Log(_connections);
-				networkView.RPC("AddName", RPCMode.All, 0, _playerName);
+				photonView.RPC("AddName", PhotonTargets.All, 0, _playerName);
 				
 			}
 		}
 	}
 	
-	void OnPlayerConnected(NetworkPlayer player)
+	void OnPhotonPlayerConnected(PhotonPlayer player)
 	{
 		_connections++;
-		networkView.RPC("UpdateConnections", RPCMode.All, _connections);
-		//Debug.Log("connects when logged in:" + Network.connections.Length);
+		photonView.RPC("UpdateConnections", PhotonTargets.All, _connections);
+		//Debug.Log("connects when logged in:" + PhotonNetwork.playerList.Length);
 	}
 	
-	void OnPlayerDisconnected(NetworkPlayer player)
+	void OnPhotonPlayerDisconnected(PhotonPlayer player)
 	{
 		_connections--;
 		_playerNames.Remove(Convert.ToInt32(player.ToString()));
-		//networkView.RPC("UpdateConnections", RPCMode.All, _connections);
+		//photonView.RPC("UpdateConnections", PhotonTargets.All, _connections);
 	}
 	
 	void OnDisconnectedFromServer(NetworkDisconnection info)
@@ -151,10 +151,10 @@ public class AccountSystem : MonoBehaviour {
 		_connections--;
 		if(_connections < 0)
 			_connections = 0;
-		//networkView.RPC("UpdateConnections", RPCMode.All, _connections);
+		//photonView.RPC("UpdateConnections", PhotonTargets.All, _connections);
 	}
 	
-	[RPC]
+	[PunRPC]
 	void UpdateConnections(int i_length)
 	{
 		_connections = i_length;
@@ -182,7 +182,7 @@ public class AccountSystem : MonoBehaviour {
 		}
 		else 
 		{
-			networkView.RPC("RequestServerUpdateNames", RPCMode.Server, true);
+			photonView.RPC("RequestServerUpdateNames", PhotonTargets.MasterClient, true);
 			return "";
 		}
 	}
@@ -198,19 +198,19 @@ public class AccountSystem : MonoBehaviour {
 		
 		if(_playerNames.Count < _connections)
 		{
-			networkView.RPC("RequestServerUpdateNames", RPCMode.Server, true);
+			photonView.RPC("RequestServerUpdateNames", PhotonTargets.MasterClient, true);
 		}
 		
-		if(Network.isServer)
+		if(PhotonNetwork.isMasterClient)
 		{
 			if(_requireUpdate)
 			{
 				//the server name is put at first
-				networkView.RPC ("InitPlayerName", RPCMode.All, 0, _playerName);
+				photonView.RPC ("InitPlayerName", PhotonTargets.All, 0, _playerName);
 				//if(_connections == 2 && _playerNames.Count == 2)
 				//{
 				//	for(int i = 1; i < _connections; i++)
-				//		networkView.RPC ("InitPlayerName", RPCMode.All, i, _playerNames[i]);					
+				//		photonView.RPC ("InitPlayerName", PhotonTargets.All, i, _playerNames[i]);					
 				//}
 				//else
 				//{
@@ -222,7 +222,7 @@ public class AccountSystem : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void InitPlayerName(int id, string i_name)	
 	{
 		if(!_playerNames.ContainsKey(id))
@@ -243,7 +243,7 @@ public class AccountSystem : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[PunRPC]
 	void RequestServerUpdateNames(bool i_bool)
 	{
 		_requireUpdate = i_bool;
@@ -265,7 +265,7 @@ public class AccountSystem : MonoBehaviour {
 		_showCreateNameInterface = true;
 	}
 
-	[RPC]
+	[PunRPC]
 	void UpdateNameByID(int i_id, string i_name)
 	{
 		_playerNames[i_id] = i_name;
@@ -279,7 +279,7 @@ public class AccountSystem : MonoBehaviour {
 		}
 	}
 
-	[RPC]
+	[PunRPC]
 	void AddName(int i_id, string i_name)
 	{
 		_playerNames.Add(i_id, i_name);

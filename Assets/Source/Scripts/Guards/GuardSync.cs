@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GuardSync : MonoBehaviour {
+public class GuardSync : Photon.MonoBehaviour {
 	
 	public GameObject guard2DPrefab;
 	private GameObject _guard2DPrefab;
@@ -50,13 +50,13 @@ public class GuardSync : MonoBehaviour {
 			    _lastPos = transform.position;
 				//Have to pass a extra data, doesn't worth it.
 				NetworkManager.Manager.UpdateGuardPosition(transform.position, GuardId);
-			    //networkView.RPC("SetPosition", RPCMode.Others, transform.position);
+			    //photonView.RPC("SetPosition", PhotonTargets.Others, transform.position);
 			}
 			if(Quaternion.Angle(transform.rotation, _lastRot) > MiniMovement)
 			{
 				_lastRot = transform.rotation;
 				NetworkManager.Manager.UpdateGuardRotation(transform.rotation, GuardId);
-				//networkView.RPC("SetRotation", RPCMode.Others, transform.rotation);
+				//photonView.RPC("SetRotation", PhotonTargets.Others, transform.rotation);
 			}
 		}
 		
@@ -85,13 +85,13 @@ public class GuardSync : MonoBehaviour {
 		}
 	}
 	
-	//[RPC]
+	//[PunRPC]
 	public void SetPosition(Vector3 newPosition)
 	{
 	    transform.position = newPosition;
 	}
 	
-	//[RPC]
+	//[PunRPC]
 	public void SetRotation(Quaternion newRotation)
 	{
 	    transform.rotation = newRotation;

@@ -110,6 +110,7 @@ public class ThiefGrid : MonoBehaviour {
 	
 	public void LoadGridLines()
 	{
+		Debug.Log ("LoadGridLines - _hexGrid.gridSize = " + _hexGrid.gridSize);
 		GridLines = new Dictionary<int, LineEffect>();
 		for ( int i = 0 ; i < _hexGrid.gridSize ; i+=2 )
 		{
@@ -216,6 +217,7 @@ public class ThiefGrid : MonoBehaviour {
 	
 	public void SetLinkState( int i_index, LinkState i_state )
 	{
+		Debug.Log ("in SetLinkState ");
 		LineEffect lineScript = GridLines[i_index].gameObject.GetComponent<LineEffect>();
 		if ( !HexGrid.Manager.IsLineJammed( i_index ) )
 		{
@@ -508,7 +510,7 @@ public class ThiefGrid : MonoBehaviour {
 	
 	public void CreatePing( int i_hexIndex )
 	{
-		//Debug.Log ("Creating Ping");
+		Debug.Log ("Creating Ping");
 		Vector3 pingPos = HexGrid.Manager.GetCoordHex( i_hexIndex, 0.02f);
 		Transform pingAnimation = (Transform) Instantiate(pingCreatedIndicator, pingPos, Quaternion.identity);
 	}
@@ -577,7 +579,7 @@ public class ThiefGrid : MonoBehaviour {
 	
 	public void UpdateFloorConnections()
 	{
-		//Debug.Log ("Updating Floor Connections");
+		Debug.Log ("Updating Floor Connections");
 		// Use connection manager data to update floor.
 		foreach ( KeyValuePair<int, LineEffect> l in GridLines)
 		{
@@ -589,7 +591,7 @@ public class ThiefGrid : MonoBehaviour {
 			{
 				if ( ConnectionManager.Manager.IsLinePowered( l.Key ) )
 				{
-					//Debug.Log ("Setting Line: " + l.Key + " to " + " Powered");
+					Debug.Log ("Setting Line: " + l.Key + " to " + " Powered");
 					SetLinkState(l.Key, LinkState.POWERED);
 				}
 				else if ( ConnectionManager.Manager.IsLineConnected( l.Key ) )
@@ -601,7 +603,7 @@ public class ThiefGrid : MonoBehaviour {
 				//else if ( HexGrid.Manager.IsAvailable ( l.Key ) )
 				else if ( HexGrid.Manager.IsLineAvailable ( l.Key ) )
 				{
-					//Debug.Log ("Setting Line: " + l.Key + " to " + " Available");
+					Debug.Log ("Setting Line: " + l.Key + " to " + " Available");
 					SetLinkState(l.Key, LinkState.AVAILABLE);
 				}
 				else

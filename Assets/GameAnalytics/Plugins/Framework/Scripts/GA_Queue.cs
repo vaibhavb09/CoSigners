@@ -186,7 +186,7 @@ public static class GA_Queue
 					
 					if (GA.SettingsGA.DebugMode)
 					{
-						GA.Log("GA: Network connection detected. Adding archived data to next submit queue.");
+						GA.Log("GA: PhotonNetwork connection detected. Adding archived data to next submit queue.");
 					}
 				}
 			}
