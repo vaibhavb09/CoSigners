@@ -25,7 +25,7 @@ public struct SteamLobby
 }
 
 public class GameLobbyInterface : Photon.PunBehaviour {
-{
+	
 	private bool _showGameLobby = false;
 	private Rect windowRect = new Rect(Screen.width/2, Screen.height/2, 600, 400);
 	private StartGameFlow _flow;
@@ -48,8 +48,8 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 	private Texture2D _refreshButtonNormal;
 	private Texture2D _genericMessageBox;
 	private Texture2D _closeMessageBox;
-
-
+	
+	
 	private Texture2D _mainWindow;
 	private Texture2D _scrollUpArrow;
 	private Texture2D _scrollUpDisable;
@@ -60,31 +60,29 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 	private Texture2D _lanNotice;
 	private Texture2D _mainMenuButton;
 	private Texture2D _mainMenuButtonActive;
-
+	
 	// Steam Callbacks
 	protected Callback<LobbyGameCreated_t> m_LobbyGameCreated;
 	protected Callback<LobbyEnter_t> m_LobbyEnteredCallback;
-
+	
 	// Steam Call Results
 	private CallResult<LobbyCreated_t> OnLobbyCreatedCallResult;
 	private CallResult<LobbyMatchList_t> OnLobbyMatchListCallResult;
-
+	
 	private List<SteamLobby> _activeSteamLobbies = new List<SteamLobby>();
-
-	private CSteamID 		_currentSteamLobbyID = CSteamID.Nil;
-
+	
 	private HostData[] 		_hostData;
 	private List<HostData>  _filteredhostData = new List<HostData>();
 	private List<LANData> 	_lanData = new List<LANData>();
 	private List<LANData>   _filteredLANData = new List<LANData>();
-
-
+	
+	
 	private RoomInfo[]     _rooms;
 	private List<RoomInfo> _filteredrooms = new List<RoomInfo>();
-
+	
 	private ConnectionStatus _connStatus = ConnectionStatus.None;
 	private string _failedMessage = "";
-
+	
 	#region GUISettings
 	private const int MenuStartPosition_Y = 13;
 	private const int ListStartPosition_Y = 6;
@@ -115,15 +113,9 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 	private string _customSPort = "25566";
 	private int _customPort = 0;
 	private bool _menuActive = true;
-
-	public void LeaveSteamLobby()
-	{
-		SteamMatchmaking.LeaveLobby (_currentSteamLobbyID);
-		_currentSteamLobbyID = CSteamID.Nil;
-	}
 	
 	#endregion
-
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -144,11 +136,11 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		// Create Steam Callbacks
 		m_LobbyGameCreated = Callback<LobbyGameCreated_t>.Create(OnLobbyGameCreated);
 		m_LobbyEnteredCallback = Callback<LobbyEnter_t>.Create (OnLobbyEntered);
-
+		
 		// Create Steam Call Results
 		OnLobbyCreatedCallResult = CallResult<LobbyCreated_t>.Create(OnLobbyCreated);
 		OnLobbyMatchListCallResult = CallResult<LobbyMatchList_t>.Create (OnLobbyMatchListReceived);
-
+		
 		_playerUtil = GameObject.Find("PlayerUtil");
 		_camera = GameObject.Find("TopDownCamera");
 		_flow = gameObject.GetComponent<StartGameFlow>();
@@ -163,7 +155,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		_refreshButtonNormal		= Resources.Load("Textures/NewGameLobby/btn_Refresh_norm", typeof(Texture2D)) as Texture2D;
 		_genericMessageBox			= Resources.Load("Textures/StartScreenUI/GenericMessageBox", typeof(Texture2D)) as Texture2D;
 		_closeMessageBox			= Resources.Load("Textures/StartScreenUI/RemoveMessageBtn", typeof(Texture2D)) as Texture2D;
-
+		
 		_mainWindow					= Resources.Load("Textures/NewGameLobby/GamesListWindow", typeof(Texture2D)) as Texture2D;
 		_scrollUpArrow				= Resources.Load("Textures/NewGameLobby/btn_ScrollUp_norm", typeof(Texture2D)) as Texture2D;
 		_scrollUpDisable			= Resources.Load("Textures/NewGameLobby/btn_ScrollUp_disable", typeof(Texture2D)) as Texture2D;
@@ -185,25 +177,25 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 			{	
 				_showIPs = !_showIPs;
 			}
-
+			
 			if(Input.GetKeyDown(KeyCode.F2))
 			{	
 				_customJoin = true;
 			}
-
+			
 			if(Input.GetKeyDown(KeyCode.F4))
 			{
 				_customCreate = true;
 			}
 		}
-
+		
 		if(_currentTimer > _RefreshInterval)
 		{
 			if(_flow.IsInGameLobby)
 			{
 				//_receivedLANInfo = _flow.LANReceiveRoomInfo();
 				//if(_receivedLANInfo != " ")
-					//ProcessLANInfo(_receivedLANInfo);
+				//ProcessLANInfo(_receivedLANInfo);
 				//FilterHostList();
 			}
 			_currentTimer = 0.0f;
@@ -212,9 +204,9 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		{
 			_currentTimer += Time.deltaTime;
 		}
-
+		
 		_constantTimer += Time.deltaTime;
-
+		
 		if(_totalGames > GameCapacity)
 		{
 			if ( (_totalGames- _currentGameIndex > GameCapacity) && Input.GetAxis("Mouse ScrollWheel") > 0 )
@@ -325,13 +317,13 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		{
 			GUI.Window(2, new Rect(Screen.width/2 - 100, Screen.height/2 - 100, 200, 200), JoinGameLoop, "Custom Join Game");
 		}
-
+		
 		if(_customCreate)
 		{
 			GUI.Window(2, new Rect(Screen.width/2 - 100, Screen.height/2 - 100, 200, 200), CreateGameLoop, "Custom Create Game");
 		}
 	}
-
+	
 	private void ScrollStuff()
 	{
 		if(_totalGames > GameCapacity)
@@ -368,7 +360,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 			}
 		}
 	}
-
+	
 	private void JoinGameLoop(int i_id)
 	{
 		GUILayout.BeginVertical();
@@ -395,7 +387,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		GUILayout.EndHorizontal();
 		GUILayout.EndVertical();
 	}
-
+	
 	private void CreateGameLoop(int i_id)
 	{
 		GUILayout.BeginVertical();
@@ -439,12 +431,12 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		ScreenHelper.SlideInTexture(-16, 23, 0, 23, 16, 8, _lanNotice, _constantTimer, 0.5f, 0, 0);
 		ScreenHelper.SlideInTexture(2, -13, 2, 0, 16, 12, _sideWindow, _constantTimer, 0.5f, 0, 0);
 		ScreenHelper.SlideInTexture(64, 0, 22, 0, 42, 36, _mainWindow, _constantTimer, 0.5f, 0, 0);
-
+		
 		if(ScreenHelper.SlideInButton(-22, 27, 0, 27, 22, 3, _createLocalGameButton, _constantTimer, 0.5f, 0, 0))
 		{
 			_flow.IsLANGame = true;
 			//PhotonNetwork.CreateRoom(1, 25566, false);
-
+			
 			//_serverName = _playerUtil.GetComponent<AccountSystem>().GetName() + "'s Game1";
 			//PhotonNetwork.CreateRoom(_serverName);
 			//_flow.LANBroadcastRoomMessage(_serverName + "#Hacker#Welcome to CERTA!#true#false");
@@ -482,7 +474,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 			}
 			//MasterServer.RegisterHost("CH", _serverName, "Undecided#Undecided");
 			//}
-
+			
 			/*if(SteamManager.Initialized)
 			{
 				SteamAPICall_t handle = SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, 2);
@@ -498,12 +490,12 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		{
 			_flow.ShowLoginInterface();
 		}
-
+		
 		GameListInterface();
 		ShowConnectionStatus();
 		//windowRect = GUI.Window(0, windowRect, gameListFunc, "Game Lobby");
 	}
-
+	
 	private void ShowConnectionStatus()
 	{
 		if(_connStatus == ConnectionStatus.Connecting)
@@ -534,7 +526,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 			}
 		}
 	}
-
+	
 	void OnFailedToConnect_OBSELETE(NetworkConnectionError error) 
 	{
 		_connStatus = ConnectionStatus.Failed;
@@ -556,15 +548,15 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 				}
 			}
 		}*/
-
+		
 		//if (SteamManager.Initialized) 
 		//{
-			//SteamAPICall_t handle = SteamMatchmaking.RequestLobbyList ();
-			//OnLobbyMatchListCallResult.Set(handle);
+		//SteamAPICall_t handle = SteamMatchmaking.RequestLobbyList ();
+		//OnLobbyMatchListCallResult.Set(handle);
 		//}
-
-
-
+		
+		
+		
 		//_hostData = MasterServer.PollHostList();
 		//_filteredhostData.Clear();
 		//if(_hostData.Length != 0)
@@ -592,7 +584,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		//ScreenHelper.DrawGreenTitleText(GameNameStartPosition_X, MenuStartPosition_Y, GameNameWidth, 2, "Game Name");
 		//ScreenHelper.DrawGreenTitleText(LocationStartPosition_X, MenuStartPosition_Y, LocationWidth, 2, "Location");
 		//ScreenHelper.DrawGreenTitleText(RoleStartPosition_X, MenuStartPosition_Y, RoleWidth, 2, "Role Needed");
-
+		
 		if (VirtualKeyboard.enabled == true)
 			_gameroomName = VirtualKeyboard.text;
 		_gameroomName = ScreenHelper.DrawTextField(47, 1, 13, 1, _gameroomName, 30);
@@ -609,7 +601,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		
 		_LANGames = _filteredLANData.Count;
 		//_LANGames = 0;
-
+		
 		//_serverGames = _activeSteamLobbies.Count;
 		_serverGames = _filteredrooms.Count;
 		
@@ -653,7 +645,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 						{
 							_connStatus = ConnectionStatus.RoomFull;
 						}
-
+						
 						_menuActive = false;
 					}
 				}
@@ -661,7 +653,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 				{
 					ScreenHelper.SlideInTexture(65, ListStartPosition_Y + i * ListInterval_Y, 23, ListStartPosition_Y + i * ListInterval_Y, 39, 2, _joinButton, _constantTimer, 0.5f, 0, 0);
 				}
-
+				
 				ScreenHelper.SlideInText(66, ListStartPosition_Y + i * ListInterval_Y, GameNameStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, GameNameWidth, 2,
 				                         _filteredLANData[i + i_startIndex].gameName,
 				                         _constantTimer, 0.5f, 0, 0);
@@ -691,7 +683,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 						{
 							_connStatus = ConnectionStatus.RoomFull;
 						}
-
+						
 						_menuActive = false;
 					}
 				}
@@ -699,14 +691,14 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 				{
 					ScreenHelper.SlideInTexture(65, ListStartPosition_Y + i * ListInterval_Y, 23, ListStartPosition_Y + i * ListInterval_Y, 39, 2, _joinButton, _constantTimer, 0.5f, 0, 0);
 				}
-
+				
 				//Debug.Log("Host: " + (i + i_startIndex - i_lanGameNumber).ToString());
 				object value;
 				//_filteredrooms[i + i_startIndex - i_lanGameNumber].customProperties.TryGetValue("lobby_info", out value);
 				string lobby_info = (string)_filteredrooms[i + i_startIndex - i_lanGameNumber].customProperties["roleAndScore"];
 				//Debug.Log("Lobby Info : " + lobby_info);
 				string game_name = _filteredrooms[i + i_startIndex - i_lanGameNumber].name;
-
+				
 				string[] roleAndScore = lobby_info.Split("#".ToCharArray());
 				if(!_showIPs)
 				{
@@ -716,11 +708,11 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 					if(roleAndScore.Length == 2)
 					{
 						ScreenHelper.SlideInText(150, ListStartPosition_Y + i * ListInterval_Y, LocationStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, LocationWidth, 2,
-					                   	      roleAndScore[1],
-					                         _constantTimer, 0.5f, 0, 0);
+						                         roleAndScore[1],
+						                         _constantTimer, 0.5f, 0, 0);
 						ScreenHelper.SlideInText(88, ListStartPosition_Y + i * ListInterval_Y, RoleStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, RoleWidth, 2,
-					                         roleAndScore[0],
-					                        	 _constantTimer, 0.5f, 0, 0);
+						                         roleAndScore[0],
+						                         _constantTimer, 0.5f, 0, 0);
 					}
 				}
 				else
@@ -729,23 +721,23 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 					//                         _filteredhostData[i + i_startIndex - i_lanGameNumber].ip[0] + ": "+ _filteredhostData[i + i_startIndex - i_lanGameNumber].port,
 					//                         _constantTimer, 0.5f, 0, 0);
 				}
-
-
-//				if(_filteredhostData[i + i_startIndex - i_lanGameNumber].connectedPlayers <= 1)
-//				{
-//					if(ScreenHelper.DrawButton(JoinButtonStartPosition_X, (float)ListStartPosition_Y + (float)(i * ListInterval_Y) - JoinButtonOffset, JoinButtonWidth,
-//					                           2, _joinButton))
-//					{
-//						_connStatus = ConnectionStatus.Connecting;
-//						PhotonNetwork.JoinRoom(_filteredhostData[i + i_startIndex - i_lanGameNumber]);
-//						//PhotonNetwork.JoinRoom(_filteredhostData[i + i_startIndex - i_lanGameNumber].ip, _filteredhostData[i + i_startIndex - i_lanGameNumber].port);
-//					}
-//				}
-//				else
-//				{
-//					ScreenHelper.DrawGameListText(JoinButtonStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, JoinButtonWidth, 1,
-//					                              "RoomFull");
-//				}
+				
+				
+				//				if(_filteredhostData[i + i_startIndex - i_lanGameNumber].connectedPlayers <= 1)
+				//				{
+				//					if(ScreenHelper.DrawButton(JoinButtonStartPosition_X, (float)ListStartPosition_Y + (float)(i * ListInterval_Y) - JoinButtonOffset, JoinButtonWidth,
+				//					                           2, _joinButton))
+				//					{
+				//						_connStatus = ConnectionStatus.Connecting;
+				//						PhotonNetwork.JoinRoom(_filteredhostData[i + i_startIndex - i_lanGameNumber]);
+				//						//PhotonNetwork.JoinRoom(_filteredhostData[i + i_startIndex - i_lanGameNumber].ip, _filteredhostData[i + i_startIndex - i_lanGameNumber].port);
+				//					}
+				//				}
+				//				else
+				//				{
+				//					ScreenHelper.DrawGameListText(JoinButtonStartPosition_X, ListStartPosition_Y + i * ListInterval_Y, JoinButtonWidth, 1,
+				//					                              "RoomFull");
+				//				}
 			}
 		}
 	}
@@ -812,7 +804,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		}
 		//GUI.DragWindow(new Rect(0, 0, Screen.width, Screen.height));
 	}
-
+	
 	public string GetLocalIPAddress()
 	{
 		string ip = ""; 
@@ -825,10 +817,10 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 				ip = GetIPAddressFromDynDns();
 			}
 		}
-
+		
 		return ip;
 	}
-
+	
 	public string GetIPAddressFromDynDns()
 	{
 		string response = new System.Net.WebClient().DownloadString("http://checkip.dyndns.org");
@@ -838,7 +830,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		string a4 = a3[0];
 		return a4;		
 	}
-
+	
 	// Steam Callbacks
 	void OnLobbyGameCreated(LobbyGameCreated_t pCallback) 
 	{
@@ -850,20 +842,20 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		Debug.Log("[" + LobbyCreated_t.k_iCallback + " - LobbyCreated] - " + pCallback.m_eResult + " -- " + pCallback.m_ulSteamIDLobby);
 		if (SteamManager.Initialized) 
 		{
-			_currentSteamLobbyID = new CSteamID(pCallback.m_ulSteamIDLobby);
-			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "name", _serverName);
-			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "host_ip", GetLocalIPAddress()); 
-			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "lobby_info", "Undecided#Undecided");
+			CSteamID lobbyID = new CSteamID(pCallback.m_ulSteamIDLobby);
+			SteamMatchmaking.SetLobbyData (lobbyID, "name", _serverName);
+			SteamMatchmaking.SetLobbyData (lobbyID, "host_ip", GetLocalIPAddress()); 
+			SteamMatchmaking.SetLobbyData (lobbyID, "lobby_info", "Undecided#Undecided");
 			// For extra safety check
-			SteamMatchmaking.SetLobbyData (_currentSteamLobbyID, "game_name", "Cyber_Heist");
+			SteamMatchmaking.SetLobbyData (lobbyID, "game_name", "Cyber_Heist");
 			// Add version checking also. For future.
 			// SteamMatchmaking.SetLobbyData (lobbyID, "game_version", GetGameVersionFromSavedFile());
-
+			
 			Debug.Log("Local Ip Address is:" + GetLocalIPAddress());
 			// we check if we are connected or not, we join if we are , else we initiate the connection to the server.
 		}
 	}
-
+	
 	void OnLobbyEntered(LobbyEnter_t pCallback)
 	{
 		Debug.Log ("Joined Lobby:" + pCallback.m_ulSteamIDLobby);
@@ -873,9 +865,9 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 	{
 		Debug.Log("[" + LobbyMatchList_t.k_iCallback + " - LobbyMatchList] - " + pCallback.m_nLobbiesMatching);
 		uint NumServerGames = pCallback.m_nLobbiesMatching;
-
+		
 		_activeSteamLobbies.Clear();
-
+		
 		Debug.Log ("Active steam Lobbies" + NumServerGames);
 		for (int i = 0; i < NumServerGames; ++i) 
 		{
@@ -883,7 +875,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 			{
 				CSteamID currentLobbyID = SteamMatchmaking.GetLobbyByIndex (i);
 				CSteamID lobbyOwner = SteamMatchmaking.GetLobbyMemberByIndex(currentLobbyID, 0);
-			
+				
 				SteamLobby newLobby;
 				newLobby.m_LobbyID = currentLobbyID;
 				newLobby.m_LobbyOwner = lobbyOwner;
@@ -892,7 +884,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 				newLobby.m_LobbyInfo = SteamMatchmaking.GetLobbyData(currentLobbyID, "lobby_info");
 				newLobby.m_GameName = SteamMatchmaking.GetLobbyData(currentLobbyID, "game_name");
 				//newLobby.m_GameVersion = SteamMatchmaking.GetLobbyData(currentLobbyID, "game_version");
-
+				
 				if(newLobby.m_GameName == "Cyber_Heist" /*&& newLobby.m_GameVersion == GetGameVersionFromSavedFile()*/)
 				{
 					_activeSteamLobbies.Add(newLobby);
@@ -923,7 +915,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		
 		Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");        
 	}
-
+	
 	public override void OnPhotonRandomJoinFailed (object[] codeAndMsg)
 	{
 		Debug.Log("DemoAnimator/Launcher:OnPhotonRandomJoinFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom(null, new RoomOptions() {maxPlayers = 4}, null);");
@@ -931,7 +923,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 		// #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
 		//PhotonNetwork.CreateRoom(null, new RoomOptions() { maxPlayers = 4 }, null);
 	}
-
+	
 	public override void OnCreatedRoom()
 	{
 		Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
@@ -941,18 +933,18 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 			Debug.Log("Setting this player as Master Client");
 		}
 	}
-
+	
 	public override void OnJoinedRoom()
 	{
 		Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
 	}
-
+	
 	public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
 	{
 		Debug.Log("DemoAnimator/Launcher: OnPhotonJoinRoomFailed() called by PUN. Now this client is in a room.");
 		_connStatus = ConnectionStatus.Failed;
 	}
-
+	
 	public override void OnReceivedRoomListUpdate()
 	{
 		Debug.Log("OnReceivedRoomListUpdate");
@@ -963,7 +955,7 @@ public class GameLobbyInterface : Photon.PunBehaviour {
 				_filteredrooms.Add (room);
 			}
 		}
-
+		
 	}
 	
 	public override void OnPhotonCustomRoomPropertiesChanged	(	ExitGames.Client.Photon.Hashtable 	propertiesThatChanged	)

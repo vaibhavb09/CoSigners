@@ -286,7 +286,6 @@ public class StartGameFlow : Photon.MonoBehaviour{
 		_gameLobbyInterface.Show();
 		_isInGameLobby = true;
 		_isInGameRoom = false;
-		_gameLobbyInterface.LeaveSteamLobby ();
 	}
 	
 	public void ShowGameLobby()
